@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to publish blog on Jekyll with example.</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-publish-blog-on-jekyll-with-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-publish-blog-on-jekyll-with-example/</guid>
+      <description>You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Jekyll requires blog post files to be named according to the following format:
+`YEAR-MONTH-DAY-title.MARKUP`
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file.</description>
+    </item>
+    
+  </channel>
+</rss>

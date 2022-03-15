@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Emacs Package Explained: How to customize key binding in evil modes? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Emacs Package Explained: How to customize key binding in evil modes?" />
+<meta property="og:description" content="This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" />
+
+<meta itemprop="name" content="Emacs Package Explained: How to customize key binding in evil modes?">
+<meta itemprop="description" content="This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.">
+
+<meta itemprop="wordCount" content="523">
+
+
+
+<meta itemprop="keywords" content="evilmode,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs Package Explained: How to customize key binding in evil modes?"/>
+<meta name="twitter:description" content="This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Emacs Package Explained: How to customize key binding in evil modes?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This is my summary of a more thoroughly explained evil guide, see <a href="https://github.com/noctuid/evil-guide#why-dont-keys-defined-with-evil-define-key-work-immediately">here</a>.</p>
+<h2 id="keymap-precendence-in-vanilla-emacs">Keymap Precendence in vanilla emacs</h2>
+<ul>
+<li><code>overriding-terminal-local-map</code> for terminal-specific key bind</li>
+<li><code>overriding-local-map</code></li>
+<li><code>keymap char property at point</code> keymaps for the current character. Yasnippet keymaps are in this category.</li>
+<li><code>emulation-mode-map-alists</code>. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings. Evil mode keymap falls into this category.</li>
+<li><code>minor-mode-overriding-map-alise</code></li>
+<li><code>minor-mode-map-alist</code></li>
+<li><code>keymap text property at point</code></li>
+<li><code>current-local-map</code></li>
+<li><code>current-global-map</code></li>
+</ul>
+<h2 id="keymap-precendence-in-evil-mode">Keymap Precendence in <code>evil mode</code></h2>
+<p>Emacs will look up keymaps in order of top to bottom:</p>
+<ul>
+<li><code>evil-make-intercept-map</code></li>
+<li><code>evil-local-set-key</code></li>
+<li><code>evil-define-minor-mode-key</code></li>
+<li><code>evil-define-key</code> (auxiliary keymaps)</li>
+<li><code>evil-make-overriding-map</code></li>
+<li><code>evil-global-set-map</code></li>
+</ul>
+<h2 id="evil-keymaps-states">Evil keymaps states</h2>
+<ul>
+<li><code>evil-insert-state-map</code></li>
+<li><code>evil-emacs-state-map</code></li>
+<li><code>evil-normal-state-map</code></li>
+<li><code>evil-visual-state-map</code></li>
+<li><code>evil-motion-state-map</code></li>
+<li><code>evil-operator-state-map</code></li>
+<li><code>evil-outer-text-objects-map</code></li>
+<li><code>evil-inner-text-objects-map</code></li>
+<li><code>evil-replace-state-map</code></li>
+</ul>
+<p>Note: there is a non-intuitive behavior of evil motion state which I don&rsquo;t quit understand yet. see <a href="https://github.com/noctuid/evil-guide#global-keybindings-and-evil-states">here</a>.</p>
+<h2 id="defining-evil-keymaps">Defining evil keymaps</h2>
+<p>one can define evil keymaps with evil function or native emacs function.</p>
+<p>In all of the cases, one needs to provide <code>key</code>, <code>command</code>, <code>evil state</code>, and <code>keymap</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">define-key</span> <span style="color:#e6db74">&#39;evil-normal-state-map</span> (kbd <span style="color:#e6db74">&#34;a&#34;</span>) <span style="color:#e6db74">&#39;bar</span>) <span style="color:#75715e">;; i am not sure why scope of evil keymap  doesn&#39;t need to be provided like &#39;evil-global-set-map&#39; etc.</span>
+(evil-define-key <span style="color:#e6db74">&#39;normal</span> <span style="color:#e6db74">&#39;global</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;bar</span>)
+(evil-global-set-key <span style="color:#e6db74">&#39;normal</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;bar</span>)
+</code></pre></div><p>To define lead key, <code>make-sparse-keymap</code> can be used as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defvar my-leader-map (<span style="color:#a6e22e">make-sparse-keymap</span>)
+  <span style="color:#e6db74">&#34;keymap for leader key&#34;</span>)
+
+<span style="color:#75715e">;; binding &#34;,&#34; to the keymap</span>
+(<span style="color:#a6e22e">define-key</span> evil-normal-state-map <span style="color:#e6db74">&#34;,&#34;</span> my-leader-map)
+
+<span style="color:#75715e">;; binding &#34;,b&#34;</span>
+(<span style="color:#a6e22e">define-key</span> my-leader-map <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#39;list-buffers</span>)
+
+<span style="color:#75715e">;; change the &#34;leader&#34; key to space</span>
+(<span style="color:#a6e22e">define-key</span> evil-normal-state-map (kbd <span style="color:#e6db74">&#34;-&#34;</span>) my-leader-map)
+</code></pre></div><h2 id="why-doesn-t-evil-mode-work-properly">Why doesn&rsquo;t evil mode work properly?</h2>
+<p>To be clear, there is no magic underneath. If evil keymaps is in the correct state within correct keymaps precedence, every should work according to keymap search rules.</p>
+<p>Recall that evil keymaps are in <code>emulation-mode-map-alists</code>, hence, it is possible that other keymaps within the same mode-map can over right it. For example, company mode may override evil mode.</p>
+<h2 id="switching-between-evil-and-emacs">Switching Between Evil and Emacs</h2>
+<p>Note that, here, we don&rsquo;t want to override keybinding. We want to switch between evil and emacs state.</p>
+<p>there are the following ways to do this.</p>
+<ul>
+<li>use <code>evil-set-initial-state</code>. Set the initial state when a mode is activated.</li>
+<li>use <code>evil-make-override-map</code> or <code>evil-make-intercept-map</code>. Reorder key precedence.</li>
+<li>use <code>evil-execute-in-emacs-state</code>. temporary change to emacs state.</li>
+<li>use <code>evil-disable-insert-state-bindings</code>. If this is non-nil, default Emacs bindings are by and large accessible in insert state.</li>
+</ul>
+<p>You can also make sure that a keymap is always less than evil keymap using <code>evil-make-overiding-map</code> and <code>evil-make-intercept-map</code>.</p>
+<p>Furthermore, once a key is defined with <code>evil-intercept-maps</code>, it cannot be override. Example of this is <code>edebug-mode-map</code>. To modifier key in intercept-map, you must undefined it. It can be done as followed</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">define-key</span> keymap [intercept-state] <span style="color:#66d9ef">nil</span>)
+</code></pre></div><p>On a side note, if you define keybinding with <code>setq</code>, it will have no effect if you define keymap after evil is loaded, so you have to make sure that evil is loaded after as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq evil-overriding-maps <span style="color:#66d9ef">nil</span>
+      evil-intercept-maps <span style="color:#66d9ef">nil</span>)
+<span style="color:#75715e">;; ...</span>
+(require <span style="color:#e6db74">&#39;evil</span>)
+</code></pre></div><p>You can always prevent evil keymaps from ever being overwritten after evil is loaded. You can use <code>(advice-add 'evil-make-overriding-map :override #'ignore)</code> which can be removed with <code>(advice-remove 'evil-make-overriding-map #'ignore)</code>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/evilmode" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">evilmode</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

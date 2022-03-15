@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to use auto yasnippet (aka aya) in your workflow? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="All of the content I presented below can be found at Auto-YASnippet Github repo.
+Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
+I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
+This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
+Without aya, one would have do the following">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="How to use auto yasnippet (aka aya) in your workflow?" />
+<meta property="og:description" content="All of the content I presented below can be found at Auto-YASnippet Github repo.
+Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
+I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
+This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
+Without aya, one would have do the following" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/" />
+
+<meta itemprop="name" content="How to use auto yasnippet (aka aya) in your workflow?">
+<meta itemprop="description" content="All of the content I presented below can be found at Auto-YASnippet Github repo.
+Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
+I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
+This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
+Without aya, one would have do the following">
+
+<meta itemprop="wordCount" content="250">
+
+
+
+<meta itemprop="keywords" content="aya,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to use auto yasnippet (aka aya) in your workflow?"/>
+<meta name="twitter:description" content="All of the content I presented below can be found at Auto-YASnippet Github repo.
+Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
+I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
+This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
+Without aya, one would have do the following"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">How to use auto yasnippet (aka aya) in your workflow?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>All of the content I presented below can be found at <a href="https://github.com/abo-abo/auto-yasnippet">Auto-YASnippet Github repo</a>.</p>
+<p>Auto-Yasnippet (aka aya) provides the following interactive commands: <code>aya-create</code>, <code>aya-expand</code>, <code>aya-persiste-snippet</code>, and <code>aya-open-line</code>:</p>
+<p>I don&rsquo;t quite understand <code>aya-open-line</code> yet, so I will not be explaining it here.</p>
+<p>This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.</p>
+<p>Without <code>aya</code>, one would have do the following</p>
+<ol>
+<li>go to <code>yassnippet</code> directory.</li>
+<li>implement snippet template which may required multiple reload of the <code>yassnippet</code> directory via <code>yas-reload-all</code>.</li>
+<li>switch back to the to buffer you wish to apply the template.</li>
+<li>insert template and edit it.</li>
+</ol>
+<p><code>aya</code> simply skip the above step and automatically create <code>yasnippet</code> template base on context which may be one line or multiple line.</p>
+<p>Here is how one can use <code>aya</code>. imagine you have function <code>count_of_red(color)</code> and you want to count three colors: red, blue, and green.</p>
+<p>You can start by writing template on the line in the same buffer you are editing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">count_of_<span style="color:#f92672">~</span>red <span style="color:#f92672">=</span> get_total(<span style="color:#e6db74">&#34;~red&#34;</span>);
+</code></pre></div><p>note: <code>~</code> is a <code>aya-marker</code> which will mark word to be replaced.</p>
+<p>Then, you will call <code>aya-create</code> with point (cursor) on the same line. Note, <code>~</code> should now gone, and you should get the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">count_of_red <span style="color:#f92672">=</span> get_total(<span style="color:#e6db74">&#34;red&#34;</span>);
+</code></pre></div><p>To reused the template, you just created with <code>aya-create</code>. Just run <code>aya-expand</code> on the line you want to insert the new template.</p>
+<p>Done! Blazing fast!</p>
+<p>Oh, I heard you want to save the template to a snippet? run <code>aya-persist-snippet</code>. Save.</p>
+<p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/aya" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">aya</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

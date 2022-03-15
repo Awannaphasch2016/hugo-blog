@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blockchain on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/blockchain/</link>
+    <description>Recent content in blockchain on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Economic inside blockchain: How does supply-demand mechanism works in blockchain?</title>
+      <link>https://awannaphasch2016.github.io/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/</guid>
+      <description>Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka.</description>
+    </item>
+    
+  </channel>
+</rss>

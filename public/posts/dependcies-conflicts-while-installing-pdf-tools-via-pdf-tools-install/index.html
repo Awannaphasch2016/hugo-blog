@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install." />
+<meta property="og:description" content="Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" />
+
+<meta itemprop="name" content="Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.">
+<meta itemprop="description" content="Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.">
+
+<meta itemprop="wordCount" content="3699">
+
+
+
+<meta itemprop="keywords" content="emacs,pdf-tools,garun,error," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install."/>
+<meta name="twitter:description" content="Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="current-solution-as-of-dot">Current Solution as of <!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2022-03-02 Wed&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->.</h2>
+<p>The solution only works on doom emacs only, I found that <code>pdf-tools</code> must be install with <code>init.el</code>.</p>
+<p>I had <code>(package! pdf-tools)</code> and <code>:tools pdf</code>. Dependencies conflict is caused by endable pdf-tools two different ways as shown.</p>
+<p>I solved the problem by remove <code>(package! pdf-tools)</code> from packages.el and only keep <code>:tools pdf</code>.</p>
+<p>Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.), so I didn&rsquo;t know how to properly install things. (This problem is recognized by doom emacs maintainer that installing packages in doom style are beginner mistake.)</p>
+<h2 id="actions-log">actions log</h2>
+<h3 id="gathering-information">Gathering information</h3>
+<p>When I encountered this error, I can still open doom with <code>doom run</code>, but it is clear from the error message when doom is open that config.el is not loaded all the ways.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Warning: due to a long standing Gtk+ bug
+https://gitlab.gnome.org/GNOME/gtk/issues/221
+Emacs might crash when run in daemon mode and the X11 connection is unexpectedly lost.
+Using an Emacs configured with --with-x-toolkit=lucid does not have this problem.
+Warning (initialization): An error occurred while loading ‘/home/awannaphasch2016/.emacs.d/init.el’:
+
+Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable)
+
+To ensure normal operation, you should investigate and remove the
+cause of the error in your initialization file.  Start Emacs with
+the ‘--debug-init’ option to view a complete error backtrace.
+</code></pre></div><p>It is important to note that doom does recognize pdf mode. (It open pdf file with pdfview mode)</p>
+<p>As the main error message suggests <code>pdf-info-epdfinfo-program</code> can&rsquo;t not be executed because it doesn&rsquo;t exist.</p>
+<p>This <a href="https://www.reddit.com/r/emacs/comments/aa9yz3/compiling_pdftools/">page</a> encounters similar error, and it is suggested to run <code>pdf-tools-install</code>.</p>
+<p>Running <code>pdf-tools-install.</code> output the following error.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">-*- mode: compilation; default-directory: &#34;~/.emacs.d/.local/elpa/pdf-tools-20211110.513/build/server/&#34; -*-
+Comint started at Thu Nov 18 09:02:31
+
+/home/awannaphasch2016/.emacs.d/.local/elpa/pdf-tools-20211110.513/build/server/autobuild -i /home/awannaphasch2016/.emacs.d/.local/elpa/pdf-tools-20211110.513/
+---------------------------
+    Installing packages
+---------------------------
+Skipping package installation (already installed)
+
+---------------------------
+ Configuring and compiling
+---------------------------
+./configure -q --bindir=/home/awannaphasch2016/.emacs.d/.local/elpa/pdf-tools-20211110.513/ &amp;&amp; make clean &amp;&amp; make -s
+
+Is case-sensitive searching enabled ?     yes
+Is modifying text annotations enabled ?   yes
+Is modifying markup annotations enabled ? yes
+
+test -z &#34;epdfinfo&#34; || rm -f epdfinfo
+test -z &#34;libsynctex.a&#34; || rm -f libsynctex.a
+rm -f *.o
+epdfinfo.c: In function &#39;image_write&#39;:
+epdfinfo.c:566:9: warning: ignoring return value of &#39;fwrite&#39;, declared with attribute warn_unused_result [-Wunused-result]
+         fwrite (buffer, 1, width <span style="font-style:italic">* height *</span> 3, file);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: epdfinfo-epdfinfo.o: in function <span style="color:#e6db74">`mktempfile&#39;:
+</span><span style="color:#e6db74">epdfinfo.c:(.text.mktempfile+0x51): warning: the use of `</span>tempnam&#39; is dangerous, better use <span style="color:#e6db74">`mkstemp&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: warning: libXrender.so.1, needed by /home/awannaphasch2016/anaconda3/lib/libcairo.so, not found (try using -rpath or -rpath-link)
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: warning: libX11.so.6, needed by /home/awannaphasch2016/anaconda3/lib/libcairo.so, not found (try using -rpath or -rpath-link)
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: warning: libXext.so.6, needed by /home/awannaphasch2016/anaconda3/lib/libcairo.so, not found (try using -rpath or -rpath-link)
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: warning: libXau.so.6, needed by /home/awannaphasch2016/anaconda3/lib/libxcb-shm.so.0, not found (try using -rpath or -rpath-link)
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCreateGlyphSet&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libglib-2.0.so: undefined reference to <span style="color:#e6db74">`__fdelt_chk@GLIBC_2.15&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XNextRequest&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XShmAttach&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCompositeTriStrip&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XCreateWindow&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XShmQueryVersion&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libkrb5.so.3: undefined reference to <span style="color:#e6db74">`__poll_chk@GLIBC_2.16&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libstdc++.so: undefined reference to `</span>aligned_alloc@GLIBC_2.16&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XEventsQueued&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XExtendedMaxRequestSize&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libglib-2.0.so: undefined reference to <span style="color:#e6db74">`memcpy@GLIBC_2.14&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderFreePicture&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderFillRectangles&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>_XReadEvents&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderCompositeTrapezoids&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XCreatePixmap&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XFreePixmap&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCompositeText16&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libglib-2.0.so: undefined reference to <span style="color:#e6db74">`clock_gettime@GLIBC_2.17&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderQuerySubpixelOrder&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XAddExtension&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XUnlockDisplay&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XSync&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderFindStandardFormat&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderChangePicture&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XAllocColor&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderComposite&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XShmQueryExtension&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XCreateGC&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XShmDetach&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XDestroyWindow&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCompositeText8&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderFindVisualFormat&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XSetErrorHandler&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libgio-2.0.so.0: undefined reference to <span style="color:#e6db74">`sendmmsg@GLIBC_2.14&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XShmPutImage&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XESetCloseDisplay&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCreatePicture&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XInitImage&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libxcb.so.1: undefined reference to `</span>XauDisposeAuth&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderSetPictureClipRectangles&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCompositeText32&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XShmGetImage&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libglib-2.0.so: undefined reference to `</span>getauxval@GLIBC_2.16&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XFillRectangle&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderFreeGlyphSet&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XQueryColors&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderQueryVersion&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderFillRectangle&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XMaxRequestSize&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderSetPictureTransform&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCreateRadialGradient&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XShmCreatePixmap&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcrypto.so.1.1: undefined reference to `</span>secure_getenv@GLIBC_2.17&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XSendEvent&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XGetDefault&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XScreenNumberOfScreen&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XInitExtension&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XChangeGC&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderFreeGlyphs&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XPutImage&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XGetImage&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XSetClipMask&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderCreateSolidFill&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderCreateLinearGradient&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libxcb.so.1: undefined reference to `</span>XauGetBestAuthByAddr&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XCopyArea&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderFindFormat&#39;
+/HOME/AWANNAPHASCH2016/ANACONDA3/BIN/../LIB/GCC/X86_64-CONDA_COS6-LINUX-GNU/7.3.0/../../../../X86_64-CONDA_COS6-LINUX-GNU/BIN/LD: /HOME/AWANNAPHASCH2016/ANACONDA3/LIB/LIBCAIRO.SO: UNDEFINED REFERENCE TO <span style="color:#e6db74">`XRENDERADDGLYPHS&#39;
+</span><span style="color:#e6db74">/HOME/AWANNAPHASCH2016/ANACONDA3/BIN/../LIB/GCC/X86_64-CONDA_COS6-LINUX-GNU/7.3.0/../../../../X86_64-CONDA_COS6-LINUX-GNU/BIN/LD: /HOME/AWANNAPHASCH2016/ANACONDA3/LIB/LIBCAIRO.SO: UNDEFINED REFERENCE TO `</span>XSETCLIPRECTANGLES&#39;
+/HOME/AWANNAPHASCH2016/ANACONDA3/BIN/../LIB/GCC/X86_64-CONDA_COS6-LINUX-GNU/7.3.0/../../../../X86_64-CONDA_COS6-LINUX-GNU/BIN/LD: /HOME/AWANNAPHASCH2016/ANACONDA3/LIB/LIBCAIRO.SO: UNDEFINED REFERENCE TO <span style="color:#e6db74">`XLOCKDISPLAY&#39;
+</span><span style="color:#e6db74">/HOME/AWANNAPHASCH2016/ANACONDA3/BIN/../LIB/GCC/X86_64-CONDA_COS6-LINUX-GNU/7.3.0/../../../../X86_64-CONDA_COS6-LINUX-GNU/BIN/LD: /HOME/AWANNAPHASCH2016/ANACONDA3/LIB/LIBCAIRO.SO: UNDEFINED REFERENCE TO `</span>XRENDERSETPICTUREFILTER&#39;
+/HOME/AWANNAPHASCH2016/ANACONDA3/BIN/../LIB/GCC/X86_64-CONDA_COS6-LINUX-GNU/7.3.0/../../../../X86_64-CONDA_COS6-LINUX-GNU/BIN/LD: /HOME/AWANNAPHASCH2016/ANACONDA3/LIB/LIBCAIRO.SO: UNDEFINED REFERENCE TO `XFREEGC&#39;
+COLLECT2: ERROR: LD RETURNED 1 EXIT STATUS
+MAKE[1]: *** [MAKEFILE:473: EPDFINFO] ERROR 1
+MAKE: *** [MAKEFILE:368: ALL] ERROR 2
+===========================
+     BUILD FAILED.  ;O(
+===========================
+NOTE: MAYBE TRY THE &#39;-D&#39; OPTION.
+
+COMINT EXITED ABNORMALLY WITH CODE 1 AT THU NOV 18 09:02:38
+</code></pre></div><h3 id="remove-pdf-tools-from-package-install-and-uncomment-pdf-module-in-init-dot-el">remove <code>pdf-tools</code> from package install and uncomment <code>pdf</code> module in <code>init.el</code></h3>
+<p>I suspected that there could be version or dependencies mismatch that cause the error, so I make sure that <code>pdf-tools</code> is removed from <code>packages.el</code> page and uncommented <code>pdf</code> module in <code>init.el</code>. I do this because I figure it is best to install dependencies in doom-like ways.</p>
+<p>I observed that pdf-tools was rebuild when I reload doom.
+I also observed that when open pdf file, doom doesn&rsquo;t recognise pdf file and open it as fundamental mode. (while previous to install <code>pdf</code> module via <code>init.el</code>, doom opens pdf with pdf-view mode)</p>
+<p>Still, rerun <code>pdf-tools-install</code> still output the same error as before.</p>
+<p>Validation: How does module loaded into doom? How is it related to loading the packages itself via straight.el or other package manager?</p>
+<h3 id="replace-line-of-code-in-pdf-info-dot-el-dot-code-is-found-here-dot">replace line of code in <code>pdf-info.el</code>. Code is found <a href="https://github.com/politza/pdf-tools/pull/683/commits/90852ba946c1a798f0b7b4dd412bf9d616c8cecf">here</a>.</h3>
+<p>After replaced the line, run <code>pdf-tools-install</code> still fails.
+Note: as of <!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2021-11-18 Thu&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->, the code is not merged into master.</p>
+<h3 id="manually-compile-pdf-tools-at-dot-emacs-dot-d-dot-local-straight-repos-pdf-tools">manually compile pdf-tools at <code>~/.emacs.d/.local/straight/repos/pdf-tools/</code></h3>
+<p>I decided to follow compilation guide from pdf-tools github page, see <a href="https://github.com/politza/pdf-tools#compilation">here</a>.</p>
+<p>run <code>make -d</code>, I get the following message.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">GNU Make 4.2.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
+Reading makefile &#39;Makefile&#39;...
+Using Emacs 27.1
+Updating makefiles....
+Considering target file &#39;Makefile&#39;.
+Looking for an implicit rule for &#39;Makefile&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.o&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.c&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cc&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.C&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cpp&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.p&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.f&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.F&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.m&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.r&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.s&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.S&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.mod&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.sh&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile,v&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile,v&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;s.Makefile&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;SCCS/s.Makefile&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.o&#39;.
+Looking for a rule with intermediate file &#39;Makefile.o&#39;.
+Avoiding implicit rule recursion.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.c&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cc&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.C&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cpp&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.p&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.f&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.F&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.m&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.r&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.s&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.S&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.mod&#39;.
+Trying pattern rule with stem &#39;Makefile.o&#39;.
+Trying implicit prerequisite &#39;Makefile.o,v&#39;.
+Trying pattern rule with stem &#39;Makefile.o&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile.o,v&#39;.
+Trying pattern rule with stem &#39;Makefile.o&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile.o&#39;.
+Trying pattern rule with stem &#39;Makefile.o&#39;.
+Trying implicit prerequisite &#39;s.Makefile.o&#39;.
+Trying pattern rule with stem &#39;Makefile.o&#39;.
+Trying implicit prerequisite &#39;SCCS/s.Makefile.o&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.c&#39;.
+Looking for a rule with intermediate file &#39;Makefile.c&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.y&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.l&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.w&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.w&#39;.
+    Trying pattern rule with stem &#39;Makefile.c&#39;.
+    Trying implicit prerequisite &#39;Makefile.c,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.c&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.c,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.c&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.c&#39;.
+    Trying pattern rule with stem &#39;Makefile.c&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.c&#39;.
+    Trying pattern rule with stem &#39;Makefile.c&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.c&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.y&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.y&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.y&#39;.
+    Trying implicit prerequisite &#39;Makefile.y,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.y&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.y,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.y&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.y&#39;.
+    Trying pattern rule with stem &#39;Makefile.y&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.y&#39;.
+    Trying pattern rule with stem &#39;Makefile.y&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.y&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.l&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.l&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.l&#39;.
+    Trying implicit prerequisite &#39;Makefile.l,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.l&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.l,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.l&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.l&#39;.
+    Trying pattern rule with stem &#39;Makefile.l&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.l&#39;.
+    Trying pattern rule with stem &#39;Makefile.l&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.l&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.w&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.w&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.w&#39;.
+    Trying implicit prerequisite &#39;Makefile.w,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.w&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.w,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.w&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.w&#39;.
+    Trying pattern rule with stem &#39;Makefile.w&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.w&#39;.
+    Trying pattern rule with stem &#39;Makefile.w&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.w&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Rejecting impossible implicit prerequisite &#39;Makefile.w&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cc&#39;.
+Looking for a rule with intermediate file &#39;Makefile.cc&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.cc&#39;.
+    Trying implicit prerequisite &#39;Makefile.cc,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.cc&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.cc,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.cc&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.cc&#39;.
+    Trying pattern rule with stem &#39;Makefile.cc&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.cc&#39;.
+    Trying pattern rule with stem &#39;Makefile.cc&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.cc&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.C&#39;.
+Looking for a rule with intermediate file &#39;Makefile.C&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.C&#39;.
+    Trying implicit prerequisite &#39;Makefile.C,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.C&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.C,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.C&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.C&#39;.
+    Trying pattern rule with stem &#39;Makefile.C&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.C&#39;.
+    Trying pattern rule with stem &#39;Makefile.C&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.C&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.cpp&#39;.
+Looking for a rule with intermediate file &#39;Makefile.cpp&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.cpp&#39;.
+    Trying implicit prerequisite &#39;Makefile.cpp,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.cpp&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.cpp,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.cpp&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.cpp&#39;.
+    Trying pattern rule with stem &#39;Makefile.cpp&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.cpp&#39;.
+    Trying pattern rule with stem &#39;Makefile.cpp&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.cpp&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.p&#39;.
+Looking for a rule with intermediate file &#39;Makefile.p&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.web&#39;.
+    Trying pattern rule with stem &#39;Makefile.p&#39;.
+    Trying implicit prerequisite &#39;Makefile.p,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.p&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.p,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.p&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.p&#39;.
+    Trying pattern rule with stem &#39;Makefile.p&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.p&#39;.
+    Trying pattern rule with stem &#39;Makefile.p&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.p&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.web&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.web&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.web&#39;.
+    Trying implicit prerequisite &#39;Makefile.web,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.web&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.web,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.web&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.web&#39;.
+    Trying pattern rule with stem &#39;Makefile.web&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.web&#39;.
+    Trying pattern rule with stem &#39;Makefile.web&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.web&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.f&#39;.
+Looking for a rule with intermediate file &#39;Makefile.f&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.F&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.r&#39;.
+    Trying pattern rule with stem &#39;Makefile.f&#39;.
+    Trying implicit prerequisite &#39;Makefile.f,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.f&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.f,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.f&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.f&#39;.
+    Trying pattern rule with stem &#39;Makefile.f&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.f&#39;.
+    Trying pattern rule with stem &#39;Makefile.f&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.f&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.F&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.F&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.F&#39;.
+    Trying implicit prerequisite &#39;Makefile.F,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.F&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.F,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.F&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.F&#39;.
+    Trying pattern rule with stem &#39;Makefile.F&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.F&#39;.
+    Trying pattern rule with stem &#39;Makefile.F&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.F&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.r&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.r&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Rejecting impossible implicit prerequisite &#39;Makefile.l&#39;.
+    Trying pattern rule with stem &#39;Makefile.r&#39;.
+    Trying implicit prerequisite &#39;Makefile.r,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.r&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.r,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.r&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.r&#39;.
+    Trying pattern rule with stem &#39;Makefile.r&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.r&#39;.
+    Trying pattern rule with stem &#39;Makefile.r&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.r&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.F&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.m&#39;.
+Looking for a rule with intermediate file &#39;Makefile.m&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.ym&#39;.
+    Trying pattern rule with stem &#39;Makefile.m&#39;.
+    Trying implicit prerequisite &#39;Makefile.m,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.m&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.m,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.m&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.m&#39;.
+    Trying pattern rule with stem &#39;Makefile.m&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.m&#39;.
+    Trying pattern rule with stem &#39;Makefile.m&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.m&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.ym&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.ym&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.ym&#39;.
+    Trying implicit prerequisite &#39;Makefile.ym,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.ym&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.ym,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.ym&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.ym&#39;.
+    Trying pattern rule with stem &#39;Makefile.ym&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.ym&#39;.
+    Trying pattern rule with stem &#39;Makefile.ym&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.ym&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.r&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.s&#39;.
+Looking for a rule with intermediate file &#39;Makefile.s&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.S&#39;.
+    Trying pattern rule with stem &#39;Makefile.s&#39;.
+    Trying implicit prerequisite &#39;Makefile.s,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.s&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.s,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.s&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.s&#39;.
+    Trying pattern rule with stem &#39;Makefile.s&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.s&#39;.
+    Trying pattern rule with stem &#39;Makefile.s&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.s&#39;.
+    Trying pattern rule with stem &#39;Makefile&#39;.
+    Trying implicit prerequisite &#39;Makefile.S&#39;.
+    Looking for a rule with intermediate file &#39;Makefile.S&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.S&#39;.
+    Trying implicit prerequisite &#39;Makefile.S,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.S&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.S,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.S&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.S&#39;.
+    Trying pattern rule with stem &#39;Makefile.S&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.S&#39;.
+    Trying pattern rule with stem &#39;Makefile.S&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.S&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.S&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.mod&#39;.
+Looking for a rule with intermediate file &#39;Makefile.mod&#39;.
+    Avoiding implicit rule recursion.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem &#39;Makefile.mod&#39;.
+    Trying implicit prerequisite &#39;Makefile.mod,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.mod&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.mod,v&#39;.
+    Trying pattern rule with stem &#39;Makefile.mod&#39;.
+    Trying implicit prerequisite &#39;RCS/Makefile.mod&#39;.
+    Trying pattern rule with stem &#39;Makefile.mod&#39;.
+    Trying implicit prerequisite &#39;s.Makefile.mod&#39;.
+    Trying pattern rule with stem &#39;Makefile.mod&#39;.
+    Trying implicit prerequisite &#39;SCCS/s.Makefile.mod&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.c&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.cc&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.C&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.cpp&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.p&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.f&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.F&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.m&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.r&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.s&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.S&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Rejecting impossible implicit prerequisite &#39;Makefile.mod&#39;.
+Trying pattern rule with stem &#39;Makefile&#39;.
+Trying implicit prerequisite &#39;Makefile.sh&#39;.
+Looking for a rule with intermediate file &#39;Makefile.sh&#39;.
+Avoiding implicit rule recursion.
+Trying pattern rule with stem &#39;Makefile.sh&#39;.
+Trying implicit prerequisite &#39;Makefile.sh,v&#39;.
+Trying pattern rule with stem &#39;Makefile.sh&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile.sh,v&#39;.
+Trying pattern rule with stem &#39;Makefile.sh&#39;.
+Trying implicit prerequisite &#39;RCS/Makefile.sh&#39;.
+Trying pattern rule with stem &#39;Makefile.sh&#39;.
+Trying implicit prerequisite &#39;s.Makefile.sh&#39;.
+Trying pattern rule with stem &#39;Makefile.sh&#39;.
+Trying implicit prerequisite &#39;SCCS/s.Makefile.sh&#39;.
+No implicit rule found for &#39;Makefile&#39;.
+Finished prerequisites of target file &#39;Makefile&#39;.
+No need to remake target &#39;Makefile&#39;.
+Updating goal targets....
+Considering target file &#39;all&#39;.
+File &#39;all&#39; does not exist.
+Considering target file &#39;pdf-tools-1.0.tar&#39;.
+File &#39;pdf-tools-1.0.tar&#39; does not exist.
+    Considering target file &#39;.cask/27.1&#39;.
+    File &#39;.cask/27.1&#39; does not exist.
+    Finished prerequisites of target file &#39;.cask/27.1&#39;.
+    Must remake target &#39;.cask/27.1&#39;.
+cask install
+Putting child 0x55d1fce51170 (.cask/27.1) PID 2737 on the chain.
+Live child 0x55d1fce51170 (.cask/27.1) PID 2737
+Reaping losing child 0x55d1fce51170 PID 2737
+Removing child 0x55d1fce51170 PID 2737 from chain.
+</code></pre></div><p>I searched the error of <code>make: cask command not found</code> and, interestingly, I found this <a href="https://github.com/politza/pdf-tools/issues/335">page</a>, which is an issue from pdf-tools github.</p>
+<p>I have further check that version of <code>pdf-tools</code> from <code>M-x list-packages</code> are the latest version, see the commit on github <a href="https://github.com/vedang/pdf-tools/tree/a8847b75d3487d60e27762816bdbdd23b6dc1c11">here</a>.</p>
+<p>I confirmed that epdfinfo can&rsquo;t be found by checking the following</p>
+<ol>
+<li><code>M-x pdf-info-check-epdfinfo RET</code></li>
+<li>from installing section <a href="https://github.com/vedang/pdf-tools/tree/a8847b75d3487d60e27762816bdbdd23b6dc1c11#installing">here</a>, I checked that no tar file is contained within the direcotry.</li>
+</ol>
+<h3 id="search-about-epdfinfo-installabtion-problem-on-the-latest-git-commit-no-result-found-dot">search about <code>epdfinfo</code> installabtion problem on the latest git commit, no result found.</h3>
+<p>I searched for <code>epdfinfo</code> related issue on the latest git commit and found nothing.
+This confirmed that the problem is more general than version conflict.</p>
+<h3 id="install-cask-manually-and-rerun-make-d-in-dot-emacs-dot-d-dot-local-straight-repos-pdf-tools">install cask manually, and rerun <code>make -d</code> in <code>~/.emacs.d/.local/straight/repos/pdf-tools/</code></h3>
+<p>I install cask manually from <a href="https://github.com/cask/cask#installation">here</a>.</p>
+<p>when I rerun <code>make -d</code>, the same <code>cask caa't be found</code> is gone, and get the following message instead.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libxcb.so.1: undefined reference to <span style="color:#e6db74">`XauGetBestAuthByAddr&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XCopyArea&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderFindFormat&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XRenderAddGlyphs&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XSetClipRectangles&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XLockDisplay&#39;
+/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to <span style="color:#e6db74">`XRenderSetPictureFilter&#39;
+</span><span style="color:#e6db74">/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld: /home/awannaphasch2016/anaconda3/lib/libcairo.so: undefined reference to `</span>XFreeGC&#39;
+collect2: error: ld returned 1 exit status
+Reaping losing child 0x55a8532ded80 PID 9340
+make[2]: *** [Makefile:473: epdfinfo] Error 1
+Removing child 0x55a8532ded80 PID 9340 from chain.
+make[2]: Leaving directory &#39;/home/awannaphasch2016/.emacs.d/.local/straight/repos/pdf-tools/server&#39;
+Reaping losing child 0x560ffc5badf0 PID 9336
+make[1]: *** [Makefile:368: all] Error 2
+Removing child 0x560ffc5badf0 PID 9336 from chain.
+make[1]: Leaving directory &#39;/home/awannaphasch2016/.emacs.d/.local/straight/repos/pdf-tools/server&#39;
+Reaping losing child 0x5577befe74b0 PID 9333
+make: *** [Makefile:82: server/epdfinfo] Error 2
+Removing child 0x5577befe74b0 PID 9333 from chain.
+</code></pre></div><p>The above error seem to be the same as the one I observed at <a href="#gathering-information">Gathering information</a>.
+When I rerun <code>pdf-tools-install</code>, I still get the same error as mentioned.</p>
+<h3 id="found-same-collect2-error-ld-error-in-the-latest-issue-of-pdf-tools-dot">Found same <code>collect2: error: ld</code> error in the latest issue of pdf-tools.</h3>
+<p>I found the issue <a href="https://github.com/vedang/pdf-tools/issues/42">here</a>.</p>
+<p>I stopped here because to I am unable to locate where <code>/home/awannaphasch2016/anaconda3/bin/../lib/gcc/x86_64-conda_cos6-linux-gnu/7.3.0/../../../../x86_64-conda_cos6-linux-gnu/bin/ld</code> is.</p>
+<p>To dig into it further, I first need to locate the file and knowledge about how C program is built and how ld works may come in handy if I am on the right track on debugging this problem.</p>
+<h3 id="i-found-solution-by-keeping-tools-pdf-and-remove--package-pdf-tools--from-packages-dot-el">I found solution by keeping <code>:tools pdf</code> and remove <code>(package! pdf-tools)</code> from packages.el</h3>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/emacs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emacs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/pdf-tools" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">pdf-tools</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/garun" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">garun</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/error" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">error</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/how-to-solve-handing-tramp/">How to solve hanging tramps?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

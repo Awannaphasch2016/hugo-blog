@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>terraform on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/terraform/</link>
+    <description>Recent content in terraform on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Terraform to set up ec2 instances for data science projects.</title>
+      <link>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</guid>
+      <description>Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

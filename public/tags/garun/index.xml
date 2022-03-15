@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>garun on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/garun/</link>
+    <description>Recent content in garun on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/garun/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.</title>
+      <link>https://awannaphasch2016.github.io/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/</guid>
+      <description>Current Solution as of &amp;lt;2022-03-02 Wed&amp;gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.</description>
+    </item>
+    
+    <item>
+      <title>How to solve hanging tramps?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-solve-handing-tramp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-solve-handing-tramp/</guid>
+      <description>Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
+From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
+I am using zsh shell in my remote compute.</description>
+    </item>
+    
+  </channel>
+</rss>

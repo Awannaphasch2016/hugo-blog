@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My Citation Management Workflow. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="there are three categories of note taking process
+ organize files. write notes on a file. search files and notes (aka completion in emacs) organize notes reference to file.  First two are easy to achieve. Put notes and pdf files in folders does the job. The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="My Citation Management Workflow." />
+<meta property="og:description" content="there are three categories of note taking process
+ organize files. write notes on a file. search files and notes (aka completion in emacs) organize notes reference to file.  First two are easy to achieve. Put notes and pdf files in folders does the job. The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/my-citation-management-workflow/" />
+
+<meta itemprop="name" content="My Citation Management Workflow.">
+<meta itemprop="description" content="there are three categories of note taking process
+ organize files. write notes on a file. search files and notes (aka completion in emacs) organize notes reference to file.  First two are easy to achieve. Put notes and pdf files in folders does the job. The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e.">
+
+<meta itemprop="wordCount" content="855">
+
+
+
+<meta itemprop="keywords" content="citation,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My Citation Management Workflow."/>
+<meta name="twitter:description" content="there are three categories of note taking process
+ organize files. write notes on a file. search files and notes (aka completion in emacs) organize notes reference to file.  First two are easy to achieve. Put notes and pdf files in folders does the job. The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">My Citation Management Workflow.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>there are three categories of note taking process</p>
+<ol>
+<li>organize files.</li>
+<li>write notes on a file.</li>
+<li>search files and notes (aka completion in emacs)</li>
+<li>organize notes reference to file.</li>
+</ol>
+<p>First two are easy to achieve. Put notes and pdf files in folders does the job.
+The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e.g. <code>ivy</code>, <code>helm</code>, <code>vertico</code>) or project management package. (e.g. <code>projectile</code>)</p>
+<p>The hard (confusing) part is organize notes reference to file. When I says organize notes references, I don&rsquo;t just mean organize collection of citations. What I really mean is to link .bib to PDF file and its notes.</p>
+<p>The last part is where advantage of Emacs come to bite me. (This definitely wasn&rsquo;t the first time.)
+Emacs are known to be hack-able and extensible. It can be extended to do variety of things. As a results, people invented tools to do the same things in different ways.</p>
+<p>Consider this. to make references we need three things; citations, physical files, and notes.
+In reality, there are more than one way in which order of the three are retrieved. For example,
+citation -&gt; physical file -&gt; note or note -&gt; physical file -&gt; citation.
+Now, each of the step can be done in various ways, says, one can manually put citation then later download PDF file (notice that there is no connection between PDF and citation) or, maybe, one can download PDF with Zotero which automatically download citation for you. In the later, there are connection between citation and PDF but Zotero may make mistake about the title of PDF, hence, prevent a file to be searchable by name. (condition 3. search files and notes)</p>
+<p>How can we establish consistency between these steps such that we can establish connection between physical files, notes, and citations?</p>
+<h2 id="establish-standard">Establish Standard</h2>
+<p>First thing that come to mind is &ldquo;standardization.&rdquo; We must enforce certain rules to reduce possible inconsistency.</p>
+<ol>
+<li>citation must follow the same convention e.g. author&rsquo;s lastname followed by year.</li>
+<li>PDF must be able to search by citation convention establish in point 1.</li>
+<li>citation must contains a file key whose value is file location.</li>
+</ol>
+<p>The idea of the above standard is to</p>
+<ol>
+<li>embed information about file location inside citation entry.</li>
+<li>embed information about citation inside note.</li>
+</ol>
+<p>With above standard, we guarantee relation as a directed acyclic graph (DAG). In my opinion, this is the safest type of graph we can have to functions required to navigate between components will fail due to faulty of a graph.</p>
+<p>We get the following DAG</p>
+<pre><code class="language-nil" data-lang="nil">FILE &lt;-&gt; citation &lt;-&gt; note
+</code></pre><p>Since travel from note can reach FILE, one can implement a function to open FILE from inside the note.</p>
+<h2 id="utilizing-existing-packages">Utilizing existing packages</h2>
+<p>Lets focus our attention back to ours tools to achieve this task.</p>
+<pre><code class="language-nil" data-lang="nil">citation &lt;-&gt; note
+</code></pre><p>Using <code>citar-open-entry</code>, we can searches citation from <code>citar-bibliography</code>, a .bib file which contains collections of citations. Since we made this connection, citation insertion or jump from citation mentioned in a note to citation entry in <code>citar-bibliogrpahy</code> is possible.</p>
+<p>By default, if note doesn&rsquo;t yet exist, <code>citar-open-notes</code> created a new file with name <code>[id][file-title].org</code> and, inside the org file, it produce ID property and ROAM_REFS property whose value is citation link to <code>citar-bibliography</code> with file&rsquo;s name as a title of the note file.</p>
+<pre><code class="language-nil" data-lang="nil">FILE &lt;-&gt; citation
+</code></pre><p>I was having a problem open file from citation using citar. I has since found and fixed the problem. To put it simply,</p>
+<p>citar looks into citation entry and find entry &ldquo;file&rdquo; then simply use this information to open a file. I have check that value contains a valid file path.</p>
+<p>Since I am using WSL2, I have to be careful when export citation from Zotero. I run Emacs on Ubuntu in WSL2 which is equivalent of Emacs running on Ubuntu, therefore, it can&rsquo;t understand window file path. Example of window file path generated from Zotero.</p>
+<pre><code class="language-nil" data-lang="nil">file = {C\:\\Users\\terng\\Zotero\\storage\\37L2SIXA\\Kazemi et al. - Representation Learning for Dynamic Graphs A Surv.pdf}
+</code></pre><p>I have to first change file path to valid file path in Linux convention.</p>
+<pre><code class="language-nil" data-lang="nil">file = {/mnt/c/Users/terng/Zotero/storage/37L2SIXA/Kazemi et al. - Representation Learning for Dynamic Graphs A Surv.pdf}
+</code></pre><h2 id="bonus">Bonus</h2>
+<p>note: Since I have fixed a bug to open allow me to open a file from its citation. I no longer need org-noter as an essential component. Nonetheless, org-noter is still a viable annotator tools. <!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2022-03-12 Sat&gt;<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Org-noter is an interesting one. It is implemented as a document annotator, so it has no built-in capability to make connection to citation. It is interesting because it allowed the direct connection between FILE and notes. which is not a design that I intended to achieve.</p>
+<pre><code class="language-nil" data-lang="nil">FILE &lt;-&gt; note
+</code></pre><p>Org-noter helps me solve <code>FILE &lt;-&gt; citation</code> problem I mentioned earlier.
+To fit org-noter in my workflow, I only have an option to open a note first then connect note to a file. Org noter allows one to connect to a note from PDF, but file name must be selected from a fixed options. Since I want flexibility to choose file name, I can&rsquo;t use the later option.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/citation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">citation</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

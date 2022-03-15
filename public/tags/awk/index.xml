@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>awk on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/awk/</link>
+    <description>Recent content in awk on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to parse text with awk?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-parse-text-with-awk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-parse-text-with-awk/</guid>
+      <description>ref  https://stackoverflow.com/questions/6284560/how-to-split-a-variable-by-a-special-character/6284596    Awk Syntax awk &amp;#39;(PATTERN1){...print something..} (PATTERN2){..print something..}&amp;#39; awk &amp;#39;PATTERN1{...print something..} PATTERN2{..print something..}&amp;#39; for each line, if PATTERNN is matched, command in {} will be executed.
+syntax `awk &amp;lsquo;NR==1{print}&amp;rsquo; [FILE]` `awk &amp;lsquo;NR==1&amp;rsquo; [FILE]` note for line 1, print whole line `awk &amp;lsquo;NR==1{}&amp;rsquo; [FILE]` note for line 1, {} = don&amp;rsquo;t do anything `awk &amp;lsquo;NR==1{print} {print}&amp;rsquo; [FILE]` note {} without condition is the same as condition always set to True.</description>
+    </item>
+    
+  </channel>
+</rss>

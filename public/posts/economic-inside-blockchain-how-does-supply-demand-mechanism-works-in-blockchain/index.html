@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Economic inside blockchain: How does supply-demand mechanism works in blockchain? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Economic inside blockchain: How does supply-demand mechanism works in blockchain?" />
+<meta property="og:description" content="Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/" />
+
+<meta itemprop="name" content="Economic inside blockchain: How does supply-demand mechanism works in blockchain?">
+<meta itemprop="description" content="Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka.">
+
+<meta itemprop="wordCount" content="849">
+
+
+
+<meta itemprop="keywords" content="blockchain,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Economic inside blockchain: How does supply-demand mechanism works in blockchain?"/>
+<meta name="twitter:description" content="Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="gas-and-denominations-of-coins">Gas and Denominations of coins</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<figure>
+    <img src="/ox-hugo/screenshot_20220315_124959.png"
+         alt="Figure 1: Denominations of Ethers" width="300px"/> <figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->Denominations of Ethers</p>
+        </figcaption>
+</figure>
+
+<p>In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.</p>
+<p>If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. <!-- raw HTML omitted --> which is from Etherem yellow paper (aka. technical white paper). (<!-- raw HTML omitted -->Wood and others 2014<!-- raw HTML omitted -->)</p>
+<p>These denominators are units of gas cost in transaction. When talking about cost of gas, using GWei is more convenience, hence, a more widely use as a unit of gas price. I cannot find any historical reason why GWei is chosen over Wei other than convenience.</p>
+<p>Transaction cost can be easily calculated as (amount of gas \(\times\) cost per unit of gas.)</p>
+<p>Still, It is important to talk about mechanism in which Wei is value.
+Wei value is calculated based on demands of transaction and supply of gas. We will discuss more about economy of block later.</p>
+<p>The idea behind gas is to make user pays for computational resources required to complete a transaction on a blockchain. This mechanism directly influence demands of a user to run the transaction and computation cost of a smart contract. (<!-- raw HTML omitted -->El Faqir El Rhazoui 2021<!-- raw HTML omitted -->)</p>
+<h2 id="optimizing-number-of-gas-supply-of-blockchain-at-a-given-point-in-time-dot">Optimizing number of gas supply of blockchain at a given point in time.</h2>
+<p>Since number of gas available is equivalent of supply, and production of supplies depend on block size (gas limit per block) and times it take to validate the block (difficulty of the block puzzle.). To maximize number of gas supply, we can adjust difficulties of block puzzle such that (number of block \(\times\) size of block) is maximize.</p>
+<p>The level of difficulties also has to take into account mining power per time unit. Therefore, at a given point in time, we are given mining power per time unit and we have to solve for difficulties that maximize number of gas supply. See the problem statement below for clarification.</p>
+<pre><code class="language-nil" data-lang="nil">Problem statement
+-----------------
+
+Given (mining power per time unit),
+We must solve for optimal level of (puzzle difficulties) such that (size of block) and (number of blocks) will results in maximum number of gas supplies
+
+Base on the following constraints.
+1. More difficult puzzle --implies--&gt; bigger block -&gt; less number of block
+2. number of gas supply = block size * number of block
+</code></pre><p>Difficulty level has the following formula. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>\begin{equation}
+Difficulty\_level = HashRate / Constant
+\end{equation}</p>
+<p>Exactly, HashRate is the &ldquo;mining power per time unit&rdquo; we mentioned above.</p>
+<p>It is important to note that HashRate cannot be calculated in real time instead it newly generate per cycle which is about 14 days. Hence, calculation of HashRate lags behind actual supply and demand in the market.</p>
+<h2 id="what-is-the-incentive-to-mine">What is the incentive to mine?</h2>
+<p>As we mentioned above that supply of gas controlled by HashRate, but what exactly is the underlying incentives for mining? the answer is coins as minnig&rsquo;s reward. For every time block puzzle is solved,  fixed number of &ldquo;reward&rdquo; is given to miner in the form of coins.</p>
+<p>To sum up, solving a block puzzle generate reward to the miner as in the form of coins and these same coins (such as bitcoin) are added to the economy as supply of blocks that contains gas. Furthermore, the coins itself is an asset which contain value and are tradable and whose value is controlled by &ldquo;coins market&rdquo;.</p>
+<h2 id="blockchain-economy-economy-of-computation-vs-economy-of-coins">Blockchain economy: Economy of computation vs Economy of coins</h2>
+<p>In my understanding, there are two different markets which I called &ldquo;coin market&rdquo; (economy of computation) and &ldquo;computation market.&rdquo; (economy of coins)</p>
+<p>I have discussed above about how mechanism of both market works together, but it may not be clear to you. So I have a dedicated section to clarify the distinction between the two markets.</p>
+<p>&ldquo;Computation market&rdquo; is the market that involves miner, smart contract, and gas. Miners supplies gas by solving puzzle (aka mining). Smart contract can be think of as demand in the market because number gas must be paid as a cost to compute these smart contracts. Lastly, gas is the entity whose value is calculated as (price of Gwei \(\times\) number of Gwei) and is used to value cost of transaction.</p>
+<p>&ldquo;Coin market&rdquo; is the market that involves coins owner (which may or may not be miners themselves, coins buyer, and coins. Coin owners are those who possess coins. Coins buyers are those who wants to be the future owner of the coins. Lastly, coins is an entity that hold monetary values and can use as transfer of wealth.</p>
+<p>So at this point, you might be asking &ldquo;How are the two markets influence one another?&rdquo;
+The only factor that tight the market together is &ldquo;incentive of the miner.&rdquo; The only reason that miner mines coins is because the coin can be traded in the &ldquo;coin market&rdquo; with &ldquo;real money&rdquo;. And it just happens that the mined coins are, in facts, consist of blocks which provide supply to the &ldquo;computation market.&rdquo;</p>
+<h2 id="footnote">Footnote</h2>
+<!-- raw HTML omitted -->
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.eastshore.xyz/factors-affecting-cryptocurrency-mining-profit/">Factors Affecting Cryptocurrency Mining Profits</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/blockchain" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blockchain</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

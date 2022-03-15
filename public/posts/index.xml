@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/posts/</link>
+    <description>Recent content in Posts on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://awannaphasch2016.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install LaTeX on Ubuntu is not as simple as you think.</title>
+      <link>https://awannaphasch2016.github.io/posts/install-latex-on-ubuntu-is-not-as-simple-as-you-think/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 -0500</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/install-latex-on-ubuntu-is-not-as-simple-as-you-think/</guid>
+      <description>First of all, I am no expert in LaTeX. I am just a dude who has (a lot) of trouble installing LaTeX and was trying to solve it.
+From this experience, I learn important lesson is always start digging from the official documentation of the target packages/libraries. This is because there are many two types of solution in general: general solution and environment specific solution.
+In this case, its clearly a environment specific problem which required environemnt speicific solution.</description>
+    </item>
+    
+    <item>
+      <title>Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</title>
+      <link>https://awannaphasch2016.github.io/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/</guid>
+      <description>When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.</description>
+    </item>
+    
+    <item>
+      <title>Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</title>
+      <link>https://awannaphasch2016.github.io/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/</guid>
+      <description>Personally, I think snippets is under untilize. Same as notes. The fact is people just don&amp;rsquo;t do neither snippets or notes.
+I defined code snippet as followed
+ A collection of either small/large code which may store in single/multiple files that you will revisit against in the future.
+ Focusing on manging code snippets in emacs, few packages come to mind including: yassnipet, auto-yasnippet, yankpad, and code library.
+In my workflow, to share code snippet with others, gists is needed.</description>
+    </item>
+    
+    <item>
+      <title>Connection between org-roam-bibtex (orb), org-roam and org-ref.</title>
+      <link>https://awannaphasch2016.github.io/posts/connection-between-org-roam-bibtex-orb-org-roam-and-org-ref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/connection-between-org-roam-bibtex-orb-org-roam-and-org-ref/</guid>
+      <description>Org-ref manage citation entry, referenced citation, PDF, and note just fine. But the problem arise when trying to link notes created org-ref as a node in org roam. This is the problem that orb solve to allow PDF notes to be inserted as a org roam node. To summarize, the problem that orb solve to integrate org-ref functionalities into org-roam ecosystem.
+All org roam does is the following:
+ create name of a note file using org roam file name convention.</description>
+    </item>
+    
+    <item>
+      <title>Dev Logs: Auto-YASnippet (aka aya) dive deep.</title>
+      <link>https://awannaphasch2016.github.io/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/</guid>
+      <description>Dev logs is new blog series which dive deep into implementation level. The goal is to understand how things works. I figure this should be an interesting series because I always wanted to know how these program works underneath. Instead of explaining the whole code base, I will only focus on the &amp;ldquo;magical&amp;rdquo; part that sparked my interest the most.
+Todays I present to you aya.
+I started of the series with aya because, I think, it is a small package with the right portion of magic.</description>
+    </item>
+    
+    <item>
+      <title>Don&#39;t pick between org roam and org brain. Use them together!!</title>
+      <link>https://awannaphasch2016.github.io/posts/dont-pick-between-org-roam-and-org-brain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/dont-pick-between-org-roam-and-org-brain/</guid>
+      <description>ref  list of dicussion about using org roam and org brain together  Reddit post: org brain and org roam Org brain issue: (Idea) Org roam brain mode      I personally use org roam to add notes. It is a great tools for connecting ideas and notes.
+But if i am being honest, graph visualization is disspointingly useless. I am not I am not the only one.</description>
+    </item>
+    
+    <item>
+      <title>Economic inside blockchain: How does supply-demand mechanism works in blockchain?</title>
+      <link>https://awannaphasch2016.github.io/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/</guid>
+      <description>Gas and Denominations of coins   Figure 1: Denominations of Ethers
+  In this section, we will focus on denominations of Ethers. The goal is to provide more concrete example into denomination of a coin.
+If you are familiar with Etherem, we have heard Wei and GWei. These are not the only two denominators of Ethers. List of all denominators of Ether is shown in Fig. which is from Etherem yellow paper (aka.</description>
+    </item>
+    
+    <item>
+      <title>Emacs Package Explained: How to customize key binding in evil modes?</title>
+      <link>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</guid>
+      <description>This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.</description>
+    </item>
+    
+    <item>
+      <title>Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.</title>
+      <link>https://awannaphasch2016.github.io/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/</guid>
+      <description>Current Solution as of &amp;lt;2022-03-02 Wed&amp;gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.</description>
+    </item>
+    
+    <item>
+      <title>How to parse text with awk?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-parse-text-with-awk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-parse-text-with-awk/</guid>
+      <description>ref  https://stackoverflow.com/questions/6284560/how-to-split-a-variable-by-a-special-character/6284596    Awk Syntax awk &amp;#39;(PATTERN1){...print something..} (PATTERN2){..print something..}&amp;#39; awk &amp;#39;PATTERN1{...print something..} PATTERN2{..print something..}&amp;#39; for each line, if PATTERNN is matched, command in {} will be executed.
+syntax `awk &amp;lsquo;NR==1{print}&amp;rsquo; [FILE]` `awk &amp;lsquo;NR==1&amp;rsquo; [FILE]` note for line 1, print whole line `awk &amp;lsquo;NR==1{}&amp;rsquo; [FILE]` note for line 1, {} = don&amp;rsquo;t do anything `awk &amp;lsquo;NR==1{print} {print}&amp;rsquo; [FILE]` note {} without condition is the same as condition always set to True.</description>
+    </item>
+    
+    <item>
+      <title>How to publish blog on Jekyll with example.</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-publish-blog-on-jekyll-with-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-publish-blog-on-jekyll-with-example/</guid>
+      <description>You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Jekyll requires blog post files to be named according to the following format:
+`YEAR-MONTH-DAY-title.MARKUP`
+Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file.</description>
+    </item>
+    
+    <item>
+      <title>how to publish hugo blog with org mode subtree?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-publish-hugo-blog-with-org-mode-subtree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-publish-hugo-blog-with-org-mode-subtree/</guid>
+      <description>Prerequisite of this blog assumes that you already setup hugo blog by going through hugo quick start documentation.
+This blog is published via approaches presented in this blog.
+Org mode subtree is just one of the bullet point (aka. header) within org mode. As the title suggested, this article publication workflow allows one to publish subsection of a content within one of org mode header as a full page article. Main advantage of this method is that user doesn&amp;rsquo;t need to move content from the original location.</description>
+    </item>
+    
+    <item>
+      <title>How to set local variable for a specific mode?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-set-local-variable-for-a-specific-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-set-local-variable-for-a-specific-mode/</guid>
+      <description>This type of tutorial/question is best to present with an example. Given that I want to set compile-command variable for LaTex mode which applies to all buffer of this mode.
+(defun set-compile-command-default-in-LaTeX-mode () (set (make-local-variable &amp;#39;compile-command) ;; create local variable specific to a current buffer (format &amp;#34;&amp;#34; (buffer-file-name)))) (add-hook &amp;#39;LaTeX-mode-hook &amp;#39;set-compile-command-default-in-LaTeX-mode) </description>
+    </item>
+    
+    <item>
+      <title>how to set recurring todo tasks with org mode in emacs?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-set-recurring-todo-tasks-with-org-mode-in-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-set-recurring-todo-tasks-with-org-mode-in-emacs/</guid>
+      <description>First thing is to understand that behavior of a header block in org mode is dictated by properties.
+I want to set repeating task to have the following functions
+ when I change from TODO state to DONE state, a header block will log &amp;ldquo;state changes&amp;rdquo; with time stamp.  That is all the requirement I need for recurring tasks.
+This can be done by setting the following
+ set :REPEAT_TO_STATE: property under the header with org-set-property set either DEADLINE (org-deadline) or SCHEDULE (org-schedule) with recurring syntax 1 , for example, adding .</description>
+    </item>
+    
+    <item>
+      <title>How to set up org-roam and org-roam-bibtex as building block of emacs as your primary personal knowledge management?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/</guid>
+      <description>{{&amp;lt; ref &amp;ldquo;~/org/personal-knowledge-management-pkm-note.org&amp;rdquo; &amp;gt;}}</description>
+    </item>
+    
+    <item>
+      <title>How to solve hanging tramps?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-solve-handing-tramp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-solve-handing-tramp/</guid>
+      <description>Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
+From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
+I am using zsh shell in my remote compute.</description>
+    </item>
+    
+    <item>
+      <title>How to use auto yasnippet (aka aya) in your workflow?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/</guid>
+      <description>All of the content I presented below can be found at Auto-YASnippet Github repo.
+Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
+I don&amp;rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
+This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
+Without aya, one would have do the following</description>
+    </item>
+    
+    <item>
+      <title>How to write latex using org mode? Minmum things you need to know.</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-write-latex-using-org-mode.-minmum-things-you-need-to-know/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-write-latex-using-org-mode.-minmum-things-you-need-to-know/</guid>
+      <description>What you need to know to start writing latex in org mode is to understand how org-export-dispatch include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, here.
+You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.
+In this blog, I will just present minimal info for you to start writing latex in org mode.</description>
+    </item>
+    
+    <item>
+      <title>My Citation Management Workflow.</title>
+      <link>https://awannaphasch2016.github.io/posts/my-citation-management-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/my-citation-management-workflow/</guid>
+      <description>there are three categories of note taking process
+ organize files. write notes on a file. search files and notes (aka completion in emacs) organize notes reference to file.  First two are easy to achieve. Put notes and pdf files in folders does the job. The third condition is arguably not difficult neither. One can search for a file given a file directory quickly which can be done with any of the completion packages (e.</description>
+    </item>
+    
+    <item>
+      <title>Org Roam Bibtex Orb Note</title>
+      <link>https://awannaphasch2016.github.io/posts/org-roam-bibtex-orb-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/org-roam-bibtex-orb-note/</guid>
+      <description>Blog Connection between org roam bibtex (orb) and org ref. Org-ref manage citation entry, referenced citation, PDF, and note just fine. But the problem arise when trying to link notes created org-ref as a node in org roam. This is the problem that orb solve to allow PDF notes to be inserted as a org roam node. To summarize, the problem that orb solve to integrate org-ref functionalities into org-roam ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Using Terraform to set up ec2 instances for data science projects.</title>
+      <link>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</guid>
+      <description>Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

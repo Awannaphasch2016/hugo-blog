@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Using Terraform to set up ec2 instances for data science projects. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Using Terraform to set up ec2 instances for data science projects." />
+<meta property="og:description" content="Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/" />
+
+<meta itemprop="name" content="Using Terraform to set up ec2 instances for data science projects.">
+<meta itemprop="description" content="Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www.">
+
+<meta itemprop="wordCount" content="133">
+
+
+
+<meta itemprop="keywords" content="ec2,blog,terraform," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Terraform to set up ec2 instances for data science projects."/>
+<meta name="twitter:description" content="Take Away  you will learn how to automate ec2 setup using terraform that is suited for data science project.  Tools  EC2 Terraform  Requirements Knowledge Requirements  understand basic of how to create terraform project understand basic of how to set up ec2 instances  System Requirements   WSL/Ubuntu
+ I have only tested this in WSL    install all dependencies of cuda
+ for list of software requirements, see  https://www."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Using Terraform to set up ec2 instances for data science projects.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="take-away">Take Away</h2>
+<ul>
+<li>you will learn how to automate ec2 setup using terraform that is
+suited for data science project.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>EC2</li>
+<li>Terraform</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<h3 id="knowledge-requirements">Knowledge Requirements</h3>
+<ul>
+<li>understand basic of how to create terraform project</li>
+<li>understand basic of how to set up ec2 instances</li>
+</ul>
+<h3 id="system-requirements">System Requirements</h3>
+<ul>
+<li>
+<p>WSL/Ubuntu</p>
+<ul>
+<li>I have only tested this in WSL</li>
+</ul>
+</li>
+<li>
+<p>install all dependencies of cuda</p>
+<ul>
+<li>for list of software requirements, see
+<ul>
+<li><a href="https://www.tensorflow.org/install/gpu#linux_setup">https://www.tensorflow.org/install/gpu#linux_setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>optional</p>
+<ul>
+<li>Docker # References</li>
+</ul>
+</li>
+<li>
+<p>Terraform AWS documentation</p>
+<ul>
+<li><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#availability_zone">https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#availability_zone</a></li>
+</ul>
+</li>
+<li>
+<p>pytorch docker image</p>
+<ul>
+<li><a href="https://github.com/anibali/docker-pytorch">https://github.com/anibali/docker-pytorch</a> # Content</li>
+</ul>
+</li>
+</ul>
+<h2 id="code">Code</h2>
+<h3 id="aws">AWS</h3>
+<ol>
+<li>export the following environment variables including
+<ul>
+<li>AWS_ACCESS_KEY_ID</li>
+<li>AWS_SECRET_ACCESS_KEY</li>
+<li>AWS_DEFAULT_REGION</li>
+</ul>
+</li>
+</ol>
+<h3 id="terraform">Terraform</h3>
+<ol>
+<li>create terraform project</li>
+<li>In the project, create main.tf and copy&amp;paste the following code</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">    resource &#34;aws_instance&#34; &#34;web&#34; {
+      ami = &#34;ami-08962a4068733a2b6&#34;
+      instance_type = &#34;p3.8xlarge&#34;
+      cpu_core_count = 16
+      cpu_threads_per_core = 2
+      tags = {
+        Name = &#34;HelloWorld&#34;
+      }
+
+    }
+</code></pre></div><ol>
+<li>now you have ec2 running with</li>
+</ol>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/ec2" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ec2</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/terraform" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">terraform</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

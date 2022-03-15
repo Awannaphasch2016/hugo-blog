@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Building fundamental in Emacs: How to customize key binding in vanilla Emacs? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Building fundamental in Emacs: How to customize key binding in vanilla Emacs?" />
+<meta property="og:description" content="When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" />
+
+<meta itemprop="name" content="Building fundamental in Emacs: How to customize key binding in vanilla Emacs?">
+<meta itemprop="description" content="When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.">
+
+<meta itemprop="wordCount" content="1189">
+
+
+
+<meta itemprop="keywords" content="emacs,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building fundamental in Emacs: How to customize key binding in vanilla Emacs?"/>
+<meta name="twitter:description" content="When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.</p>
+<p>I started of the series with a topic that irritate me quite often, key binding.</p>
+<p>My goal of this blog is as followed</p>
+<ol>
+<li>Understand priority of keymaps</li>
+<li>Understand stand enough to distinguish vanilla Emacs problem from Doom problem.</li>
+</ol>
+<p>This is a summarize of <code>Emacs Internal Manual under Emacs topic on chapter 49.3 Key Binding Chapter</code>.</p>
+<h2 id="keymaps">Keymaps</h2>
+<p>Most modes have their own key binding which can overwrite your custom keybinding. For this reasons Emacs has reserve small number of keys to create a &ldquo;safe space&rdquo; for custom or build-in key binding example of these are &lsquo;C-c &lt;a char&gt;'', &lsquo;F5&rsquo; - &lsquo;F9&rsquo; keys.</p>
+<p>Key sequence and its command function are recorded in Emacs as a data structure called &ldquo;keymaps&rdquo;.</p>
+<p>Keymap&rsquo;s value consist of <code>sequence of key binding</code> and <code>command</code> where <code>sequence of key binding</code> can either be a key or a <code>chain of keymaps</code>, more in &ldquo;Visualize how a chain of keymaps works&rdquo; section. In the other word, a keymap is a map between presentation of <code>key sequence</code> to a command.</p>
+<p>Note that since <code>keymaps</code> is simply just a data structure. A mode can define its own <code>keymaps</code> such as <code>org-mode-map</code> etc.</p>
+<p>To inspect current keymaps availble in a buffer, you can use <code>C-h b</code>.</p>
+<p>Keymaps accepts values from variety of keys including &lsquo;&lt;Home&gt;&rsquo; and mouse.</p>
+<h2 id="prefix">Prefix</h2>
+<p>Emacs interprets one keymap at a time, however, a &ldquo;chain&rdquo; of keymap commands is also accepted. A &ldquo;chain&rdquo; of keymap  contains &ldquo;prefix&rdquo;. &ldquo;prefix&rdquo; is a keymap that map to other keymaps.</p>
+<p>Some keymap (not all) have symbols representation, for example, symbol of &lsquo;C-x&rsquo; is &lsquo;Control-X-prefix&rsquo;.</p>
+<h2 id="local-keymaps">Local Keymaps</h2>
+<p>local keymaps can have their own prefix key.</p>
+<p>It is important to note that global prefix is ALWAYS vulnerable to be overwritten by higher priority keys. Still, there are keys that are reserved for the user. (From what I have read, it is unclear which keys are reserved.)</p>
+<p>When local keymap is defined, global keymaps and local keymaps are chain together.
+To clarify, given that we have &ldquo;C-x C-z h&rdquo;, &ldquo;C-x&rdquo; is global prefix and &ldquo;C-z&rdquo; is local prefix. instead of one &ldquo;C-x C-z&rdquo; prefix.</p>
+<h2 id="visualize-how-a-chain-of-keymaps-works">Visualize how a chain of keymaps works?</h2>
+<p>This is how I think of it visually. It maybe incorrect or imprecise, but, at least, it helps me visualize in my head.</p>
+<p>Says, we have a keymap <code>a,b,...,n</code> that map to <code>foo-command</code>.
+Recall that a keymap is a map between presentation of <code>key sequence</code> to a command.
+When sequence of key is pressed, a chain of keymap will be evaluated as followed.</p>
+<pre><code class="language-nil" data-lang="nil">(key a, keymap b)-&gt; (key b, keymap c) -&gt; ... -&gt; (key n, foo-commands)
+</code></pre><h2 id="key-precedence--keymap-lookup-order">Key precedence (keymap lookup order)</h2>
+<p>local keymaps can be defined in 3 different places.</p>
+<ol>
+<li>Major mode</li>
+<li>Minor mode</li>
+<li>area of text within a buffer.</li>
+</ol>
+<p>To be more precise, in term of commands, key precedence (keymap lookup order) is as followed. Emacs look up keymap from top to bottom of the list.</p>
+<ol>
+<li><code>overriding-terminal-local-map</code> for terminal-specific key bind</li>
+<li><code>overriding-local-map</code></li>
+<li><code>keymap char property at point</code> keymaps for the current character. Yasnippet keymaps are in this category.</li>
+<li><code>emulation-mode-map-alists</code>. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings. Evil mode keymap falls into this category.</li>
+<li><code>minor-mode-overriding-map-alise</code></li>
+<li><code>minor-mode-map-alist</code></li>
+<li><code>keymap text property at point</code></li>
+<li><code>current-local-map</code></li>
+<li><code>current-global-map</code></li>
+</ol>
+<h2 id="modifying-keybinding">Modifying Keybinding</h2>
+<p>Note that, Emacs always treats ‘C-A’ as ‘C-a’, ‘C-B’ as ‘C-b’, and so forth. This is because, in non-graphical environment,  &lsquo;A&rsquo; is the same as &lsquo;a.&rsquo; To let Emacs know about the difference, we can pass in &lsquo;C-S-a&rsquo; where S is &lt;Shift&gt;.</p>
+<p>You have to think in the point of view of how computer compile information.</p>
+<p>Emacs also accpets uncommon including &lt;Super&gt;, &lt;Hyper&gt;, and &lt;Alt&gt;, these are represented as &lsquo;s-', &lsquo;H-', and &lsquo;A-'. Without these keys on the keyboard, you can still activate the key with &lsquo;C-x @ s&rsquo;, &lsquo;C-x @ h&rsquo;, and &lsquo;C-x @ a&rsquo;, respectively.</p>
+<p>There are more valid keys. I only provide few examples.</p>
+<p>The goal of modifying a keymap is to either modify <code>sequence of key binding</code> or <code>command</code> of a keymap.</p>
+<h3 id="changing-keybinding-for-current-emacs-session-dot">Changing Keybinding for current Emacs session.</h3>
+<p>One can change keybinding for CURRENT Emacs session with the following options.</p>
+<pre><code class="language-nil" data-lang="nil">‘M-x global-set-key &lt;RET&gt; KEY CMD &lt;RET&gt;’
+     Define KEY globally to run CMD.
+‘M-x local-set-key &lt;RET&gt; KEY CMD &lt;RET&gt;’
+     Define KEY locally (in the major mode now in effect) to run CMD.
+‘M-x global-unset-key &lt;RET&gt; KEY’
+     Make KEY undefined in the global map.
+‘M-x local-unset-key &lt;RET&gt; KEY’
+     Make KEY undefined locally (in the major mode now in effect).
+</code></pre><h3 id="changing-keybinding-permanently-dot">Changing Keybinding permanently.</h3>
+<p>One can change keybinding permanently using the following commands.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;C-c y&#34;</span>) <span style="color:#e6db74">&#39;clipboard-yank</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-M-q&#34;</span>) <span style="color:#e6db74">&#39;query-replace</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f5&gt;&#34;</span>) <span style="color:#e6db74">&#39;flyspell-mode</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-&lt;f5&gt;&#34;</span>) <span style="color:#e6db74">&#39;display-line-numbers-mode</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span>) <span style="color:#e6db74">&#39;forward-sentence</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;mouse-2&gt;&#34;</span>) <span style="color:#e6db74">&#39;mouse-save-then-kill</span>)
+</code></pre></div><p>One can also delay local keymap to be evaluated by using hook as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook <span style="color:#e6db74">&#39;texinfo-mode-hook</span>
+    (lambda ()
+        (<span style="color:#a6e22e">define-key</span> texinfo-mode-map <span style="color:#e6db74">&#34;\C-cp&#34;</span>
+                    <span style="color:#e6db74">&#39;backward-paragraph</span>)
+        (<span style="color:#a6e22e">define-key</span> texinfo-mode-map <span style="color:#e6db74">&#34;\C-cn&#34;</span>
+                    <span style="color:#e6db74">&#39;forward-paragraph</span>)))
+        (<span style="color:#a6e22e">define-key</span> texinfo-mode-map <span style="color:#e6db74">&#34;\C-c\C-xx&#34;</span> <span style="color:#66d9ef">nil</span>)
+</code></pre></div><h3 id="rebinding-with-mouse-event">Rebinding with Mouse event</h3>
+<p>valid key includes</p>
+<pre><code class="language-nil" data-lang="nil">[mouse-N] where 1 is the leftmost mouse button.
+[drag-mouse-N]
+[down-mouse-N]
+[double-mouse-N]
+</code></pre><p>keyboard prefix precedes mouse prefix.</p>
+<p>Keybinding for clicking on frame has the following format [frame-type mouse-N]
+frame-type includes</p>
+<pre><code class="language-nil" data-lang="nil">‘mode-line’
+     The mouse was in the mode line of a window.
+‘vertical-line’
+     The mouse was in the vertical line separating side-by-side windows.
+     (If you use scroll bars, they appear in place of these vertical
+     lines.)
+‘vertical-scroll-bar’
+     The mouse was in a vertical scroll bar.  (This is the only kind of
+     scroll bar Emacs currently supports.)
+‘menu-bar’
+     The mouse was in the menu bar.
+‘tab-bar’
+     The mouse was in a tab bar.
+‘tab-line’
+     The mouse was in a tab line.
+‘header-line’
+     The mouse was in a header line.
+</code></pre><h3 id="disabling-commands">Disabling Commands</h3>
+<p>disable Commands silently</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">put</span> <span style="color:#e6db74">&#39;delete-region</span> <span style="color:#e6db74">&#39;disabled</span>
+    <span style="color:#e6db74">&#34;It&#39;s better to use </span><span style="color:#e6db74">`kill-region&#39;</span><span style="color:#e6db74"> instead.\n&#34;</span>)
+</code></pre></div><p>disable commands with message</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">put</span> <span style="color:#e6db74">&#39;delete-region</span> <span style="color:#e6db74">&#39;disabled</span>
+    <span style="color:#e6db74">&#34;It&#39;s better to use </span><span style="color:#e6db74">`kill-region&#39;</span><span style="color:#e6db74"> instead.\n&#34;</span>)
+</code></pre></div><h3 id="when-to-define-a-mode">When to define a mode?</h3>
+<p>You might imagine to simply have one of these modifier keymap function in your init.el and keymaps will be rebind.</p>
+<p>Not so fast.</p>
+<p>Sometimes, major mode or minor mode may define their keybinding using mode-hook. In this case, keymaps that are defined later can override your init.el configuration. In the cases as this, you have to dig into thier souce code to understand when you want your new keybinding to be evaluated.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This blog summarizes <code>Emacs Internal Manual under Emacs topic on chapter 49.3 Key Binding Chapter</code>. We have learn that keymap priority based on context from highest to lowest: region in buffer, minor mode, and major mode.</p>
+<p>Lastly, I have learned that vanilla Emacs doesn&rsquo;t exc. I can&rsquo;t say what exactly.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/emacs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emacs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/">Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-solve-handing-tramp/">How to solve hanging tramps?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

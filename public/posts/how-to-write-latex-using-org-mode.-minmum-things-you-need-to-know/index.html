@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to write latex using org mode? Minmum things you need to know. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="What you need to know to start writing latex in org mode is to understand how org-export-dispatch include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, here.
+You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.
+In this blog, I will just present minimal info for you to start writing latex in org mode.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="How to write latex using org mode? Minmum things you need to know." />
+<meta property="og:description" content="What you need to know to start writing latex in org mode is to understand how org-export-dispatch include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, here.
+You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.
+In this blog, I will just present minimal info for you to start writing latex in org mode." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/how-to-write-latex-using-org-mode.-minmum-things-you-need-to-know/" />
+
+<meta itemprop="name" content="How to write latex using org mode? Minmum things you need to know.">
+<meta itemprop="description" content="What you need to know to start writing latex in org mode is to understand how org-export-dispatch include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, here.
+You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.
+In this blog, I will just present minimal info for you to start writing latex in org mode.">
+
+<meta itemprop="wordCount" content="406">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to write latex using org mode? Minmum things you need to know."/>
+<meta name="twitter:description" content="What you need to know to start writing latex in org mode is to understand how org-export-dispatch include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, here.
+You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.
+In this blog, I will just present minimal info for you to start writing latex in org mode."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">How to write latex using org mode? Minmum things you need to know.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>What you need to know to start writing latex in org mode is to understand how <code>org-export-dispatch</code> include/exclude/map org mode component to latex equivalent. You can learn all about these info by reading org manual on the topic, <a href="https://orgmode.org/manual/Exporting.html">here</a>.</p>
+<p>You should know a little bit about org mode header arguments and LaTeX to fully follow the blog.</p>
+<p>In this blog, I will just present minimal info for you to start writing latex in org mode.</p>
+<p>This is the org header for a minimum use.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org"><span style="color:#75715e">#+TITLE</span><span style="color:#75715e">: Ensemble Approaches for Streaming Networking Classification</span>
+<span style="color:#75715e">#+DATE</span><span style="color:#75715e">: &lt;2022-03-03 Thu&gt;</span>
+<span style="color:#75715e">#+AUTHOR</span><span style="color:#75715e">: Anak Wannaphaschaiyong</span>
+<span style="color:#75715e">#+EMAIL</span><span style="color:#75715e">: awannaphasch2016@fau.edu</span>
+<span style="color:#75715e">#+OPTIONS</span><span style="color:#75715e">: toc:nil</span>
+<span style="color:#75715e">#+LATEX_CLASS</span><span style="color:#75715e">: IEEE</span>
+</code></pre></div><p>From above code, you need to define things to be used in <code>#+LATEX_CLASS</code>. LaTeX class&rsquo;s variable avaible in the header argument is defined in <code>org-latex-class</code>. From above you see that I define LaTeX class variable with <code>org-latex-class</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(add-to-list <span style="color:#e6db74">&#39;org-latex-classes</span>
+             <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;IEEE&#34;</span> <span style="color:#e6db74">&#34;\\documentclass{IEEEtran}&#34;</span>
+  (<span style="color:#e6db74">&#34;\\section{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\section*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsection*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subsubsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsubsection*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\paragraph{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\paragraph*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subparagraph{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subparagraph*{%s}&#34;</span>)))
+</code></pre></div><p>From the doc you see that</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org">  (class-name
+    header-string
+    (numbered-section . unnumbered-section)
+    ...)
+</code></pre></div><p>so, we get
+&ldquo;IEEE&rdquo; is a class name.</p>
+<p><code>\\documentclass{IEEEtran}</code> is <code>header-string</code></p>
+<p>and</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#e6db74">&#34;\\section{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\section*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsection*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subsubsection{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subsubsection*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\paragraph{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\paragraph*{%s}&#34;</span>)
+  (<span style="color:#e6db74">&#34;\\subparagraph{%s}&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;\\subparagraph*{%s}&#34;</span>
+</code></pre></div><p>is list of <code>(number-section . unnumbered-section)</code></p>
+<p>Out of these components, its worth to understand that <code>(number-section . unnumbered-section)</code> directly mapped to how <code>org-export-dispatch</code> map org header to latex equivalent.</p>
+<p>Using the above <code>(number-section . unnumbered-section)</code>, If you have content of org file as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org">*<span style="font-weight:bold"> first header</span>
+<span style="color:#75715e">**</span> second header
+<span style="color:#75715e">***</span> third header
+</code></pre></div><p>First header will be map to section, second header will be mapped to subsection, and so on.</p>
+<p>Without these defined, <code>org-export-dispatch</code> will map first header to enumerate and whatever that is equivalent of subenumerate, and so on. (I don&rsquo;t recall the name percisely.)</p>
+<p>I provide example of minimum content below</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org"><span style="color:#75715e">#+TITLE</span><span style="color:#75715e">: Ensemble Approaches for Streaming Networking Classification</span>
+<span style="color:#75715e">#+DATE</span><span style="color:#75715e">: &lt;2022-03-03 Thu&gt;</span>
+<span style="color:#75715e">#+AUTHOR</span><span style="color:#75715e">: Anak Wannaphaschaiyong</span>
+<span style="color:#75715e">#+EMAIL</span><span style="color:#75715e">: awannaphasch2016@fau.edu</span>
+<span style="color:#75715e">#+OPTIONS</span><span style="color:#75715e">: toc:nil</span>
+<span style="color:#75715e">#+LATEX_CLASS</span><span style="color:#75715e">: IEEE</span>
+
+*<span style="font-weight:bold"> First Header</span>
+
+Lorem $1<span style="color:#f92672">+1$ ipsum dolor sit amet, consectetur adipiscing elit. Cras lorem
+</span><span style="color:#f92672">nisi, tincidunt tempus sem nec, elementum feugiat ipsum. Nulla in
+</span><span style="color:#f92672">diam libero. nunc tristique ex a nibh egestas sollicitudin.
+</span><span style="color:#f92672">
+</span><span style="color:#f92672">\begin{equation}
+</span><span style="color:#f92672">1+</span> 1
+\end{equation}
+
+<span style="color:#66d9ef">- </span>1
+<span style="color:#66d9ef">- </span>2
+<span style="color:#66d9ef">- </span>3
+<span style="color:#66d9ef">- </span>4
+
+<span style="color:#75715e">**</span> sub header<span style="font-style:italic"> :noexport:</span>
+Mauris efficitur vitae ex id egestas. Vestibulum ligula felis,
+pulvinar a posuere id, luctus vitae leo. Sed ac imperdiet orci, non
+elementum leo. Nullam molestie congue placerat. Phasellus tempor et
+libero maximus commodo.
+*<span style="font-weight:bold"> Second header</span>
+something bruh
+</code></pre></div><p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
