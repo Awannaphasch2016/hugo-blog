@@ -43,11 +43,11 @@ Org mode subtree is just one of the bullet point (aka. header) within org mode. 
 This blog is published via approaches presented in this blog.
 Org mode subtree is just one of the bullet point (aka. header) within org mode. As the title suggested, this article publication workflow allows one to publish subsection of a content within one of org mode header as a full page article. Main advantage of this method is that user doesn&rsquo;t need to move content from the original location.">
 
-<meta itemprop="wordCount" content="293">
+<meta itemprop="wordCount" content="437">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="hugo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="how to publish hugo blog with org mode subtree?"/>
 <meta name="twitter:description" content="Prerequisite of this blog assumes that you already setup hugo blog by going through hugo quick start documentation.
 This blog is published via approaches presented in this blog.
@@ -138,16 +138,23 @@ As the title suggested, this article publication workflow allows one to publish 
 <li>converting org mode to org markdown.</li>
 <li>place converted markdown down file to content directory of your hugo site. (e.g. <code>path-to-hugo-site/hugo/quickstart/content/posts/</code>)</li>
 </ol>
-<p>The goal of these configuration is to let hugo file converter knows base directory of your hugo site directory, and name of the article.</p>
+<p>The goal of these configurations is to let hugo file converter knows base directory of your hugo site directory, and name of the article.</p>
 <p>You can set base directory of your hugo site by setting <code>:hugo_base_dir:</code> property at the top of your file. It should look like the following, for example,</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org"><span style="color:#75715e">#+hugo_base_dir</span><span style="color:#75715e">: /home/awannaphasch2016/org/projects/sideprojects/website/my-website/hugo/quickstart=</span>
 </code></pre></div><p>Next, you have to set name of your article by setting <code>:EXPORT_FILE_NAME:</code> property under header that contain content of your.</p>
 <p>Now, you are ready to publish your content. You can publish with <code>org-export-dispatch</code> command and select <code>Export to hugo-compatible markdown</code> option.</p>
-<p>Done!!</p>
-<p>One minor inconvenient I want to point out is using this workflow one cannot identify location of the org file from converted markdown files shown in content directory of your hugo site. Because of the first point, everytimes you published the same content, new markdown is created. You have to delete the previous one manually.</p>
-<p>Slight inconvenient, but miles away from other publiccation workflow I have tried.</p>
+<p>Your article is added to <code>hugo-repo/content/posts</code> as a post with .md extension. This is a local update. If you run <code>hugo server -D</code> (this runs hugo server locally at <code>localhost</code> port <code>1313</code>: <code>localhost:1313</code>), you can see that new article has been updated.</p>
+<p>To update to online (At <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-06-15 Wed]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I personally use github free hosting ending in <code>.github.io</code>), you have to run <code>hugo</code> command at the project root directory. The changes will be generated to <code>hugo-repo/public/posts</code>. This directory contains articles that are ready to be hosted online for the world to see.</p>
+<p>Note that using hugo with github, online <code>hugo-repo/public</code> needs to be manage. Not the whole <code>hugo-repo</code>.
+It is also important to emphasize that local update can be viewed immediately, however, you must wait for a few mins (&lt; 5 mins) for online update. (like any other content update for online site ever.)</p>
+<p>One minor inconvenient I want to point out is using this workflow one cannot identify location of the org file from converted markdown files shown in content directory of your hugo site. Because of the first point, every times you published the same content, new markdown is created. You have to delete the previous one manually.</p>
+<p>Slight inconvenient, but miles away from other publication workflow I have tried.</p>
 <p>Peace out.</p>
 <ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/hugo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">hugo</a>
+   </li>
   
 </ul>
 <div class="mt6 instapaper_ignoref">

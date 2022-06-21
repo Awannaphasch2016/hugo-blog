@@ -42,5 +42,15 @@ From an hour of digging, I discovered that tramp is really specific in term of h
 I am using zsh shell in my remote compute.</description>
     </item>
     
+    <item>
+      <title>Most Efficient Workflow To &#34;Lookup&#34; Documentations On Programming Language.</title>
+      <link>https://awannaphasch2016.github.io/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/</guid>
+      <description>The normal workflow of lookup documentation would be to search google, stack-overflow, etc. Alternatively, if you are using IDE, IDE will lookup documentation for you, for example goto-definition etc. Very convenience. What else do you need?
+Although, searching online directly is not the best approach, it is everyone last line of defense. On the other hands, IDE is as good as it gets. However, the problem with IDE is that it is context specific.</description>
+    </item>
+    
   </channel>
 </rss>

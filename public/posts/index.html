@@ -243,15 +243,13 @@ Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" class="link black dim">
-        Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.
+      <a href="/posts/enable-x11-display-in-wsl2/" class="link black dim">
+        Enable x11 display in WSL2
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
-I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
-I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
-Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
+      Resources are provided in my roam research note.
+I successfully connect x-apps via x11 protocol by first installing and launching xming server. Xming application provides x11-server. Then, I need to tell the wsl2 &ldquo;address and port of X11 server to connect wsl2 application to&rdquo; (my note on x11 can be seen here) X11 server is enlisted as WSL2 entrusted DNS which located in resolve.conf. (my note on resolve.conf can be seen here.
     </div>
   </div>
 </div>
@@ -263,15 +261,15 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/evolution-of-asset-transaction/" class="link black dim">
-        Evolution of Asset Transaction
+      <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" class="link black dim">
+        Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This essay is my interpretation of a discussion on &ldquo;NFTing the World for the General Good&rdquo; episode on Real Vision TV. The information in the essay are adapted to fit rational narrative that I have in my brain.
-This is the beginning of the essay.
-The four phases are categorized into the following
- transaction an physical assets transaction of electron transaction of information transaction of digital assets  Each phase increase efficiency of transactions which depends on three factors: object, process, and rules.
+      Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
     </div>
   </div>
 </div>

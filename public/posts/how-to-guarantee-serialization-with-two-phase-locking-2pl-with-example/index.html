@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to Guarantee Serialization with Two-Phase Locking (2PL) with Example | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
+The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is guaranteed to be serializable.
+  Figure 1: Figure 21.3
+    Figure 2: Figure 21.4
+  Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="How to Guarantee Serialization with Two-Phase Locking (2PL) with Example" />
+<meta property="og:description" content="This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
+The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is guaranteed to be serializable.
+  Figure 1: Figure 21.3
+    Figure 2: Figure 21.4
+  Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/" />
+
+<meta itemprop="name" content="How to Guarantee Serialization with Two-Phase Locking (2PL) with Example">
+<meta itemprop="description" content="This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
+The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is guaranteed to be serializable.
+  Figure 1: Figure 21.3
+    Figure 2: Figure 21.4
+  Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock.">
+
+<meta itemprop="wordCount" content="360">
+
+
+
+<meta itemprop="keywords" content="book,blog,database," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Guarantee Serialization with Two-Phase Locking (2PL) with Example"/>
+<meta name="twitter:description" content="This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
+The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is guaranteed to be serializable.
+  Figure 1: Figure 21.3
+    Figure 2: Figure 21.4
+  Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">How to Guarantee Serialization with Two-Phase Locking (2PL) with Example</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.</p>
+<p>The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is <code>guaranteed to be serializable</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<figure>
+    <img src="/ox-hugo/screenshot_20220427_180350.png"
+         alt="Figure 1: Figure 21.3" width="500px"/> <figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->Figure 21.3</p>
+        </figcaption>
+</figure>
+
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<figure>
+    <img src="/ox-hugo/screenshot_20220427_180447.png"
+         alt="Figure 2: Figure 21.4" width="500px"/> <figcaption>
+            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->Figure 21.4</p>
+        </figcaption>
+</figure>
+
+<p>Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock. However, figure &lt;Figure_21.4&gt; is considered 2PL while figure &lt;Figure_21.3&gt; is not. Note that 2PL is Shared/Exclusive locks with additional protocol called <code>two phase locking protocol</code>. The different between 2PL and shared/exclusive lock is that 2PL guarantee serialization while the other doesn&rsquo;t.</p>
+<p>The book also mentioned that while 2PL protocol guarantee sheduling serializability. It doesn&rsquo;t permit all possible serializable schedules.</p>
+<p>Serialization is achieved via by converting figure &lt;Figure_21.3&gt; to figure &lt;Figure_21.4&gt; because figure &lt;Figure_21.4&gt; reorders write_lock(X) and write_lock(Y) to be right before unlock(Y) and unlock(X), respectively.</p>
+<p>Naturally, two questions arises.</p>
+<p>Considering \(T_1\), the first question is &ldquo;why does order of write_lock(X) and unlock(Y) matter?&rdquo; To answer this question, one have to think in term of constraint that would results in serialization.  In \(T_{1}\), value of Y is read first. This means Y should be locked until <code>X = X+Y</code> is written. This condition is satisfied by placing write_lock(X) above unlock(Y). This can be read as &ldquo;write X before unlock Y.&rdquo;</p>
+<p>To satisfy the above constraints, in \(T_1\), write_lock have to be placed on X until <code>X = X +Y</code> is executed. This guarantees that X will not be changed until <code>X = X+Y</code> is executed. At the same time, \(T_{1}\) doesn&rsquo;t need to be any constraint on Y except that \(T_1\) needs to be informed of any changes made in Y before <code>X = X+Y</code> will be computed.</p>
+<p>Secondly, considering \(T_1\), &ldquo;can write_lock(X) be anywhere else above unlock(Y)?&rdquo; The answer is yes, but the reason that it is placed right above unlock is for efficiency by reducing queue waiting time. Recall that when write_lock is called, neither read nor write can be called on the same data. <code>To guarantee this efficiency, distant between write_lock(X) and write_item(X) needs to be minimized</code>.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/book" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">book</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/database" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">database</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/">Most Efficient Workflow To &#34;Lookup&#34; Documentations On Programming Language.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

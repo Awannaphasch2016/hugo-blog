@@ -18,6 +18,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/autodidact/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/awk/</loc>
   </url>
   
@@ -31,6 +35,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/book/</loc>
   </url>
   
   <url>
@@ -58,6 +66,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/database/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/</loc>
   </url>
   
@@ -66,7 +78,15 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/documentation/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/dont-pick-between-org-roam-and-org-brain/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/doom-emacs/</loc>
   </url>
   
   <url>
@@ -90,6 +110,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/enable-x11-display-in-wsl2/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/error/</loc>
   </url>
   
@@ -107,6 +131,14 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/garun/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/</loc>
   </url>
   
   <url>
@@ -146,11 +178,19 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/hugo/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/jekyll/</loc>
   </url>
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/latex/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/</loc>
   </url>
   
   <url>
@@ -178,11 +218,23 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/time-travelers-guide-to-navigate-git-commit-history/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/tramp/</loc>
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/useful-emacs-command-and-snippets-for-writing/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/writing-better-git-comment-message/</loc>
   </url>
   
 </urlset>

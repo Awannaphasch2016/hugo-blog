@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/database/</link>
+    <description>Recent content in database on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Guarantee Serialization with Two-Phase Locking (2PL) with Example</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/</guid>
+      <description>This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
+The goal of this blog is to give a concrete example on how 2PL&amp;rsquo;s schedule is guaranteed to be serializable.
+  Figure 1: Figure 21.3
+    Figure 2: Figure 21.4
+  Figure &amp;lt;Figure_21.3&amp;gt; and figure &amp;lt;Figure_21.4&amp;gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock.</description>
+    </item>
+    
+  </channel>
+</rss>

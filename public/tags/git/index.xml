@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/git/</link>
+    <description>Recent content in git on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Time Travelers Guide To Navigate Git Commit History.</title>
+      <link>https://awannaphasch2016.github.io/posts/time-travelers-guide-to-navigate-git-commit-history/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/time-travelers-guide-to-navigate-git-commit-history/</guid>
+      <description>One of principle I follow is
+ never rely on others&amp;rsquo; people goodwill. and always expect other to be evil when it is possible.
+ In quote , type of evil falls into incompetent evil and irresponsible evil. Putting this principle into practice, one must understand structures that govern behavior of people given a particular pursuit of goal.
+In this scenario, I refers structure as git log and a particular pursuite of goal as learning and understanding a piece of code such as open source code.</description>
+    </item>
+    
+  </channel>
+</rss>
