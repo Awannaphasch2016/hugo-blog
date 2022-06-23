@@ -250,6 +250,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/terminal/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/terraform/</loc>
   </url>
   
@@ -263,6 +267,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/useful-emacs-command-and-snippets-for-writing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/using-terminals-in-doom-emacs/</loc>
   </url>
   
   <url>

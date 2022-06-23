@@ -20,5 +20,17 @@
 If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.</description>
     </item>
     
+    <item>
+      <title>Using terminals in Doom Emacs.</title>
+      <link>https://awannaphasch2016.github.io/posts/using-terminals-in-doom-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/using-terminals-in-doom-emacs/</guid>
+      <description>To open multiple terminal, a neat trick is to rename file buffer that terminal is opened 1.
+To open file from terminal, one can just M-x find-file in the terminal buffer.
+  stackoverflow: More than one emacs terminal &amp;#x21a9;&amp;#xfe0e;
+   </description>
+    </item>
+    
   </channel>
 </rss>
