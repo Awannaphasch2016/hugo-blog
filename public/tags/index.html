@@ -218,12 +218,63 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
+        A Note On Straight&#39;s Recipe.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straight/" class="link black dim">
+        A Note On Straight.el&#39;s Transaction
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is based on staright.el README which at the moment doesn&rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
+Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/" class="link black dim">
+        Comparison of straight.el to other Emacs package manager.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .
     </div>
   </div>
 </div>
@@ -399,6 +450,22 @@ Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create
 I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
 This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
 Without aya, one would have do the following
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/keybinding-in-doom-emacs/" class="link black dim">
+        Keybinding In Doom Emacs
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.
     </div>
   </div>
 </div>
@@ -593,6 +660,29 @@ I started of the series with aya because, I think, it is a small package with th
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       The normal workflow of lookup documentation would be to search google, stack-overflow, etc. Alternatively, if you are using IDE, IDE will lookup documentation for you, for example goto-definition etc. Very convenience. What else do you need?
 Although, searching online directly is not the best approach, it is everyone last line of defense. On the other hands, IDE is as good as it gets. However, the problem with IDE is that it is context specific.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/doom" class="link blue hover-black">
+            Tag: doom
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/keybinding-in-doom-emacs/" class="link black dim">
+        Keybinding In Doom Emacs
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.
     </div>
   </div>
 </div>
@@ -909,6 +999,29 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
         
       
         <h2 class="f1">
+          <a href="/tags/keybinding" class="link blue hover-black">
+            Tag: keybinding
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/keybinding-in-doom-emacs/" class="link black dim">
+        Keybinding In Doom Emacs
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/latex" class="link blue hover-black">
             Tag: latex
           </a>
@@ -925,6 +1038,64 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       This type of tutorial/question is best to present with an example. Given that I want to set compile-command variable for LaTex mode which applies to all buffer of this mode.
 (defun set-compile-command-default-in-LaTeX-mode () (set (make-local-variable &#39;compile-command) ;; create local variable specific to a current buffer (format &#34;&#34; (buffer-file-name)))) (add-hook &#39;LaTeX-mode-hook &#39;set-compile-command-default-in-LaTeX-mode) 
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/package-manager" class="link blue hover-black">
+            Tag: package-manager
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
+        A Note On Straight&#39;s Recipe.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straight/" class="link black dim">
+        A Note On Straight.el&#39;s Transaction
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is based on staright.el README which at the moment doesn&rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
+Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/" class="link black dim">
+        Comparison of straight.el to other Emacs package manager.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .
     </div>
   </div>
 </div>
@@ -957,6 +1128,30 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
         
       
         <h2 class="f1">
+          <a href="/tags/recipe" class="link blue hover-black">
+            Tag: recipe
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
+        A Note On Straight&#39;s Recipe.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/snippet" class="link blue hover-black">
             Tag: snippet
           </a>
@@ -976,6 +1171,64 @@ I defined code snippet as followed
  A collection of either small/large code which may store in single/multiple files that you will revisit against in the future.
  Focusing on manging code snippets in emacs, few packages come to mind including: yassnipet, auto-yasnippet, yankpad, and code library.
 In my workflow, to share code snippet with others, gists is needed.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/straight" class="link blue hover-black">
+            Tag: straight
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
+        A Note On Straight&#39;s Recipe.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straight/" class="link black dim">
+        A Note On Straight.el&#39;s Transaction
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is based on staright.el README which at the moment doesn&rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
+Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/" class="link black dim">
+        Comparison of straight.el to other Emacs package manager.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .
     </div>
   </div>
 </div>

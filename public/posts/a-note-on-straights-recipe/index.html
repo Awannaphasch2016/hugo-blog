@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>A Note On Straight&#39;s Recipe. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="A Note On Straight&#39;s Recipe." />
+<meta property="og:description" content="Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/a-note-on-straights-recipe/" />
+
+<meta itemprop="name" content="A Note On Straight&#39;s Recipe.">
+<meta itemprop="description" content="Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.">
+
+<meta itemprop="wordCount" content="670">
+
+
+
+<meta itemprop="keywords" content="package-manager,blog,recipe,straight,package-manager," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Note On Straight&#39;s Recipe."/>
+<meta name="twitter:description" content="Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">A Note On Straight&#39;s Recipe.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Straight&rsquo;s recipe is similar but not identify to one used by MELPA. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>A <code>recipe</code> describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (<code>recipe</code>) of a package.</p>
+<p>Ultimately, a package is defined is a collection of files required for package&rsquo;s build. <code>striaght.el</code> views a package in this manner. As a result, <code>straight.el</code> tries to get away from definition package as a folder (e.g. Git repo or an entry in MELPA). Note that folder itself is also defined as a collection of file that share same root directory. Some would argue that folder can be composed of symlink. Allowing symlink, folder is a subset of a package because all files in folder may not required for package&rsquo;s build. That&rsquo;s it <code>straight.el</code> use symlink internally.</p>
+<p>There are 2 types of recipe: fetch recipe and build recipe.</p>
+<p>As the name suggested, <code>build recipe</code> is <code>recipe</code> for build. Using definition of <code>recipe</code>, <code>build recipe</code> is a recipe that describe local source and local destination of symlink relevant to succesfully build a package. It is composed of 3 properties: <code>:files</code>, <code>:local-repo</code>, and <code>:build</code>. symlink is created from <code>:files</code> to point to <code>:local-repo</code>. After symlinks are created, the target files are byte-compile and store in <code>:local-repo</code>. When local files are missing, <code>fetch recipe</code> will be used to fetch files from git repo, hosted online ,such as Github. It is composed of 5 properties: <code>:repo</code>, <code>:host</code>, <code>:branch</code>, <code>:nonrecursive</code>, <code>:fork</code>, <code>:protocol</code>.</p>
+<p>See &lt;straight_dir&gt; for visualization straight directory. Note that only <code>.el</code> files are symlinked, since only they are relevant to Emacs to build.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">straight
+├── build
+│   ├── el-patch
+│   │   ├── el-patch-autoloads.el
+│   │   ├── el-patch.el -&gt; ~/.emacs.d/straight/repos/el-patch/el-patch.el
+│   │   └── el-patch.elc
+│   └── straight
+│       ├── straight-autoloads.el
+│       ├── straight.el -&gt; ~/.emacs.d/straight/repos/straight.el/straight.el
+│       └── straight.elc
+└── repos
+    ├── el-patch
+    │   ├── CHANGELOG.md
+    │   ├── LICENSE.md
+    │   ├── README.md
+    │   └── el-patch.el
+    └── straight.el
+        ├── LICENSE.md
+        ├── Makefile
+        ├── README.md
+        ├── bootstrap.el
+        ├── install.el
+        └── straight.el
+</code></pre></div><p>Note that collection of recipes are contained in recipe repositories which is implemented as a regular package (collection of dependent files). The recipe repository backends abstract over the formatting differences in different recipe sources to translate recipes into the uniform format used by straight.el. When you run M-x straight-get-recipe, the translated recipe is what is returned. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h2 id="what-recipe-doesn-t-get-right-dot">What recipe doesn&rsquo;t get right.</h2>
+<p>As far as I am concerned, <code>straight.el</code> follows informal guideline by package manager developer (<!-- raw HTML omitted -->Boyer 2016<!-- raw HTML omitted -->) which requires that a package manage dependencies based on information from 4 states including project code, manifest file, lock file, and dependencies. <code>straight.el</code> <code>recipe</code> is an implementation of manifest like functionality. One thing that <code>straight.el</code> doesn&rsquo;t follow is that <code>lockfile</code> is written by human to overwrite <code>fetch recipe</code>. One downfalls of this is there is no way to confirm that the package manager use dependencies you are intended. Boyer (<!-- raw HTML omitted -->Boyer 2016<!-- raw HTML omitted -->) states that lockfile should generate by machine as a confirmation of what dependencies it uses. As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-06-22 Wed]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I can&rsquo;t think of a scenario that require one to edit lockfile to overwrite <code>recipe</code>. I need to use it more to have creditable opinion to critique further.</p>
+<p>Lastly, <code>straight.el</code> should allow for &ldquo;local recipe&rdquo; which can be loaded to overwrite &ldquo;original recipe.&rdquo; Not sure how useful will this be, but it seems to be quit useful for testing different version of packages while using Emacs.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Last few word from me before signing off. After reading through, I get this feeling that <code>straight.el</code> obviously does what &ldquo;package manager&rdquo; should do in general. Whenever I have a feeling of &ldquo;obviously x&rdquo;, there is an &ldquo;internal signal&rdquo; in me that says &ldquo;its obvious because you don&rsquo;t know what have been done.&rdquo; I will leave this question to be explored in the future. For now, best I can do is to be curious on whether &ldquo;internal signal&rdquo; is any good.</p>
+<p>That&rsquo;s it.
+Peace.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://github.com/radian-software/straight.el#the-recipe-format">The staright&rsquo;s recipe format</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/package-manager" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">package-manager</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/recipe" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">recipe</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/straight" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">straight</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/package-manager" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">package-manager</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/">How to Guarantee Serialization with Two-Phase Locking (2PL) with Example</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/keybinding-in-doom-emacs/">Keybinding In Doom Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/">Most Efficient Workflow To &#34;Lookup&#34; Documentations On Programming Language.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

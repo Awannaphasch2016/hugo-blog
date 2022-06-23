@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>How to publish blog on Jekyll with example. | Anak Wannaphaschaiyong</title>
+    <title>Comparison of straight.el to other Emacs package manager. | Anak Wannaphaschaiyong</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-Jekyll requires blog post files to be named according to the following format:
-`YEAR-MONTH-DAY-title.MARKUP`
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file.">
+    <meta name="description" content="This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .">
     <meta name="generator" content="Hugo 0.68.3" />
     
     
@@ -32,30 +32,30 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
     
     
-    <meta property="og:title" content="How to publish blog on Jekyll with example." />
-<meta property="og:description" content="You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-Jekyll requires blog post files to be named according to the following format:
-`YEAR-MONTH-DAY-title.MARKUP`
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file." />
+    <meta property="og:title" content="Comparison of straight.el to other Emacs package manager." />
+<meta property="og:description" content="This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://awannaphasch2016.github.io/posts/how-to-publish-blog-on-jekyll-with-example/" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/comparison-of-straight.el-to-other-emacs-package-manager/" />
 
-<meta itemprop="name" content="How to publish blog on Jekyll with example.">
-<meta itemprop="description" content="You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-Jekyll requires blog post files to be named according to the following format:
-`YEAR-MONTH-DAY-title.MARKUP`
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file.">
+<meta itemprop="name" content="Comparison of straight.el to other Emacs package manager.">
+<meta itemprop="description" content="This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .">
 
-<meta itemprop="wordCount" content="161">
+<meta itemprop="wordCount" content="88">
 
 
 
-<meta itemprop="keywords" content="Jekyll,blog," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to publish blog on Jekyll with example."/>
-<meta name="twitter:description" content="You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-Jekyll requires blog post files to be named according to the following format:
-`YEAR-MONTH-DAY-title.MARKUP`
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file."/>
+<meta itemprop="keywords" content="package-manager,blog,straight,package-manager," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comparison of straight.el to other Emacs package manager."/>
+<meta name="twitter:description" content="This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into ."/>
 
 	
   </head>
@@ -117,7 +117,7 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">How to publish blog on Jekyll with example.</h1>
+      <h1 class="f1 athelas mt3 mb1">Comparison of straight.el to other Emacs package manager.</h1>
       
       <p class="tracked">
           By <strong>
@@ -133,32 +133,28 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`,
-which launches a web server and auto-regenerates your site when a file is updated.</p>
-<p>Jekyll requires blog post files to be named according to the following format:</p>
-<p>`YEAR-MONTH-DAY-title.MARKUP`</p>
-<p>Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file
-extension representing the format used in the file. After that, include the necessary front matter. Take a
-look at the source for this post to get an idea about how it works.</p>
-<p>Jekyll also offers powerful support for code snippets:</p>
-<p>{% highlight ruby %}
-def print_hi(name)
-puts &ldquo;Hi, #{name}&rdquo;
-end
-print_hi(&lsquo;Tom&rsquo;)
-#=&gt; prints &lsquo;Hi, Tom&rsquo; to STDOUT.
-{% endhighlight %}</p>
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all
-bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll
-Talk</a>.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This article is an opinion piece on <a href="https://github.com/radian-software/straight.el#comparison-to-other-package-managers">Comparison to other package managers</a>.</p>
+<p>Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.</p>
+<p>One idea that <code>straight.el</code> emphasizes a lot is that <code>straight.el</code> manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;</p>
+<p>Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .emacs.d).</p>
+<p>That&rsquo;s it.
+peace.</p>
 <ul class="pa0">
   
    <li class="list di">
-     <a href="/tags/jekyll" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Jekyll</a>
+     <a href="/tags/package-manager" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">package-manager</a>
    </li>
   
    <li class="list di">
      <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/straight" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">straight</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/package-manager" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">package-manager</a>
    </li>
   
 </ul>
@@ -187,10 +183,6 @@ Talk</a>.</p>
 	    
 	     <li  class="mb2">
           <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -223,6 +215,10 @@ Talk</a>.</p>
 	    
 	     <li  class="mb2">
           <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-publish-blog-on-jekyll-with-example/">How to publish blog on Jekyll with example.</a>
         </li>
 	    
 	     <li  class="mb2">

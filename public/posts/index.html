@@ -112,12 +112,69 @@ In this case, its clearly a environment specific problem which required environe
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
+        A Note On Straight&#39;s Recipe.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-straight/" class="link black dim">
+        A Note On Straight.el&#39;s Transaction
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is based on staright.el README which at the moment doesn&rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
+Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/" class="link black dim">
+        Comparison of straight.el to other Emacs package manager.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &ldquo;smallest unit of design implementation.&rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .
     </div>
   </div>
 </div>
@@ -220,62 +277,6 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
 
         </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" class="link black dim">
-        Emacs Package Explained: How to customize key binding in evil modes?
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This is my summary of a more thoroughly explained evil guide, see here.
-Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/enable-x11-display-in-wsl2/" class="link black dim">
-        Enable x11 display in WSL2
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Resources are provided in my roam research note.
-I successfully connect x-apps via x11 protocol by first installing and launching xming server. Xming application provides x11-server. Then, I need to tell the wsl2 &ldquo;address and port of X11 server to connect wsl2 application to&rdquo; (my note on x11 can be seen here) X11 server is enlisted as WSL2 entrusted DNS which located in resolve.conf. (my note on resolve.conf can be seen here.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" class="link black dim">
-        Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
-I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
-I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
-Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
     </section>
 
 <ul class="pagination">
@@ -323,12 +324,23 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
     <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

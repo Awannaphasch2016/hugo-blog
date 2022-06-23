@@ -40,7 +40,7 @@ Although, searching online directly is not the best approach, it is everyone las
 <meta itemprop="description" content="The normal workflow of lookup documentation would be to search google, stack-overflow, etc. Alternatively, if you are using IDE, IDE will lookup documentation for you, for example goto-definition etc. Very convenience. What else do you need?
 Although, searching online directly is not the best approach, it is everyone last line of defense. On the other hands, IDE is as good as it gets. However, the problem with IDE is that it is context specific.">
 
-<meta itemprop="wordCount" content="305">
+<meta itemprop="wordCount" content="341">
 
 
 
@@ -130,7 +130,12 @@ Although, searching online directly is not the best approach, it is everyone las
 <p>So, to be fair, the title claim of &ldquo;most efficient workflow&rdquo; apply mainly to text editor. Still, I use the word &ldquo;theoretically&rdquo; because, in practice, &ldquo;lookup&rdquo; documentation for any language is more or less the same.</p>
 <p>Lets get into the meat of the blog.</p>
 <p>Using Doom Emacs, looking up documentation can be online or offline. For online documentation, I use <code>devdocs.io</code>. For offline documentation, I use <code>docset</code> from Dash.app. Both contains lots of languages. I can&rsquo;t tell which has more. (You can check by yourself.)</p>
-<p>To look up online, I use command <code>+lookup/documentation</code>. To look up offline, I use <code>+lookup/in-all-docsets</code>. To look up vocabulary definition (dictionary must be downloaded locally), I use <code>+lookup/dictionary-definition</code>. To make a correct to misspelling word, I use <code>flyspell-correct-wrapper</code>. These features are provided on top of the doom completion module which provide list of string completion based on what I type.</p>
+<p>To look up online, I use command <code>+lookup/documentation</code>.
+To look up offline, I use <code>+lookup/in-all-docsets</code>.
+To look up vocabulary definition (dictionary must be downloaded locally), I use <code>+lookup/dictionary-definition</code>.
+To make a correct to misspelling word, I use <code>flyspell-correct-wrapper</code>.
+To lookup reference. I use <code>+lookup/references</code>. What is reference? you asked. Whatever you implemented to be a reference. For example, in org file, reference is implemented as synonym. Sky is the limit.</p>
+<p>Not to mention that these features are provided on top of the doom completion module which provide list of string completion based on what I type.</p>
 <p>A side note on Doom Emacs. Doom&rsquo;s convention is to add prefix <code>+</code> to commands and functions that are implemented by Doom. Doom provides <code>module</code> which combine many underlying emacs packages that do the same things to take advantages of good features and eliminate bad features. This <code>+</code> is a convention used in Doom module.</p>
 <ul class="pa0">
   
@@ -168,6 +173,18 @@ Although, searching online directly is not the best approach, it is everyone las
 	   
 	     <li  class="mb2">
           <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -212,18 +229,6 @@ Although, searching online directly is not the best approach, it is everyone las
 	    
 	     <li  class="mb2">
           <a href="/posts/how-to-solve-handing-tramp/">How to solve hanging tramps?</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/">How to use auto yasnippet (aka aya) in your workflow?</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/my-citation-management-workflow/">My Citation Management Workflow.</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
         </li>
 	    
     </ul>

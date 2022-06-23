@@ -93,6 +93,62 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" class="link black dim">
+        Emacs Package Explained: How to customize key binding in evil modes?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This is my summary of a more thoroughly explained evil guide, see here.
+Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/enable-x11-display-in-wsl2/" class="link black dim">
+        Enable x11 display in WSL2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Resources are provided in my roam research note.
+I successfully connect x-apps via x11 protocol by first installing and launching xming server. Xming application provides x11-server. Then, I need to tell the wsl2 &ldquo;address and port of X11 server to connect wsl2 application to&rdquo; (my note on x11 can be seen here) X11 server is enlisted as WSL2 entrusted DNS which located in resolve.conf. (my note on resolve.conf can be seen here.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" class="link black dim">
+        Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
+I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
+I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
+Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/evolution-of-asset-transaction/" class="link black dim">
         Evolution of Asset Transaction
       </a>
@@ -225,63 +281,6 @@ This can be done by setting the following
 
         </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/" class="link black dim">
-        How to set up org-roam and org-roam-bibtex as building block of emacs as your primary personal knowledge management?
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      {{&lt; ref &ldquo;~/org/personal-knowledge-management-pkm-note.org&rdquo; &gt;}}
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/how-to-solve-handing-tramp/" class="link black dim">
-        How to solve hanging tramps?
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
-From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
-I am using zsh shell in my remote compute.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/how-to-use-auto-yasnippet-aka-aya-in-your-workflow/" class="link black dim">
-        How to use auto yasnippet (aka aya) in your workflow?
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      All of the content I presented below can be found at Auto-YASnippet Github repo.
-Auto-Yasnippet (aka aya) provides the following interactive commands: aya-create, aya-expand, aya-persiste-snippet, and aya-open-line:
-I don&rsquo;t quite understand aya-open-line yet, so I will not be explaining it here.
-This snippet package support ad-hoc style of editing workflow where you can create useful snippet to be reused as you editing.
-Without aya, one would have do the following
-    </div>
-  </div>
-</div>
-
-        </div>
-      
     </section>
 
 <ul class="pagination">
@@ -329,12 +328,23 @@ Without aya, one would have do the following
     <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

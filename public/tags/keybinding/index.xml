@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>keybinding on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/keybinding/</link>
+    <description>Recent content in keybinding on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/keybinding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keybinding In Doom Emacs</title>
+      <link>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</guid>
+      <description>Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.</description>
+    </item>
+    
+  </channel>
+</rss>

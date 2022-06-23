@@ -18,6 +18,14 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-on-straights-recipe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-on-straight/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/autodidact/</loc>
   </url>
   
@@ -54,6 +62,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/comparison-of-straight.el-to-other-emacs-package-manager/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/</loc>
   </url>
   
@@ -83,6 +95,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/dont-pick-between-org-roam-and-org-brain/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/doom/</loc>
   </url>
   
   <url>
@@ -186,6 +202,14 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/keybinding/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/latex/</loc>
   </url>
   
@@ -202,11 +226,23 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/package-manager/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/pdf-tools/</loc>
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/recipe/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/snippet/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/straight/</loc>
   </url>
   
   <url>

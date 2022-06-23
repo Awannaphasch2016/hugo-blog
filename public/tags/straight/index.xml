@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>straight on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/straight/</link>
+    <description>Recent content in straight on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/straight/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Note On Straight&#39;s Recipe.</title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-straights-recipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-straights-recipe/</guid>
+      <description>Straight&amp;rsquo;s recipe is similar but not identify to one used by MELPA. 1
+A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
+Ultimately, a package is defined is a collection of files required for package&amp;rsquo;s build. striaght.el views a package in this manner.</description>
+    </item>
+    
+    <item>
+      <title>A Note On Straight.el&#39;s Transaction</title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-straight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-straight/</guid>
+      <description>This article is based on staright.el README which at the moment doesn&amp;rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
+Conceptually, stright.el clones Git repo and them symlinking files into Emacs&amp;rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.</description>
+    </item>
+    
+    <item>
+      <title>Comparison of straight.el to other Emacs package manager.</title>
+      <link>https://awannaphasch2016.github.io/posts/comparison-of-straight.el-to-other-emacs-package-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/comparison-of-straight.el-to-other-emacs-package-manager/</guid>
+      <description>This article is an opinion piece on Comparison to other package managers.
+Emacs package manager are split into 2 categories: package.el wrapper or not package.el wrapper.
+One idea that straight.el emphasizes a lot is that straight.el manages commits rather than managing a whole a package. Some PM only accept latest commit. Other only accepts repo on github etc. I call this design decision a &amp;ldquo;smallest unit of design implementation.&amp;rdquo;
+Other unique takes on managing Emacs packages are Borg (assimilates packages as Git submodules into .</description>
+    </item>
+    
+  </channel>
+</rss>
