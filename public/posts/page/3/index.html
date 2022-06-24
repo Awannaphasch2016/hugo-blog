@@ -93,6 +93,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/how-to-set-local-variable-for-a-specific-mode/" class="link black dim">
+        How to set local variable for a specific mode?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This type of tutorial/question is best to present with an example. Given that I want to set compile-command variable for LaTex mode which applies to all buffer of this mode.
+(defun set-compile-command-default-in-LaTeX-mode () (set (make-local-variable &#39;compile-command) ;; create local variable specific to a current buffer (format &#34;&#34; (buffer-file-name)))) (add-hook &#39;LaTeX-mode-hook &#39;set-compile-command-default-in-LaTeX-mode) 
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/how-to-set-recurring-todo-tasks-with-org-mode-in-emacs/" class="link black dim">
         how to set recurring todo tasks with org mode in emacs?
       </a>
@@ -250,26 +268,6 @@ Although, searching online directly is not the best approach, it is everyone las
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Blog Connection between org roam bibtex (orb) and org ref. Org-ref manage citation entry, referenced citation, PDF, and note just fine. But the problem arise when trying to link notes created org-ref as a node in org roam. This is the problem that orb solve to allow PDF notes to be inserted as a org roam node. To summarize, the problem that orb solve to integrate org-ref functionalities into org-roam ecosystem.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/time-travelers-guide-to-navigate-git-commit-history/" class="link black dim">
-        Time Travelers Guide To Navigate Git Commit History.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      One of principle I follow is
- never rely on others&rsquo; people goodwill. and always expect other to be evil when it is possible.
- In quote , type of evil falls into incompetent evil and irresponsible evil. Putting this principle into practice, one must understand structures that govern behavior of people given a particular pursuit of goal.
-In this scenario, I refers structure as git log and a particular pursuite of goal as learning and understanding a piece of code such as open source code.
     </div>
   </div>
 </div>
