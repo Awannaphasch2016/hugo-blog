@@ -155,6 +155,16 @@ The four phases are categorized into the following
     </item>
     
     <item>
+      <title>Getting source code of distributed binary package in Ubuntu</title>
+      <link>https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/</guid>
+      <description>This stack exchange post state the following.
+Debian and RPM packages don&amp;#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&amp;rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.</description>
+    </item>
+    
+    <item>
       <title>How to Guarantee Serialization with Two-Phase Locking (2PL) with Example</title>
       <link>https://awannaphasch2016.github.io/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

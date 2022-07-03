@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting source code of distributed binary package in Ubuntu</title>
+      <link>https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/</guid>
+      <description>This stack exchange post state the following.
+Debian and RPM packages don&amp;#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&amp;rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Getting source code of distributed binary package in Ubuntu | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This stack exchange post state the following.
+Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Getting source code of distributed binary package in Ubuntu" />
+<meta property="og:description" content="This stack exchange post state the following.
+Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/" />
+
+<meta itemprop="name" content="Getting source code of distributed binary package in Ubuntu">
+<meta itemprop="description" content="This stack exchange post state the following.
+Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.">
+
+<meta itemprop="wordCount" content="354">
+
+
+
+<meta itemprop="keywords" content="linux,blog,debug,ubuntu," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting source code of distributed binary package in Ubuntu"/>
+<meta name="twitter:description" content="This stack exchange post state the following.
+Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Getting source code of distributed binary package in Ubuntu</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><a href="https://superuser.com/questions/388890/is-there-a-way-to-extract-the-source-code-from-deb-or-rpm-packages">This</a> stack exchange post state the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org">Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball.
+</code></pre></div><p>That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.</p>
+<p>As an example of what could be provided, files contained in <a href="https://releases.hashicorp.com/vagrant/2.2.9/">https://releases.hashicorp.com/vagrant/2.2.9/</a> are shown below.</p>
+<figure>
+    <img src="/ox-hugo/screenshot_20220703_184738.png" width="300px"/> 
+</figure>
+
+<p>With good knowledge about file extension convension, in this case, best bet to find source code is to look into zip file. Unfortunately, in this case, zip file only contains binary file of <code>vagrant</code>. Fortunately, <code>vagrant</code> is an open source and one can obtain source code from its github page, <a href="https://github.com/hashicorp/vagrant">here</a>.</p>
+<p>Welcome to the world of software. You get what you get, so make the best of it.</p>
+<p>Below, I will explain step by step on how to obtain source code of distributed binary package in Ubuntu.</p>
+<p>To follow along, I will use <code>hello</code> packages in Ubuntu as an example package to download source code locally. However, any other packages available in <code>apt-get</code> can be used.</p>
+<p>First, you need to uncomment <code>deb-src</code> in <code>source.list</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chmod <span style="color:#ae81ff">777</span> /etc/apt/source.list <span style="color:#75715e"># change file permission from read-only to editable.</span>
+vim /etc/apt/source.list
+sed <span style="color:#e6db74">&#34;:%s/# deb-src/deb-src/g&#34;</span> /etc/apt/source.list <span style="color:#75715e"># replace &#39;# deb-src&#39; with &#39;deb-src&#39;</span>
+</code></pre></div><p>#+END_SRC</p>
+<p>Then, you can download source code of hello packages.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get source hello
+</code></pre></div><p>Running the above on <code>Ubuntu 20.04.4</code> will result in a known bug <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-03 Sun]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I have no clue what <code>_apt</code> or  <code>/var/lib/update-notifier/package-data-downloads/partial/</code> mean.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/
+</code></pre></div><p>The command above should download <code>hello</code> source code to current directory. Now, you can edit it as you want.</p>
+<p>Lastly, make sure to change permission of <code>/etc/apt/source-list</code> back to readonly. I don&rsquo;t know about security much, but it seems to logical.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chmod u<span style="color:#f92672">=</span>r,g<span style="color:#f92672">=</span>r,o<span style="color:#f92672">=</span>r /etc/apt/sources.list <span style="color:#75715e"># change file permission from editable tto read-only</span>
+</code></pre></div><p>That&rsquo;s it.
+Peace.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://askubuntu.com/questions/954862/couldnt-be-accessed-by-user-apt-pkgacquirerun-13-permission-denied">couldn&rsquo;t be accessed by user &lsquo;_apt&rsquo;. - pkgAcquire::Run (13: Permission denied) [duplicate]​</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/debug" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">debug</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ubuntu" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ubuntu</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/">How to Guarantee Serialization with Two-Phase Locking (2PL) with Example</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-parse-text-with-awk/">How to parse text with awk?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
