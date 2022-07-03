@@ -425,6 +425,25 @@ Without aya, one would have do the following
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/implementation-of-x-where-x-emacs-auth-source/" class="link black dim">
+        Implementation of X where X = Emac&#39;s auth-source.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      As an example, I will use api.github.com as a API endpoint.
+If I use ~/.authinfo.gpg as an auth-sources file. (variable name is auth-sources), I need to add the following to the file where I need to sub value into user-username and user-password.
+machine api.github.com login user-name password user-password auth-source-search is a function that retrieve password from your specify auth-sources file. You can use it as followed. This will output list of property where :secret key has your password as its value.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/keybinding-in-doom-emacs/" class="link black dim">
         Keybinding In Doom Emacs
       </a>

@@ -313,6 +313,17 @@ In this blog, I will just present minimal info for you to start writing latex in
     </item>
     
     <item>
+      <title>Implementation of X where X = Emac&#39;s auth-source.</title>
+      <link>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</guid>
+      <description>As an example, I will use api.github.com as a API endpoint.
+If I use ~/.authinfo.gpg as an auth-sources file. (variable name is auth-sources), I need to add the following to the file where I need to sub value into user-username and user-password.
+machine api.github.com login user-name password user-password auth-source-search is a function that retrieve password from your specify auth-sources file. You can use it as followed. This will output list of property where :secret key has your password as its value.</description>
+    </item>
+    
+    <item>
       <title>Keybinding In Doom Emacs</title>
       <link>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

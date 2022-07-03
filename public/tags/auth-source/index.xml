@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>auth-source on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/auth-source/</link>
+    <description>Recent content in auth-source on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/auth-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Implementation of X where X = Emac&#39;s auth-source.</title>
+      <link>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</guid>
+      <description>As an example, I will use api.github.com as a API endpoint.
+If I use ~/.authinfo.gpg as an auth-sources file. (variable name is auth-sources), I need to add the following to the file where I need to sub value into user-username and user-password.
+machine api.github.com login user-name password user-password auth-source-search is a function that retrieve password from your specify auth-sources file. You can use it as followed. This will output list of property where :secret key has your password as its value.</description>
+    </item>
+    
+  </channel>
+</rss>
