@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Git Workflow For Team</title>
+      <link>https://awannaphasch2016.github.io/posts/git-workflow-for-team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/git-workflow-for-team/</guid>
+      <description>I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
+Pull Requests To do a pull-requests, you need to do the following
+ fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote.</description>
+    </item>
+    
+    <item>
       <title>Time Travelers Guide To Navigate Git Commit History.</title>
       <link>https://awannaphasch2016.github.io/posts/time-travelers-guide-to-navigate-git-commit-history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Git Workflow For Team | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
+Pull Requests To do a pull-requests, you need to do the following
+ fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Git Workflow For Team" />
+<meta property="og:description" content="I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
+Pull Requests To do a pull-requests, you need to do the following
+ fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/git-workflow-for-team/" />
+
+<meta itemprop="name" content="Git Workflow For Team">
+<meta itemprop="description" content="I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
+Pull Requests To do a pull-requests, you need to do the following
+ fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote.">
+
+<meta itemprop="wordCount" content="206">
+
+
+
+<meta itemprop="keywords" content="git,collaboration," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Workflow For Team"/>
+<meta name="twitter:description" content="I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
+Pull Requests To do a pull-requests, you need to do the following
+ fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Git Workflow For Team</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.</p>
+<h2 id="pull-requests">Pull Requests</h2>
+<p>To do a pull-requests, you need to do the following</p>
+<ol>
+<li>fork original repo.</li>
+<li>create new local branch and checkout to the new branch.</li>
+<li>commit new changes.</li>
+<li>send pull requests from <code>new local branch</code> from <code>forked repo (origin)</code> to <code>original repo (upstream)</code>.</li>
+</ol>
+<p>Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using <code>git forge</code> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, adding commit to new branch <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, and then do a pull requests to the target branch in remote. The new branch is automatically created</p>
+<h2 id="pull-new-updates-from-upstream-repo">Pull new updates from upstream repo</h2>
+<p>To get new updates from upstream, you need to do the following</p>
+<ol>
+<li><code>git fetch upstream</code>
+check if git fetch correctly by running <code>git branch -v -a</code></li>
+<li>git merge <code>remote/upstream</code> to local branch.</li>
+<li>git push changes to from local branch to <code>remote/origin</code></li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-03 Sun]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I still don&rsquo;t know for sure what <code>git forge</code> does or what it is <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-03 Sun]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I believe that the new branch is on the orignal repo instead of fork repo. I haven&rsquo;t tried it first hand, I watched this <a href="https://www.youtube.com/watch?v=wgI8r3Nx_BI&amp;ab_channel=MikeZamansky">magit forge video</a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/collaboration" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">collaboration</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/time-travelers-guide-to-navigate-git-commit-history/">Time Travelers Guide To Navigate Git Commit History.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
