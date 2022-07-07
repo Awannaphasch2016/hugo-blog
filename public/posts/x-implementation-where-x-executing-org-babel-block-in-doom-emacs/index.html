@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>X implementation where X = executing org babel block in Doom Emacs. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
+Pressing enter in org-babel block will execute &#43;org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
+(&#43;org/dwim-at-point *optional ARG) .">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="X implementation where X = executing org babel block in Doom Emacs." />
+<meta property="og:description" content="Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
+Pressing enter in org-babel block will execute &#43;org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
+(&#43;org/dwim-at-point *optional ARG) ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/" />
+
+<meta itemprop="name" content="X implementation where X = executing org babel block in Doom Emacs.">
+<meta itemprop="description" content="Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
+Pressing enter in org-babel block will execute &#43;org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
+(&#43;org/dwim-at-point *optional ARG) .">
+
+<meta itemprop="wordCount" content="825">
+
+
+
+<meta itemprop="keywords" content="org-babel,notes,blog,implementation,doom,org-babel," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="X implementation where X = executing org babel block in Doom Emacs."/>
+<meta name="twitter:description" content="Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
+Pressing enter in org-babel block will execute &#43;org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
+(&#43;org/dwim-at-point *optional ARG) ."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">X implementation where X = executing org babel block in Doom Emacs.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><ul>
+<li>Editing History
+<ul>
+<li><!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-06 Wed]<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+<li>Last edit is on <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-07 Thu]<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+<p>This article investigates what is executed when one presses <code>enter</code> to execute org babel source block in Doom Emacs.</p>
+<p>Pressing <code>enter</code> in org-babel block will execute <code>+org/dwim-at-point</code>, see code below for reference.
+First, it checks if <code>point</code> is on a button. Then, it proceeds to assign evaluated output of <code>org-element-context</code> and <code>org-element-type</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(+org/dwim-at-point *optional ARG)
+  <span style="color:#f92672">...</span>
+  (if (button-at (<span style="color:#a6e22e">point</span>))
+      (<span style="color:#a6e22e">call-interactively</span> <span style="color:#a6e22e">#&#39;</span>push-button)
+    (let* ((context (org-element-context))
+           (type (org-element-type context)))
+      <span style="color:#75715e">;; skip over unimportant contexts</span>
+      (while (and context (<span style="color:#a6e22e">memq</span> type <span style="color:#f92672">&#39;</span>(verbatim code bold italic underline strike-through subscript superscript)))
+        (setq context (org-element-property :parent context)
+              type (org-element-type context)))
+      (pcase type
+        <span style="color:#f92672">...</span>
+        ((or <span style="color:#f92672">`</span>src-block <span style="color:#f92672">`</span>inline-src-block)
+         (org-babel-execute-src-block arg))
+</code></pre></div><p><code>org-element-context</code> returns smallest element or object around point as <code>(TYPE PROPS)</code>. Possible types are defined in <code>org-element-all-elements</code> and <code>org-element-all-objects</code>.</p>
+<p>PROPS, short for properties, depends on element or object type, but always have information about surrounded context and location of the element including <code>:begin</code>, <code>:end</code>, <code>:parent</code> and <code>:post-blank</code>. It is important to note here that Emacs is designed to assign set of properties to every characters in a buffer. <code>org-element-context</code> makes use of this concept. Information of <code>org-element-all-objects</code> and <code>org-element-all-elements</code> are provided below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">print</span> org-element-all-objects)
+</code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bold</td>
+<td>citation</td>
+<td>citation-reference</td>
+<td>code</td>
+<td>entity</td>
+<td>export-snippet</td>
+<td>footnote-reference</td>
+<td>inline-babel-call</td>
+<td>inline-src-block</td>
+<td>italic</td>
+<td>line-break</td>
+<td>latex-fragment</td>
+<td>link</td>
+<td>macro</td>
+<td>radio-target</td>
+<td>statistics-cookie</td>
+<td>strike-through</td>
+<td>subscript</td>
+<td>superscript</td>
+<td>table-cell</td>
+<td>target</td>
+<td>timestamp</td>
+<td>underline</td>
+<td>verbatim</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">print</span> org-element-all-elements)
+</code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>babel-call</td>
+<td>center-block</td>
+<td>clock</td>
+<td>comment</td>
+<td>comment-block</td>
+<td>diary-sexp</td>
+<td>drawer</td>
+<td>dynamic-block</td>
+<td>example-block</td>
+<td>export-block</td>
+<td>fixed-width</td>
+<td>footnote-definition</td>
+<td>headline</td>
+<td>horizontal-rule</td>
+<td>inlinetask</td>
+<td>item</td>
+<td>keyword</td>
+<td>latex-environment</td>
+<td>node-property</td>
+<td>paragraph</td>
+<td>plain-list</td>
+<td>planning</td>
+<td>property-drawer</td>
+<td>quote-block</td>
+<td>section</td>
+<td>special-block</td>
+<td>src-block</td>
+<td>table</td>
+<td>table-row</td>
+<td>verse-block</td>
+</tr>
+</tbody>
+</table>
+<p><code>org-element-context</code> simply tries to get <code>element</code>, its type, and its position, then process elements based on its type and position and output <code>(TYPE PROPS)</code>. One can think of <code>org-element-context</code> as a function that &ldquo;repackage&rdquo; information of org-element into certain format.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#f92672">...</span>
+     (let* ((pos (<span style="color:#a6e22e">point</span>))
+	    (element (or element (org-element-at-point)))
+	    (type (org-element-type element))
+	    (post (org-element-property :post-affiliated element)))
+      (cond
+       <span style="color:#75715e">;; posscess element based on its type and position.</span>
+       <span style="color:#f92672">...</span> ))
+<span style="color:#f92672">..</span>
+</code></pre></div><p>Running <code>org-element-context</code> inside org-babel block, I get the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(src-block
+ (:language <span style="color:#e6db74">&#34;python&#34;</span> :switches <span style="color:#66d9ef">nil</span> :parameters <span style="color:#66d9ef">nil</span> :begin <span style="color:#ae81ff">171</span> :end <span style="color:#ae81ff">213</span> :number-lines <span style="color:#66d9ef">nil</span> :preserve-indent <span style="color:#66d9ef">nil</span> :retain-labels <span style="color:#66d9ef">t</span> :use-labels <span style="color:#66d9ef">t</span> :label-fmt <span style="color:#66d9ef">nil</span> :value <span style="color:#e6db74">&#34;print(&#39;hi&#39;)
+</span><span style="color:#e6db74">&#34;</span> :post-blank <span style="color:#ae81ff">1</span> :post-affiliated <span style="color:#ae81ff">171</span> :mode <span style="color:#66d9ef">nil</span> :granularity element :org-element--cache-sync-key
+(<span style="color:#ae81ff">863</span> <span style="color:#f92672">.</span> <span style="color:#ae81ff">171</span>)
+:cached <span style="color:#66d9ef">t</span> :parent
+(section
+ (:begin <span style="color:#ae81ff">1</span> :end <span style="color:#ae81ff">232</span> :contents-begin <span style="color:#ae81ff">1</span> :contents-end <span style="color:#ae81ff">231</span> :robust-begin <span style="color:#ae81ff">1</span> :robust-end <span style="color:#ae81ff">229</span> :post-blank <span style="color:#ae81ff">1</span> :post-affiliated <span style="color:#ae81ff">1</span> :mode first-section :granularity element :org-element--cache-sync-key
+  (<span style="color:#ae81ff">863</span> <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>)
+  :cached <span style="color:#66d9ef">t</span> :parent
+  (org-data
+   (:begin <span style="color:#ae81ff">1</span> :contents-begin <span style="color:#ae81ff">1</span> :contents-end <span style="color:#ae81ff">2408</span> :end <span style="color:#ae81ff">2408</span> :robust-begin <span style="color:#ae81ff">3</span> :robust-end <span style="color:#ae81ff">2406</span> :post-blank <span style="color:#ae81ff">0</span> :post-affiliated <span style="color:#ae81ff">1</span> :path <span style="color:#e6db74">&#34;/home/awannaphasch2016/Scratches/tmp1.org&#34;</span> :mode org-data :CATEGORY <span style="color:#e6db74">&#34;tmp1&#34;</span> :parent <span style="color:#66d9ef">nil</span> :cached <span style="color:#66d9ef">t</span> :org-element--cache-sync-key
+    (<span style="color:#ae81ff">803</span> <span style="color:#f92672">.</span> <span style="color:#ae81ff">-1152921504606846885</span>)))))))
+</code></pre></div><p>Next, if an element&rsquo;s type is either <code>src-block</code> or <code>inline-src-block</code>, <code>org-babel-execute-src-block</code> is executed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#f92672">...</span>
+        ((or <span style="color:#f92672">`</span>src-block <span style="color:#f92672">`</span>inline-src-block)
+         (org-babel-execute-src-block arg))
+<span style="color:#f92672">..</span>
+</code></pre></div><p>Similar to <code>org-element-context</code>, <code>org-babel-execute-src-block</code> gathers information specific to <code>org-babel</code> (e.g <code>org-babel-get-src-block-info</code>). More specifically, org-babel related information is source block&rsquo;s location, header, and language. Once information is assigned to variables, the function just compute based on provided information.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun org-babel-execute-src-block (<span style="color:#66d9ef">&amp;optional</span> arg info params)
+  <span style="color:#f92672">...</span>
+  (interactive)
+  (let* ((org-babel-current-src-block-location
+	  (or org-babel-current-src-block-location
+	      (<span style="color:#a6e22e">nth</span> <span style="color:#ae81ff">5</span> info)
+	      (org-babel-where-is-src-block-head)))
+	 (info (if info (copy-tree info) (org-babel-get-src-block-info))))
+
+    (cl-callf org-babel-merge-params (<span style="color:#a6e22e">nth</span> <span style="color:#ae81ff">2</span> info) params)
+    (when (org-babel-check-evaluate info)
+      (cl-callf org-babel-process-params (<span style="color:#a6e22e">nth</span> <span style="color:#ae81ff">2</span> info))
+      (let* ((params (<span style="color:#a6e22e">nth</span> <span style="color:#ae81ff">2</span> info))
+	     (cache (let ((c (<span style="color:#a6e22e">cdr</span> (<span style="color:#a6e22e">assq</span> :cache params))))
+		      (and (not arg) c (string= <span style="color:#e6db74">&#34;yes&#34;</span> c))))
+	     (new-hash (and cache (org-babel-sha1-hash info :eval)))
+	     (old-hash (and cache (org-babel-current-result-hash)))
+	     (current-cache (and new-hash (<span style="color:#a6e22e">equal</span> new-hash old-hash))))
+	(cond
+    <span style="color:#f92672">...</span>))))
+  <span style="color:#f92672">...</span>
+)
+</code></pre></div><p><code>org-babel-current-src-block-location</code> is assigned value only in <code>org-babel-exp-results</code> which is used to prepare result to be export from org file. So, in this case, <code>org-babel-current-src-block-location</code> is nil. &lt;org_babel_execute_src_block_src&gt; says if <code>org-babel-current-src-block-location</code> is nil, fall back on value of <code>(nth 5 info)</code> then fall back to <code>(org-babel-where-is-src-block-head)</code>. I think the fallback method is there to increase efficiency because if fallback methods are expected to do the same thing, according to descriptions, and fallback methods involve more computation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(org-babel-get-src-block-info)
+</code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emacs-lisp</td>
+<td>(org-babel-get-src-block-info)</td>
+<td>((:colname-names) (:rowname-names) (:result-params both) (:result-type . value) (:results . both) (:exports . both) (:lexical . no) (:pandoc . t) (:kernel . python3) (:eval . never-export) (:tangle . no) (:hlines . no) (:noweb . no) (:cache . no) (:session . jupyter-python))</td>
+<td></td>
+<td>nil</td>
+<td>4959</td>
+<td>(&lt;%s&gt;)</td>
+</tr>
+</tbody>
+</table>
+<p>Command is interned from <code>org-babel-execute:</code> prefix followed by lang.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(cmd (<span style="color:#a6e22e">intern</span> (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;org-babel-execute:&#34;</span> lang)))
+</code></pre></div><p>In &lt;org_babel_execute_src_block_src&gt;, I find implementation of caching results interesting in that it uses hash of &ldquo;info of org babel source&rdquo; to determined if there is any change to the block since last run. block will be recomputed only if &ldquo;info of org babel source&rdquo; has changed. This is done by comparing new hash of old hash as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#f92672">...</span>
+	     (new-hash (and cache (org-babel-sha1-hash info :eval)))
+	     (old-hash (and cache (org-babel-current-result-hash)))
+	     (current-cache (and new-hash (<span style="color:#a6e22e">equal</span> new-hash old-hash)))
+<span style="color:#f92672">...</span>
+</code></pre></div><p>Lastly, it expand noweb body (<code>org-babel--expand-body</code>), evaluate body, insert result (<code>org-babel-insert-result</code>), and run hook (<code>(run-hook 'org-babel-after-execute-hook')</code>).</p>
+<p>That&rsquo;s all for code structure of computing source block. The rest is just detail which is better to learn when you really need it.</p>
+<p>I haven&rsquo;t explored caching mechanism. This should be an interesting post in itself.</p>
+<p>That&rsquo;s it.
+Peace.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/org-babel" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">org-babel</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/notes" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">notes</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/implementation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">implementation</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/doom" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">doom</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/org-babel" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">org-babel</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/keybinding-in-doom-emacs/">Keybinding In Doom Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terminals-in-doom-emacs/">Using terminals in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -11,7 +11,7 @@ All org roam does is the following:
 1.  create name of a note file using org roam file name convention.
 2.  add `:ROAM_REFS:` as a note property whose value is an org-ref citation.
 
-`orb-insert-link` creates new node (from citation entry shown in citation completion mechanism like helm-bibtex) if the node of that entry hasn't yet existed.
+`orb-insert-link` (`orb` is an abbreviation for `org-roam-bibtex`) creates new node (from citation entry shown in citation completion mechanism like helm-bibtex) if the node of that entry hasn't yet existed.
 
 That's it.
 

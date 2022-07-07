@@ -296,5 +296,16 @@ To open file from terminal, one can just M-x find-file in the terminal buffer.
 On [2022-06-26 Sun], I stumbled upon wiki.c2.com. I was reading about it for a couple hours, and wiki.c2.com seems to share lots of philosophy that The Forest holds. Two hours in, however, I can&amp;rsquo;t seem to get a grip of some very basic stuff like how to read it?</description>
     </item>
     
+    <item>
+      <title>X implementation where X = executing org babel block in Doom Emacs.</title>
+      <link>https://awannaphasch2016.github.io/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/</guid>
+      <description>Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
+Pressing enter in org-babel block will execute +org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
+(+org/dwim-at-point *optional ARG) .</description>
+    </item>
+    
   </channel>
 </rss>

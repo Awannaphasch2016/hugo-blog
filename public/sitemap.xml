@@ -230,6 +230,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/implementation/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</loc>
   </url>
   
@@ -270,7 +274,15 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/notes/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/org-roam-bibtex-orb-note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/org-babel/</loc>
   </url>
   
   <url>
@@ -351,6 +363,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/writing-better-git-comment-message/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/</loc>
   </url>
   
 </urlset>
