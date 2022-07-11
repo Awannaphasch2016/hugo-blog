@@ -48,6 +48,17 @@ I define blog as followed
     </item>
     
     <item>
+      <title>A Note of X where X = AWS IAM services.</title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-iam-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-iam-services/</guid>
+      <description>In AWS IAM, a policy is the smallest entity of permission. There are types of policies: resources-based policy, identity-based policy, and session-based policy.
+  Figure 1: aws policies
+  Policies can be attached to the following &amp;ldquo;identity&amp;rdquo;: user (1 account can have more than 1 users), role, and group (a group has many user) 1. user, role, and group are called identity. In AWS identity is called IAM identity and user, role, and group are called IAM user, IAM role, and IAM user group, respectively.</description>
+    </item>
+    
+    <item>
       <title>A Note On Straight&#39;s Recipe.</title>
       <link>https://awannaphasch2016.github.io/posts/a-note-on-straights-recipe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
