@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>A Note of X where X = AWS EC2 services. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.
+  Figure 1: EC2 instance life cycle
+  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="A Note of X where X = AWS EC2 services." />
+<meta property="og:description" content="An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.
+  Figure 1: EC2 instance life cycle
+  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-ec2-services/" />
+
+<meta itemprop="name" content="A Note of X where X = AWS EC2 services.">
+<meta itemprop="description" content="An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.
+  Figure 1: EC2 instance life cycle
+  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up.">
+
+<meta itemprop="wordCount" content="352">
+
+
+
+<meta itemprop="keywords" content="ec2,aws,blog," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Note of X where X = AWS EC2 services."/>
+<meta name="twitter:description" content="An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.
+  Figure 1: EC2 instance life cycle
+  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">A Note of X where X = AWS EC2 services.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<figure>
+    <img src="/ox-hugo/screenshot_20220711_141153.png"
+         alt="Figure 1: EC2 instance life cycle" width="500px" height="50px"/> <figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->EC2 instance life cycle</p>
+        </figcaption>
+</figure>
+
+<h2 id="validating-that-you-have-correct-setup">Validating that you have correct setup</h2>
+<p>This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up.</p>
+<h2 id="setup-and-launch-ec2-instance">Setup and launch EC2 instance</h2>
+<p>To launch an EC2 instance, you need to deal with securities <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Securities part that we need to deal with is authentication and permission. First, you need to authenticate that you have &ldquo;key&rdquo; to access an instance. If you don&rsquo;t already have <code>keypair</code>, you can create keypair as followed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws ec2 create-key-pair --key-name &lt;your-key-name&gt; --output text &gt; &lt;your-key-name&gt;.pem
+</code></pre></div><p>Note that <code>.pem</code> stands for permission. Make sure to save primary key somewhere. You will need to pass <code>.pem</code> to EC2 instance you wish to interact with.</p>
+<p>Secondly, you need to obtain <code>AWS IAM policies</code> that allow you to interact with an instance. If you don&rsquo;t already have <code>IAM users group</code>. You can create one as followed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws ec2 create-security-group --group-name &lt;group-name&gt; --description &lt;description&gt;
+</code></pre></div><p>Using above command, you need assign <code>IAM policies</code> to <code>IAM user group</code>. Note that I haven&rsquo;t tested the above command manually because I already have <code>IAM users group</code> with appropriate policies. As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-11 Mon]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I haven&rsquo;t tried adding policies to IAM identity such as <code>IAM user gruop</code> via command line. I have only tried doing in on AWS console.</p>
+<p>To launch EC2 from command line, type in</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws ec2 run-instances --image-id ami-0fb653ca2d3203ac1 --instance-type t2.micro --count <span style="color:#ae81ff">1</span> --security-group-ids sg-0db2887fa3dbd0493 --key-name &lt;key-name&gt;
+</code></pre></div><p>Note that permission to access EC2 instance via ssh is separated from permission to access EC2 instance on the browser. Make sure you get the right permission for this.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>When one interacts with remote services, securities will and must always be taken into account. This may seem unnecessary at times, but, without secure service, existence of a service cannot be justified. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/ec2" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ec2</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/aws" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">aws</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/">Using Terraform to set up ec2 instances for data science projects.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

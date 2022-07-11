@@ -48,6 +48,17 @@ I define blog as followed
     </item>
     
     <item>
+      <title>A Note of X where X = AWS EC2 services.</title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-ec2-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-ec2-services/</guid>
+      <description>An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &amp;lt;ec2_life_cycle&amp;gt;.
+  Figure 1: EC2 instance life cycle
+  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &amp;ldquo;Setup AWS credentials for your AWS account and create new user&amp;rdquo; to help you set things up.</description>
+    </item>
+    
+    <item>
       <title>A Note of X where X = AWS IAM services.</title>
       <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-iam-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
