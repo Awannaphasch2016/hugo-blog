@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>setup on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/setup/</link>
+    <description>Recent content in setup on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup AWS credentials for your AWS account and create new user.</title>
+      <link>https://awannaphasch2016.github.io/posts/setup-aws-credentials-for-your-aws-account-and-create-new-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/setup-aws-credentials-for-your-aws-account-and-create-new-user/</guid>
+      <description>AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user.</description>
+    </item>
+    
+  </channel>
+</rss>

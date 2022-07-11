@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Setup AWS credentials for your AWS account and create new user. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Setup AWS credentials for your AWS account and create new user." />
+<meta property="og:description" content="AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/setup-aws-credentials-for-your-aws-account-and-create-new-user/" />
+
+<meta itemprop="name" content="Setup AWS credentials for your AWS account and create new user.">
+<meta itemprop="description" content="AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user.">
+
+<meta itemprop="wordCount" content="187">
+
+
+
+<meta itemprop="keywords" content="iam,blog,setup," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup AWS credentials for your AWS account and create new user."/>
+<meta name="twitter:description" content="AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Setup AWS credentials for your AWS account and create new user.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="aws-credentials-and-configuration-to-your-aws-account-dot">AWS credentials and configuration to your AWS account.</h2>
+<p>AWS configuration file and credential file can be found at <code>~/.aws/config</code> and <code>~/.aws/credentials</code>.</p>
+<p>Once that done, you can use the following to get your account information.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws sts get-caller-identity
+</code></pre></div><p>It will not show secret key <code>aws_access_key_id</code> and <code>aws_secret_access_key</code> which you have set. It will only show information of your account including: <code>UserId</code>, <code>AccountId</code>, <code>Arn</code>.</p>
+<h2 id="aws-users">AWS users</h2>
+<p>Note that 1 account has 1 root and can have many <code>IAM user</code>.</p>
+<p>Word of advice is to not NEVER use root account directly. ALWAYS create IAM users within your account. You can create user as followed</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws iam create-user --user-name &lt;new-user-name&gt;
+</code></pre></div><p>Then you have to create password for the new user.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws iam create-login-profile --user-name &lt;new-user-name&gt; --password &lt;password&gt;
+</code></pre></div><p>If you are admin (root user) and have to create new user for other, says your co-worker. Using the below command, your coworker (or anyone) will be asked to create new password when you login to the new username for the first time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws iam create-login-profile --user-name &lt;new-user-name&gt; --password-reset-required --password &lt;password-to-be-changed&gt;
+</code></pre></div><p>You can check that user is created using the following</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws iam list-users
+</code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/iam" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">iam</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/setup" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">setup</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

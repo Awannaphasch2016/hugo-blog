@@ -21,5 +21,17 @@
   Policies can be attached to the following &amp;ldquo;identity&amp;rdquo;: user (1 account can have more than 1 users), role, and group (a group has many user) 1. user, role, and group are called identity. In AWS identity is called IAM identity and user, role, and group are called IAM user, IAM role, and IAM user group, respectively.</description>
     </item>
     
+    <item>
+      <title>Setup AWS credentials for your AWS account and create new user.</title>
+      <link>https://awannaphasch2016.github.io/posts/setup-aws-credentials-for-your-aws-account-and-create-new-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/setup-aws-credentials-for-your-aws-account-and-create-new-user/</guid>
+      <description>AWS credentials and configuration to your AWS account. AWS configuration file and credential file can be found at ~/.aws/config and ~/.aws/credentials.
+Once that done, you can use the following to get your account information.
+aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
+AWS users Note that 1 account has 1 root and can have many IAM user.</description>
+    </item>
+    
   </channel>
 </rss>
