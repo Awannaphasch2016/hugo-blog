@@ -1,7 +1,7 @@
 +++
 title = "How to set local variable for a specific mode?"
 author = ["Anak Wannaphaschaiyong"]
-tags = ["latex", "config"]
+tags = ["blog", "latex", "config"]
 draft = false
 +++
 

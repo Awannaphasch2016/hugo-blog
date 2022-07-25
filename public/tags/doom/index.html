@@ -102,8 +102,9 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.
+      Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages.
     </div>
   </div>
 </div>
@@ -124,6 +125,25 @@ If you use Evil mode without Emacs configuration framework such as Spacemacs or 
 To open file from terminal, one can just M-x find-file in the terminal buffer.
   stackoverflow: More than one emacs terminal &#x21a9;&#xfe0e;
    
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/" class="link black dim">
+        X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to figure out +lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command +lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully.
     </div>
   </div>
 </div>

@@ -215,7 +215,8 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/posts/evolution-of-asset-transaction/</guid>
-      <description>This essay is my interpretation of a discussion on &amp;ldquo;NFTing the World for the General Good&amp;rdquo; episode on Real Vision TV. The information in the essay are adapted to fit rational narrative that I have in my brain.
+      <description>Hello, guys
+This essay is my interpretation of a discussion on &amp;ldquo;NFTing the World for the General Good&amp;rdquo; episode on Real Vision TV. The information in the essay are adapted to fit rational narrative that I have in my brain.
 This is the beginning of the essay.
 The four phases are categorized into the following
  transaction an physical assets transaction of electron transaction of information transaction of digital assets  Each phase increase efficiency of transactions which depends on three factors: object, process, and rules.</description>
@@ -372,8 +373,9 @@ machine api.github.com login user-name password user-password auth-source-search
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</guid>
-      <description>Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.</description>
+      <description>Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages.</description>
     </item>
     
     <item>
@@ -413,6 +415,16 @@ I think of note taking as a type of data storage with a property that satisfy my
       
       <guid>https://awannaphasch2016.github.io/posts/org-roam-bibtex-orb-note/</guid>
       <description>Blog Connection between org roam bibtex (orb) and org ref. Org-ref manage citation entry, referenced citation, PDF, and note just fine. But the problem arise when trying to link notes created org-ref as a node in org roam. This is the problem that orb solve to allow PDF notes to be inserted as a org roam node. To summarize, the problem that orb solve to integrate org-ref functionalities into org-roam ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Running Docker Container With Dockerfile.</title>
+      <link>https://awannaphasch2016.github.io/posts/running-docker-container-with-dockerfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/running-docker-container-with-dockerfile/</guid>
+      <description>As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).
+FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y unzipRUN apt-get install -y ffmpegRUN wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zipRUN unzip vid-clips.zipENTRYPOINT [&amp;#34;ffmpeg&amp;#34; -i&amp;#34; clip-crf20.mp4&amp;#34; -c:v&amp;#34; libx264&amp;#34; -crf&amp;#34; 36&amp;#34; -c:a&amp;#34; copy&amp;#34; clip-out.mp4&amp;#34;]If you are not root user when you run apt-get install [package], you must confirm yes or no to installation which requires user input.</description>
     </item>
     
     <item>
@@ -491,6 +503,17 @@ On [2022-06-26 Sun], I stumbled upon wiki.c2.com. I was reading about it for a c
       <description>ref  How to commit better with Git.    Rule of thumb, from here.
  Whenever I have something that works (meaning, doesn&amp;rsquo;t break anything for anyone else) I&amp;rsquo;ll do a check-in. I write most of my stuff test first, so that means every time I have a new test that passes, I check-in.
 In practice that means a few times per hour. At least a couple of times every hour, with 5 being quite a bit.</description>
+    </item>
+    
+    <item>
+      <title>X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</title>
+      <link>https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/</guid>
+      <description>I was trying to figure out +lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command +lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully.</description>
     </item>
     
     <item>

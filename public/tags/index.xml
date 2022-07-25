@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>asset</title>
+      <link>https://awannaphasch2016.github.io/tags/asset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/asset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>auth-source</title>
       <link>https://awannaphasch2016.github.io/tags/auth-source/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -110,6 +119,15 @@
     </item>
     
     <item>
+      <title>container</title>
+      <link>https://awannaphasch2016.github.io/tags/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>database</title>
       <link>https://awannaphasch2016.github.io/tags/database/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -133,6 +151,24 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/devlogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://awannaphasch2016.github.io/tags/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dockerfile</title>
+      <link>https://awannaphasch2016.github.io/tags/dockerfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/dockerfile/</guid>
       <description></description>
     </item>
     
@@ -286,6 +322,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lookup</title>
+      <link>https://awannaphasch2016.github.io/tags/lookup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/lookup/</guid>
       <description></description>
     </item>
     

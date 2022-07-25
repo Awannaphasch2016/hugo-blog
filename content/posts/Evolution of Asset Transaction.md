@@ -1,9 +1,11 @@
 +++
 title = "Evolution of Asset Transaction"
 author = ["Anak Wannaphaschaiyong"]
-tags = ["economic", "blog"]
+tags = ["economic", "blog", "asset"]
 draft = false
 +++
+
+Hello, guys
 
 This essay is my interpretation of a discussion on "NFTing the World for the General Good" episode on Real Vision TV. The information in the essay are adapted to fit rational narrative that I have in my brain.
 
@@ -26,9 +28,9 @@ Rules are given. No one can change the rules. However, given a set of rules, obj
 
 This is a new idea that I have as of <span class="timestamp-wrapper"><span class="timestamp">[2022-04-15 Fri]</span></span>, so notation may be imprecise, but I will try my best to explain.
 
-I derived an equation of object as followed
-
 \\(object = process\_1(objects, process\_2(...))\\)
+
+I derived an equation of object as followed
 
 where An object is a output of process. A process can take N number of process and M number of objects as parameters.
 

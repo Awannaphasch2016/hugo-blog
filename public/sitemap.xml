@@ -46,6 +46,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/asset/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/auth-source/</loc>
   </url>
   
@@ -110,6 +114,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/container/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/database/</loc>
   </url>
   
@@ -123,6 +131,14 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/devlogs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/dockerfile/</loc>
   </url>
   
   <url>
@@ -274,6 +290,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/lookup/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/</loc>
   </url>
   
@@ -315,6 +335,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/recipe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/running-docker-container-with-dockerfile/</loc>
   </url>
   
   <url>
@@ -387,6 +411,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/writing-better-git-comment-message/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/</loc>
   </url>
   
   <url>

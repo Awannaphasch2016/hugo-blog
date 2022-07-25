@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I was trying to figure out &#43;lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command &#43;lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command." />
+<meta property="og:description" content="I was trying to figure out &#43;lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command &#43;lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/" />
+
+<meta itemprop="name" content="X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.">
+<meta itemprop="description" content="I was trying to figure out &#43;lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command &#43;lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully.">
+
+<meta itemprop="wordCount" content="153">
+
+
+
+<meta itemprop="keywords" content="blog,lookup,doom," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command."/>
+<meta name="twitter:description" content="I was trying to figure out &#43;lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command &#43;lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I was trying to figure out <code>+lookup/definition</code> that open in other window. In one of the issue, Henrik <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> mention that some <code>lookup</code> backend (As an example, <code>xref</code> is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>lets call this new command <code>+lookup/definition-other-window</code>
+Current possible solutions are</p>
+<ol>
+<li>ignore validation step to make sure that the command runs succesfully.</li>
+<li>when the command is called, switch to other window then run <code>+lookup/definition</code> command.
+It can be implemented as followed
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">   (dolist (fn <span style="color:#f92672">&#39;</span>(definition references))
+     (<span style="color:#a6e22e">fset</span> (<span style="color:#a6e22e">intern</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;+lookup/%s-other-window&#34;</span> fn))
+           (lambda (identifier <span style="color:#66d9ef">&amp;optional</span> arg)
+             <span style="color:#e6db74">&#34;TODO&#34;</span>
+             (interactive (<span style="color:#a6e22e">list</span> (doom-thing-at-point-or-region)
+                                current-prefix-arg))
+             (let ((pt (<span style="color:#a6e22e">point</span>)))
+               (switch-to-buffer-other-window (<span style="color:#a6e22e">current-buffer</span>))
+               (<span style="color:#a6e22e">goto-char</span> pt)
+               (<span style="color:#a6e22e">funcall</span> (<span style="color:#a6e22e">intern</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;+lookup/%s&#34;</span> fn)) identifier arg)))))
+</code></pre></div></li>
+</ol>
+<p>I just thinks its interesting, so I figure I write something about it.</p>
+<p>That&rsquo;s it.
+Peace.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Henrik is a creator of Doom Emacs. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://github.com/doomemacs/doomemacs/issues/3397#issuecomment-649124705">https://github.com/doomemacs/doomemacs/issues/3397#issuecomment-649124705</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/lookup" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">lookup</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/doom" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">doom</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/keybinding-in-doom-emacs/">Keybinding In Doom Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terminals-in-doom-emacs/">Using terminals in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/">X implementation where X = executing org babel block in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

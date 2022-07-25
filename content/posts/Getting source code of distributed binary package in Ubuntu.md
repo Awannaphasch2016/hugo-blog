@@ -17,7 +17,7 @@ As an example of what could be provided, files contained in <https://releases.ha
 
 {{< figure src="/ox-hugo/screenshot_20220703_184738.png" width="300px" >}}
 
-With good knowledge about file extension convension, in this case, best bet to find source code is to look into zip file. Unfortunately, in this case, zip file only contains binary file of `vagrant`. Fortunately, `vagrant` is an open source and one can obtain source code from its github page, [here](https://github.com/hashicorp/vagrant).
+With good knowledge about file extension convention, in this case, best bet to find source code is to look into zip file. Unfortunately, in this case, zip file only contains binary file of `vagrant`. Fortunately, `vagrant` is an open source and one can obtain source code from its github page, [here](https://github.com/hashicorp/vagrant).
 
 Welcome to the world of software. You get what you get, so make the best of it.
 

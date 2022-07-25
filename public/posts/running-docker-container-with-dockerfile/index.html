@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Running Docker Container With Dockerfile. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).
+FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y unzipRUN apt-get install -y ffmpegRUN wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zipRUN unzip vid-clips.zipENTRYPOINT [&#34;ffmpeg&#34; -i&#34; clip-crf20.mp4&#34; -c:v&#34; libx264&#34; -crf&#34; 36&#34; -c:a&#34; copy&#34; clip-out.mp4&#34;]If you are not root user when you run apt-get install [package], you must confirm yes or no to installation which requires user input.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Running Docker Container With Dockerfile." />
+<meta property="og:description" content="As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).
+FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y unzipRUN apt-get install -y ffmpegRUN wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zipRUN unzip vid-clips.zipENTRYPOINT [&#34;ffmpeg&#34; -i&#34; clip-crf20.mp4&#34; -c:v&#34; libx264&#34; -crf&#34; 36&#34; -c:a&#34; copy&#34; clip-out.mp4&#34;]If you are not root user when you run apt-get install [package], you must confirm yes or no to installation which requires user input." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/running-docker-container-with-dockerfile/" />
+
+<meta itemprop="name" content="Running Docker Container With Dockerfile.">
+<meta itemprop="description" content="As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).
+FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y unzipRUN apt-get install -y ffmpegRUN wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zipRUN unzip vid-clips.zipENTRYPOINT [&#34;ffmpeg&#34; -i&#34; clip-crf20.mp4&#34; -c:v&#34; libx264&#34; -crf&#34; 36&#34; -c:a&#34; copy&#34; clip-out.mp4&#34;]If you are not root user when you run apt-get install [package], you must confirm yes or no to installation which requires user input.">
+
+<meta itemprop="wordCount" content="316">
+
+
+
+<meta itemprop="keywords" content="docker,blog,container,dockerfile," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Running Docker Container With Dockerfile."/>
+<meta name="twitter:description" content="As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).
+FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y unzipRUN apt-get install -y ffmpegRUN wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zipRUN unzip vid-clips.zipENTRYPOINT [&#34;ffmpeg&#34; -i&#34; clip-crf20.mp4&#34; -c:v&#34; libx264&#34; -crf&#34; 36&#34; -c:a&#34; copy&#34; clip-out.mp4&#34;]If you are not root user when you run apt-get install [package], you must confirm yes or no to installation which requires user input."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Running Docker Container With Dockerfile.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>As an example, the goal is to run container that will download things hosted on the web and run some command DURING a docker launches (using ENTRYPOINT to run the command).</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -y wget<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -y unzip<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -y ffmpeg<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> wget https://www.cse.fau.edu/~hari/sequences/vid-clips.zip<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> unzip vid-clips.zip<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;ffmpeg&#34;</span> <span style="color:#960050;background-color:#1e0010">-i</span><span style="color:#e6db74">&#34; clip-crf20.mp4&#34;</span> <span style="color:#960050;background-color:#1e0010">-c:v</span><span style="color:#e6db74">&#34; libx264&#34;</span> <span style="color:#960050;background-color:#1e0010">-crf</span><span style="color:#e6db74">&#34; 36&#34;</span> <span style="color:#960050;background-color:#1e0010">-c:a</span><span style="color:#e6db74">&#34; copy&#34;</span> <span style="color:#960050;background-color:#1e0010">clip-out.mp</span><span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>If you are not root user when you run <code>apt-get install [package]</code>, you must confirm yes or no to installation which requires user input. On the other hand, <code>-y</code> will insert <code>yes</code> as user input.</p>
+<p>In &lt;935413320&gt;, image <code>ubuntu</code> (<code>FROM ubuntu</code>) run as root, so <code>-y</code> is not needed. However, you will need <code>-y</code> when install <code>ffmpeg</code>, this is because there are other user input that will be needed. I assume <code>-y</code> also accept default options. Without <code>-y</code> flag, building from Dockerfile will be halt due to OS waiting for user input.</p>
+<p>Things to note about ENTRYPOINT is each command, flag, or pipeline must have its own &ldquo;value&rdquo; in &ldquo;ENTRYPOINT list.&rdquo; According above command &lt;935413320&gt;, the command that you intended to run upon start up container launch is <code>ffmpeg -i clip-crf20.mp4 -c:v libx264 -crf 36 -c:a copy clip-out.mp4</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ffmpeg -i clip-crf20.mp4 -c:v libx264 -r <span style="color:#ae81ff">36</span> -c:a copy clip-out.mp4
+</code></pre></div><p><code>-c</code> is short for <code>-coden</code> which stands for <code>code encode</code>. I don&rsquo;t know much about <code>ffmpeg</code>, but, from reading the man page, a stream input can be encoded multiple times.</p>
+<ul>
+<li><code>-c:v libx264</code> means libx264 encoder is applied to all video stream input.</li>
+<li><code>-r 36</code> means frame rate is set to <code>36</code> fps.</li>
+<li><code>-c:a copy</code> means copy all audio stream.</li>
+</ul>
+<p>To run docker using Dockerfile, do the following</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd <span style="color:#f92672">[</span>path-to-dir-with-dockerfile<span style="color:#f92672">]</span>
+docker build -t <span style="color:#f92672">[</span>sometags<span style="color:#f92672">]</span> .
+docker run --rm -it <span style="color:#f92672">[</span>sometags<span style="color:#f92672">]</span> <span style="color:#75715e"># or `docker run --rm -d [sometags]` if you want to run container in &#34;detach&#34; mode.</span>
+</code></pre></div><p>Note that it is a good practice to always use tags.</p>
+<p>That&rsquo;s it.
+Peace.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/container" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">container</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/dockerfile" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">dockerfile</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/evolution-of-asset-transaction/">Evolution of Asset Transaction</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

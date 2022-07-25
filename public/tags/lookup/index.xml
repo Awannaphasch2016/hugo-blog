@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lookup on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/lookup/</link>
+    <description>Recent content in lookup on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/lookup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</title>
+      <link>https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/</guid>
+      <description>I was trying to figure out +lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
+lets call this new command +lookup/definition-other-window Current possible solutions are
+ ignore validation step to make sure that the command runs succesfully.</description>
+    </item>
+    
+  </channel>
+</rss>

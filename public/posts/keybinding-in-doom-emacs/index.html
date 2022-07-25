@@ -6,8 +6,9 @@
     
     <title>Keybinding In Doom Emacs | Anak Wannaphaschaiyong</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.">
+    <meta name="description" content="Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages.">
     <meta name="generator" content="Hugo 0.68.3" />
     
     
@@ -31,23 +32,26 @@ If you use Evil mode without Emacs configuration framework such as Spacemacs or 
     
     
     <meta property="og:title" content="Keybinding In Doom Emacs" />
-<meta property="og:description" content="Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages." />
+<meta property="og:description" content="Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/" />
 
 <meta itemprop="name" content="Keybinding In Doom Emacs">
-<meta itemprop="description" content="Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages.">
+<meta itemprop="description" content="Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages.">
 
-<meta itemprop="wordCount" content="350">
+<meta itemprop="wordCount" content="449">
 
 
 
 <meta itemprop="keywords" content="blog,doom,keybinding," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Keybinding In Doom Emacs"/>
-<meta name="twitter:description" content="Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
-If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages."/>
+<meta name="twitter:description" content="Doom Emacs has its own keybinding system. A more accurate explaination is
+ Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
+ If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages."/>
 
 	
   </head>
@@ -125,24 +129,43 @@ If you use Evil mode without Emacs configuration framework such as Spacemacs or 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Doom Emacs has its own keybinding system. A more accurate access would be Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.</p>
-<p>If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to  know if your keybinding is setup properly and will always work as expected at any circumstances. The usually point of failure is when your keybinding is overwritten by other packages. Most of the time, creators of those packages don&rsquo;t use evil-mode, so their implementation don&rsquo;t respect evil-mode, rightfully so.</p>
-<p>This is annoying because there is no peace of mind. You can&rsquo;t assume that it will always works in all cases. It always a process of &ldquo;lets try it here, there, what about that, &hellip;&quot;. Because of this, sometimes if I don&rsquo;t need the binding that BADLY, I don&rsquo;t even try it.</p>
-<p>Another annoying point is it is one of those problem that you think it should be fixed long along. Also, its one of those that is not that hard to try to solve, but it isn&rsquo;t that interesting enough. You also have to expect iterative process of re-implementing things whenever edge cases came up. tedious process of boringness. And because it is solvable, you can&rsquo;t even blame others, but yourself to not solve it.</p>
-<p>Thanks God.</p>
-<p>Dooms Emacs solves this problem for us. I am not sure how much Doom Emacs fixed this problem. To my knowledge, I have no problem YET using Doom Emacs keybinding configuration system.</p>
-<p>About how to use it. I think its pretty obvious from provided examples in documentation.
-I will just explains how to think about it before setup your own key.</p>
-<p>Assuming that you use evil-mode,</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Doom Emacs has its own keybinding system. A more accurate explaination is</p>
+<blockquote>
+<p>Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.</p>
+</blockquote>
+<p>If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to  know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages. Most of the time, creators of those packages don&rsquo;t use evil-mode, so their implementations don&rsquo;t respect evil-mode, rightfully so.</p>
+<p>This is annoying because there is no peace of mind. You can&rsquo;t assume that it will always works in all cases. It always a process of &ldquo;lets try it here, there, what about that, &hellip;&quot;. Because of this, if I don&rsquo;t need the binding that BADLY, I don&rsquo;t even try it.</p>
+<p>Another annoying point is it is one of those problem that you think it should be fixed long along. Also, its one of those that is not that hard to try to solve, but it isn&rsquo;t interesting enough. On top of that, you also have to expect iterative process of re-implementing things whenever edge cases came up. tedious process of boringness. And because it is solvable, you can&rsquo;t even blame others, but yourself.</p>
+<p>Thanks God. Dooms Emacs solves this problem for us. I am not sure how much Doom Emacs fixed this problem. To my knowledge, I have no problem YET using Doom Emacs keybinding configuration system.</p>
+<p>Assuming that you use evil-mode and use <code>map!</code> to modify your key <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, you have to answer the following question.</p>
 <ol>
-<li>which map you will to use the key? (<code>:map</code>)</li>
-<li>which &ldquo;evil state&rdquo; or &ldquo;emacs state&rdquo; you expect to use the key?</li>
-<li>is there any condition you want to be true to enable the key? (:when)</li>
-<li>Do you use any prefix? if yes, is it <code>:leader</code>, <code>:localleader</code>, or <code>:prefix</code> (your customize prefix).</li>
+<li>What is the keymap you will use? (<code>:map</code>)</li>
+<li>Do you expect to use your keymap in &ldquo;evil state&rdquo; or &ldquo;emacs state&rdquo;?</li>
+<li>Is there any condition you want to be true to enable the key? (<code>:when</code>)</li>
+<li>Which prefix option do you choose, if any? is it <code>:leader</code>, <code>:localleader</code>, or <code>:prefix</code> (your customize prefix).</li>
+<li>What is the mode you want to enable your keymap? (<code>:after</code>)</li>
 </ol>
-<p>That&rsquo;s it really.</p>
+<p>As an example, I have <code>org-cdlatex-mode</code> enable when I open org mode file and <code>`</code> (uptick key) is map to <code>cdlatex-math-symbol</code> command when I am in <code>evil-insert-state</code>. I eval the following expression to assign <code>`</code> to nil to allow me to type <code>`</code> in <code>evil-insert-state</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(map! :after org-cdlatex-mode
+  (:map org-cdlatex-mode-map
+    <span style="color:#e6db74">&#34;`&#34;</span> <span style="color:#66d9ef">nil</span>))
+</code></pre></div><p>Without <code>map!</code>, you will have to write hook to run after <code>org-cdlatex-mode</code> is enable as followed.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun org-cdlatex-mode-map-hook ()
+  (<span style="color:#a6e22e">define-key</span> org-cdlatex-mode-map (kbd <span style="color:#e6db74">&#34;`&#34;</span>) <span style="color:#66d9ef">nil</span>))
+(eval-after-load <span style="color:#e6db74">&#39;org-cdltex-mode</span>
+  (add-hook <span style="color:#f92672">&#39;</span><span style="color:#e6db74">&#39;org-cdllatex-mode-hook</span> <span style="color:#e6db74">&#39;org-cdlatex-mode-map-hook</span>))
+</code></pre></div><p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-11 Mon]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I am not sure what is the difference usage between <code>with-eval-after-load</code> vs <code>eval-after-load</code>.</p>
 <p>That&rsquo;s it.
 Peace.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><code>!</code> suffix indicate Doom Emacs implementation. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 <ul class="pa0">
   
    <li class="list di">
@@ -175,6 +198,10 @@ Peace.</p>
 	   
 	     <li  class="mb2">
           <a href="/posts/using-terminals-in-doom-emacs/">Using terminals in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/">X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -229,10 +256,6 @@ Peace.</p>
 	    
 	     <li  class="mb2">
           <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
         </li>
 	    
     </ul>
