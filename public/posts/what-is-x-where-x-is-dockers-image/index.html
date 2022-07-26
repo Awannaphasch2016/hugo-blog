@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>What Is X Where X Is Docker&#39;s Image? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Edit log  [2022-07-25 Mon]    I was following &ldquo;What&rsquo;s A Docker Image Anyway?&quot; 1, but found that its content is no longer true, there are new changes to metadata of docker image, so I write this blog to reflect the changes that I observed at the time of writing.
+docker -v          Docker version 20.10.17 build 100c701    I write the following Dockerfile.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="What Is X Where X Is Docker&#39;s Image?" />
+<meta property="og:description" content="Edit log  [2022-07-25 Mon]    I was following &ldquo;What&rsquo;s A Docker Image Anyway?&quot; 1, but found that its content is no longer true, there are new changes to metadata of docker image, so I write this blog to reflect the changes that I observed at the time of writing.
+docker -v          Docker version 20.10.17 build 100c701    I write the following Dockerfile." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/what-is-x-where-x-is-dockers-image/" />
+
+<meta itemprop="name" content="What Is X Where X Is Docker&#39;s Image?">
+<meta itemprop="description" content="Edit log  [2022-07-25 Mon]    I was following &ldquo;What&rsquo;s A Docker Image Anyway?&quot; 1, but found that its content is no longer true, there are new changes to metadata of docker image, so I write this blog to reflect the changes that I observed at the time of writing.
+docker -v          Docker version 20.10.17 build 100c701    I write the following Dockerfile.">
+
+<meta itemprop="wordCount" content="693">
+
+
+
+<meta itemprop="keywords" content="docker,blog,docker-image," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What Is X Where X Is Docker&#39;s Image?"/>
+<meta name="twitter:description" content="Edit log  [2022-07-25 Mon]    I was following &ldquo;What&rsquo;s A Docker Image Anyway?&quot; 1, but found that its content is no longer true, there are new changes to metadata of docker image, so I write this blog to reflect the changes that I observed at the time of writing.
+docker -v          Docker version 20.10.17 build 100c701    I write the following Dockerfile."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">What Is X Where X Is Docker&#39;s Image?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><ul>
+<li>Edit log
+<ul>
+<li><!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-25 Mon]<!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+<p>I was following &ldquo;What&rsquo;s A Docker Image Anyway?&quot; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, but found that its content is no longer true, there are new changes to metadata of docker image, so I write this blog to reflect the changes that I observed at the time of writing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker -v
+</code></pre></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker version 20.10.17</td>
+<td>build 100c701</td>
+</tr>
+</tbody>
+</table>
+<p>I write the following Dockerfile.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo hihi<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> touch /hi<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm /hi<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;echo&#34;</span>, <span style="color:#e6db74">&#34;hello&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>I build container from Dockerfile above as followed</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker build -t scratch/example1
+</code></pre></div><p>This can be validated by running the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker history scratch/example1
+</code></pre></div><table>
+<thead>
+<tr>
+<th>IMAGE</th>
+<th>CREATED</th>
+<th>CREATED</th>
+<th>BY</th>
+<th>SIZE</th>
+<th>COMMENT</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fe1071a1af53</td>
+<td>30</td>
+<td>hours</td>
+<td>ago</td>
+<td>CMD</td>
+<td>echo</td>
+<td>hello</td>
+<td>0B</td>
+<td>buildkit.dockerfile.v0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>hours</td>
+<td>ago</td>
+<td>RUN</td>
+<td>/bin/sh</td>
+<td>-c</td>
+<td>rm</td>
+<td>/hi</td>
+<td>#</td>
+<td>buildkit</td>
+<td>0B</td>
+<td>buildkit.dockerfile.v0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>hours</td>
+<td>ago</td>
+<td>RUN</td>
+<td>/bin/sh</td>
+<td>-c</td>
+<td>touch</td>
+<td>/hi</td>
+<td>#</td>
+<td>buildkit</td>
+<td>0B</td>
+<td>buildkit.dockerfile.v0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>hours</td>
+<td>ago</td>
+<td>RUN</td>
+<td>/bin/sh</td>
+<td>-c</td>
+<td>echo</td>
+<td>hihi</td>
+<td>#</td>
+<td>buildkit</td>
+<td>0B</td>
+<td>buildkit.dockerfile.v0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>months</td>
+<td>ago</td>
+<td>/bin/sh</td>
+<td>-c</td>
+<td>#(nop)</td>
+<td>CMD</td>
+<td>bash</td>
+<td>0B</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>months</td>
+<td>ago</td>
+<td>/bin/sh</td>
+<td>-c</td>
+<td>#(nop)</td>
+<td>ADD</td>
+<td>&lt;3ccf747d646089ed7&gt;…</td>
+<td>72.8MB</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>To inspect what is going on underneath <code>docker build</code>, I save created image into tar file as followed <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker save --output scratch_example1 scratch/example1
+</code></pre></div><p><code>scratch-example1.tar</code> contains the following</p>
+<pre><code class="language-tar" data-lang="tar"> drwxr-xr-x       0/0             0 167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f/
+ -rw-r--r--       0/0             3 167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f/VERSION
+ -rw-r--r--       0/0           477 167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f/json
+ -rw-r--r--       0/0          1536 167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f/layer.tar
+ drwxr-xr-x       0/0             0 1fdea14b213c2f3f88f5a2eb66244810fceea42d7c1228fbbda7d686c8589d41/
+ -rw-r--r--       0/0             3 1fdea14b213c2f3f88f5a2eb66244810fceea42d7c1228fbbda7d686c8589d41/VERSION
+ -rw-r--r--       0/0           876 1fdea14b213c2f3f88f5a2eb66244810fceea42d7c1228fbbda7d686c8589d41/json
+ -rw-r--r--       0/0          1536 1fdea14b213c2f3f88f5a2eb66244810fceea42d7c1228fbbda7d686c8589d41/layer.tar
+ drwxr-xr-x       0/0             0 5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380/
+ -rw-r--r--       0/0             3 5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380/VERSION
+ -rw-r--r--       0/0           477 5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380/json
+ -rw-r--r--       0/0          1024 5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380/layer.tar
+ drwxr-xr-x       0/0             0 d85e86bc213d877934da6a64515dfaa38bdf4c979ce33e7dbcb0b58fd8d00bbd/
+ -rw-r--r--       0/0             3 d85e86bc213d877934da6a64515dfaa38bdf4c979ce33e7dbcb0b58fd8d00bbd/VERSION
+ -rw-r--r--       0/0           401 d85e86bc213d877934da6a64515dfaa38bdf4c979ce33e7dbcb0b58fd8d00bbd/json
+ -rw-r--r--       0/0       75153920 d85e86bc213d877934da6a64515dfaa38bdf4c979ce33e7dbcb0b58fd8d00bbd/layer.tar
+ -rw-r--r--       0/0          1362 fe1071a1af5308e79164f7533e0a4b910d15f278dfdaa6245fc6ffddfb8e119c.json
+ -rw-r--r--       0/0           513 manifest.json
+ -rw-r--r--       0/0            99 repositories
+</code></pre><p>Metadata of images layers are contained in <code>manifest.json</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  {
+    <span style="color:#f92672">&#34;Config&#34;</span>: <span style="color:#e6db74">&#34;fe1071a1af5308e79164f7533e0a4b910d15f278dfdaa6245fc6ffddfb8e119c.json&#34;</span>,
+    <span style="color:#f92672">&#34;RepoTags&#34;</span>: [
+      <span style="color:#e6db74">&#34;scratch/example1:latest&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;Layers&#34;</span>: [
+      <span style="color:#e6db74">&#34;d85e86bc213d877934da6a64515dfaa38bdf4c979ce33e7dbcb0b58fd8d00bbd/layer.tar&#34;</span>,
+      <span style="color:#e6db74">&#34;5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380/layer.tar&#34;</span>,
+      <span style="color:#e6db74">&#34;167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f/layer.tar&#34;</span>,
+      <span style="color:#e6db74">&#34;1fdea14b213c2f3f88f5a2eb66244810fceea42d7c1228fbbda7d686c8589d41/layer.tar&#34;</span>
+    ]
+  }
+]
+</code></pre></div><p>Inspecting <code>[hash]/layer.json</code>, it is clear that <code>[hash]/layer.json</code> contains meta data of layers which are created by command in Dockerfile e.g. RUN, CMD, etc. <code>[hash]/layer.json</code> has id and parent. Example of <code>[hash]/layer.json</code> is shown in &lt;233064065&gt;</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;167845793a0de123dc4c161f88156bc5f251e60b980a4c05c2d4614ba3f92b0f&#34;</span>,
+  <span style="color:#f92672">&#34;parent&#34;</span>: <span style="color:#e6db74">&#34;5fe796f180a876bb11d1a67d07372506b71b6a525d50f3fb90bb372595100380&#34;</span>,
+  <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;1970-01-01T00:00:00Z&#34;</span>,
+  <span style="color:#f92672">&#34;container_config&#34;</span>: {
+    <span style="color:#f92672">&#34;Hostname&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;Domainname&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;User&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;AttachStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;AttachStdout&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;AttachStderr&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;Tty&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;OpenStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;StdinOnce&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;Env&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;Cmd&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;Image&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;Volumes&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;WorkingDir&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;Entrypoint&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;OnBuild&#34;</span>: <span style="color:#66d9ef">null</span>,
+    <span style="color:#f92672">&#34;Labels&#34;</span>: <span style="color:#66d9ef">null</span>
+  },
+  <span style="color:#f92672">&#34;os&#34;</span>: <span style="color:#e6db74">&#34;linux&#34;</span>
+}
+</code></pre></div><p>New layer builds on top of previous layer where new layer contain a diff to the previous layer (Docker uses copy-on-write filesystem) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. From youngest layer to oldest layer depth (top to bottom), we get the following &lt;4880184960&gt; which align with content of <code>manifest.json</code> in &lt;4098582197&gt;.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org">1fd...
+57e...
+167...
+d85...
+</code></pre></div><p><code>[hash].json</code> contains meetadata of <code>Dockerfile</code>, see &lt;291829122&gt;</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;architecture&#34;</span>: <span style="color:#e6db74">&#34;amd64&#34;</span>,
+  <span style="color:#f92672">&#34;config&#34;</span>: {
+    <span style="color:#f92672">&#34;Env&#34;</span>: [
+      <span style="color:#e6db74">&#34;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;Cmd&#34;</span>: [
+      <span style="color:#e6db74">&#34;echo&#34;</span>,
+      <span style="color:#e6db74">&#34;hello&#34;</span>
+    ],
+    <span style="color:#f92672">&#34;ArgsEscaped&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;OnBuild&#34;</span>: <span style="color:#66d9ef">null</span>
+  },
+  <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-07-24T19:35:13.8021321Z&#34;</span>,
+  <span style="color:#f92672">&#34;history&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-02-02T02:14:45.667699167Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;/bin/sh -c #(nop) ADD file:3ccf747d646089ed7fbb43c40c45dd43e86f0674115f856efada93c7e4a63624 in / &#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-02-02T02:14:46.177066251Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;/bin/sh -c #(nop)  CMD [\&#34;bash\&#34;]&#34;</span>,
+      <span style="color:#f92672">&#34;empty_layer&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-07-24T19:35:10.4043161Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;RUN /bin/sh -c echo hihi # buildkit&#34;</span>,
+      <span style="color:#f92672">&#34;comment&#34;</span>: <span style="color:#e6db74">&#34;buildkit.dockerfile.v0&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-07-24T19:35:12.1260549Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;RUN /bin/sh -c touch /hi # buildkit&#34;</span>,
+      <span style="color:#f92672">&#34;comment&#34;</span>: <span style="color:#e6db74">&#34;buildkit.dockerfile.v0&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-07-24T19:35:13.8021321Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;RUN /bin/sh -c rm /hi # buildkit&#34;</span>,
+      <span style="color:#f92672">&#34;comment&#34;</span>: <span style="color:#e6db74">&#34;buildkit.dockerfile.v0&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#e6db74">&#34;2022-07-24T19:35:13.8021321Z&#34;</span>,
+      <span style="color:#f92672">&#34;created_by&#34;</span>: <span style="color:#e6db74">&#34;CMD [\&#34;echo\&#34; \&#34;hello\&#34;]&#34;</span>,
+      <span style="color:#f92672">&#34;comment&#34;</span>: <span style="color:#e6db74">&#34;buildkit.dockerfile.v0&#34;</span>,
+      <span style="color:#f92672">&#34;empty_layer&#34;</span>: <span style="color:#66d9ef">true</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;os&#34;</span>: <span style="color:#e6db74">&#34;linux&#34;</span>,
+  <span style="color:#f92672">&#34;rootfs&#34;</span>: {
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;layers&#34;</span>,
+    <span style="color:#f92672">&#34;diff_ids&#34;</span>: [
+      <span style="color:#e6db74">&#34;sha256:36ffdceb4c77bf34325fb695e64ea447f688797f2f1e3af224c29593310578d2&#34;</span>,
+      <span style="color:#e6db74">&#34;sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef&#34;</span>,
+      <span style="color:#e6db74">&#34;sha256:04dc7596c93f628a30235c38a4a33cf35eab61b48b6cccda83b83ae8646021e1&#34;</span>,
+      <span style="color:#e6db74">&#34;sha256:2c751040e46bbe19f7caf612d68652d5b5772dc3bca11d93f86fa888087217d2&#34;</span>
+    ]
+  }
+}
+</code></pre></div><h2 id="docker-images">docker images</h2>
+<p>Docker image contains information on what changed to the images it&rsquo;s based on. Each image has a parent unless the image is &ldquo;scratch&rdquo; image <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<ul>
+<li>container images compose of base OS + application + user libraries.</li>
+<li>base OS is not a full-blown OS.</li>
+<li>images contains binaries and data in a read-only files system.
+<ul>
+<li>a read-write layer is added when the contianer runs.</li>
+</ul>
+</li>
+</ul>
+<p>[how to create docket images?]</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://vsupalov.com/whats-a-docker-image/">What&rsquo;s A Docker Image Anyway</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Alternatively, you can use <code>dive</code>. In <a href="https://github.com/wagoodman/dive">dive github readme</a>, dive is described as &ldquo;A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image.&rdquo; <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-07-25 Mon]<!-- raw HTML omitted --><!-- raw HTML omitted -->, I am not sure if new layer still only contain diff. I add a footnote to be precise on information that I am not 100 percent certain. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://vsupalov.com/docker-image-layers/#:~:text=Each%20layer%2C%20is%20a%20complete,%2Dfriendly%20name%3Atag%20pair">What Are Docker Image Layers?</a>. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/docker-image" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker-image</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/running-docker-container-with-dockerfile/">Running Docker Container With Dockerfile.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

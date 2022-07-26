@@ -138,6 +138,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/docker-image/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/dockerfile/</loc>
   </url>
   
@@ -395,6 +399,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/using-terraform-to-set-up-ec2-instances-for-data-science-projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/what-is-x-where-x-is-dockers-image/</loc>
   </url>
   
   <url>
