@@ -39,4 +39,4 @@ Each step of assets transaction evolution create new types of object and new typ
 This blog provide one mental framework to think about the world and emphasize on significant of blockchain technology.
 
 That's it.
-Peace.
+Peace..
