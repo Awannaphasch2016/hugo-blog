@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Original OOP is fundamentally different to Modern OOP. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Modern OOP is misused and misunderstood. Modern OOP create an object to abstract over the object internal state. Originally, OOP is intended to be used to abstract objects over the most important processes that take place within environment in which objects exit. This is done by exposing interfaces that are capable of interacting with the outside world 1. In the other word, an object should be built to be resurgence, to protect itself from dynamic environment.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Original OOP is fundamentally different to Modern OOP." />
+<meta property="og:description" content="Modern OOP is misused and misunderstood. Modern OOP create an object to abstract over the object internal state. Originally, OOP is intended to be used to abstract objects over the most important processes that take place within environment in which objects exit. This is done by exposing interfaces that are capable of interacting with the outside world 1. In the other word, an object should be built to be resurgence, to protect itself from dynamic environment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/original-oop-is-fundamentally-different-to-modern-oop/" />
+
+<meta itemprop="name" content="Original OOP is fundamentally different to Modern OOP.">
+<meta itemprop="description" content="Modern OOP is misused and misunderstood. Modern OOP create an object to abstract over the object internal state. Originally, OOP is intended to be used to abstract objects over the most important processes that take place within environment in which objects exit. This is done by exposing interfaces that are capable of interacting with the outside world 1. In the other word, an object should be built to be resurgence, to protect itself from dynamic environment.">
+
+<meta itemprop="wordCount" content="580">
+
+
+
+<meta itemprop="keywords" content="oop,blog,design,philosophy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Original OOP is fundamentally different to Modern OOP."/>
+<meta name="twitter:description" content="Modern OOP is misused and misunderstood. Modern OOP create an object to abstract over the object internal state. Originally, OOP is intended to be used to abstract objects over the most important processes that take place within environment in which objects exit. This is done by exposing interfaces that are capable of interacting with the outside world 1. In the other word, an object should be built to be resurgence, to protect itself from dynamic environment."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Original OOP is fundamentally different to Modern OOP.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Modern OOP is misused and misunderstood. Modern OOP create an object to abstract over the object internal state. Originally, OOP is intended to be used to abstract objects over the most important processes that take place within environment in which objects exit. This is done by exposing interfaces that are capable of interacting with the outside world <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. In the other word, an object should be built to be resurgence, to protect itself from dynamic environment. This should be done not by shielding itself from outside world, but by allowing itself to be adaptable to the world in which its in.</p>
+<p>Alan Kay argues that smallest unit of program should be objects not data structure and procedure. Data structure is static and procedure don&rsquo;t remember its state. On the other hand, objects can dynamically update its state.</p>
+<p>Reflecting on the philosophy of OOP, I find more similarity to functional programming (FP) than to modern OOP. FP can be implemented to be recursive, to remember its state. FP is built on pure functions which is a function with no side effects. This property of having no side effect encapsulates pure functions by &ldquo;exposing interface that capable of interacting with the outside world&rdquo; &ndash; I quote the exact same description used to describe OOP.</p>
+<p>I argue that the reason that Alan Kay don&rsquo;t see functional programming as a type of OOP because he focuses too much on implementing programmable objects to be equivalent of physical objects which are fatal flaw in his believe because programmable objects live in world of bit while physical objects live in world of atom. However, his idea of having programmable objects as smallest unit of exchange may still be largely valid as one user named mpweiher from Hacker News explains Alan Kay view on FP. He put it nicely as followed <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<blockquote>
+<p>I obviously can&rsquo;t tell you what he&rsquo;s thinking, but I can make an educated guess:
+In the video (and almost anywhere else you look) you&rsquo;ll note he talks about recursion on the concept of &ldquo;computer&rdquo; as a way to scale, because that way the parts are as powerful as the whole.</p>
+<p>If you split that concept into the sub-notions of &ldquo;procedures&rdquo; and &ldquo;data&rdquo;, you no longer have that recursive principle, and &ldquo;functions&rdquo; in this context are sufficiently equivalent to procedures.</p>
+<p>Going the other way, functions don&rsquo;t really scale up, many if not most things in computing are not functions to be computed. One could argue that computers and &ldquo;computer science&rdquo; are misnamed, as computation is more the exception than the rule. &ldquo;Data-around-shufflers&rdquo; would be more appropriate.</p>
+<p>I didn&rsquo;t see the exact monad references, but they look like ways of working around the fact that the &ldquo;function&rdquo; primitive is inappropriate. It is really nice, mind you, and has wonderful properties. Kind of like circles as the basis for astronomical orbits: they are &ldquo;perfect&rdquo;, but the world isn&rsquo;t perfect in the same way, so trying to model the imperfect world with these perfect primitives leads to having to introduce epicycles/monads.</p>
+</blockquote>
+<p>In summary, mpweiher argues that a &ldquo;pure function&rdquo; in FP is not equivalent of an &ldquo;object&rdquo; in OOP because pure function is too &ldquo;perfect&rdquo; and is not capable of describing the real world. His premise lead to a conclusion that monad is needed to patch &ldquo;imperfection&rdquo; caused by flawed assumption built on &ldquo;pure function.&rdquo; If there exists such an &ldquo;OOP object&rdquo; claimed by Alan Kay, we may not need &ldquo;monad-like tool&rdquo; after all.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://youtu.be/NTRLK2F_THY?t=633">https://youtu.be/NTRLK2F_THY?t=633</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://news.ycombinator.com/item?id=13035577">https://news.ycombinator.com/item?id=13035577</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/oop" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">oop</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/design" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">design</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/philosophy" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">philosophy</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/freedom-and-power-are-two-sides-of-the-same-coin/">Freedom and Power are two sides of the same coin.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/html-is-a-bad-design/">Html is a Bad Design.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/incentives-of-owning-money/">Incentives Of Owning Money.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/justifying-existent-of-company/">Justifying Existent Of Company.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/money-is-a-type-of-token/">Money Is A Type Of Token.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/society-as-a-function-of-attention/">Society As A Function Of Attention.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
