@@ -1,7 +1,7 @@
 +++
 title = "Assess Your Level of Understanding"
 author = ["Anak Wannaphaschaiyong"]
-tags = ["blog", "story-telling"]
+tags = ["philosophy", "blog", "story-telling"]
 draft = false
 +++
 

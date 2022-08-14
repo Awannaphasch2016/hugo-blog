@@ -36,6 +36,16 @@ I define blog as followed
     </item>
     
     <item>
+      <title>A Brief Story of Evolution and Widespread Adoption of The Internet</title>
+      <link>https://awannaphasch2016.github.io/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/</guid>
+      <description>&amp;ldquo;Internetworking Architecture&amp;rdquo; (Leiner et al. 2009) was a fundamental design that enable machines and computers to communicate via internet regardless of underlying communication protocol.
+TCP/IP were implemented in UNIX operating system triggers a widespread adoption of internet (Leiner et al. 2009). Dispersion of protocols began in research community. Recall that predecessor of internet project (it was named &amp;ldquo;internetworking&amp;rdquo; at the time) was funded with the goal to increase speed and efficiency of research collaborations.</description>
+    </item>
+    
+    <item>
       <title>A Note of X where X = AWS EC2 services.</title>
       <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-ec2-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -259,6 +269,17 @@ Without aya, one would have do the following</description>
     </item>
     
     <item>
+      <title>Html is a Bad Design.</title>
+      <link>https://awannaphasch2016.github.io/posts/html-is-a-bad-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/html-is-a-bad-design/</guid>
+      <description>Alan Kay famously critique World Wide Web (WWW) where HTML is originated. He publicly dislike HTML as followed
+ Things like [HTML] happens when we let physicists play with computer.
+ He stated that HTML is a bad markup language because people who build HTML thinks their way of representing web page is the only way. He mentioned a (older and) better alternative to HTML is to define protocol based on ordered region on a tape &amp;mdash; back when tapes were still popular means of storage in 1950&amp;rsquo;s.</description>
+    </item>
+    
+    <item>
       <title>Implementation of X where X = Emac&#39;s auth-source.</title>
       <link>https://awannaphasch2016.github.io/posts/implementation-of-x-where-x-emacs-auth-source/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -277,6 +298,15 @@ machine api.github.com login user-name password user-password auth-source-search
       <guid>https://awannaphasch2016.github.io/posts/incentives-of-owning-money/</guid>
       <description>Edit History  last edit on [2022-07-30 Sat]    Money is the most flexible medium of exchange. For more detail please refer to my blog named &amp;ldquo;Money Is A Type of Token.&amp;rdquo;
 Motivation drive efforts. Effort is a seed of creation and innovation. It just happens that money provides universal motivation due to its utility which is measured by speed of conversion from itself to other assets. Money has fastest conversion rates.</description>
+    </item>
+    
+    <item>
+      <title>Justifying Existent Of Company.</title>
+      <link>https://awannaphasch2016.github.io/posts/justifying-existent-of-company/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/justifying-existent-of-company/</guid>
+      <description>TBD</description>
     </item>
     
     <item>
@@ -349,6 +379,16 @@ FROMubuntuRUN apt-get updateRUN apt-get install -y wgetRUN apt-get install -y un
 Once that done, you can use the following to get your account information.
 aws sts get-caller-identity It will not show secret key aws_access_key_id and aws_secret_access_key which you have set. It will only show information of your account including: UserId, AccountId, Arn.
 AWS users Note that 1 account has 1 root and can have many IAM user.</description>
+    </item>
+    
+    <item>
+      <title>Society As A Function Of Attention.</title>
+      <link>https://awannaphasch2016.github.io/posts/society-as-a-function-of-attention/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/society-as-a-function-of-attention/</guid>
+      <description>Incentive is an underlying mechanism that drive society at any scale including individual, group of individuals, and human population as a whole.
+Incentive is an abstract concept. Physically, incentives are driven by money, refer to my blog titled &amp;ldquo;Incentives of Owning Money&amp;rdquo; for more detail. Another important concept is to accept that money is an indirect form of freedom and power, refer to my blog titled &amp;ldquo;Blog Freedom and Power are two sides of the same coin&amp;rdquo; for more detail.</description>
     </item>
     
     <item>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/html/</link>
+    <description>Recent content in html on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Html is a Bad Design.</title>
+      <link>https://awannaphasch2016.github.io/posts/html-is-a-bad-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/html-is-a-bad-design/</guid>
+      <description>Alan Kay famously critique World Wide Web (WWW) where HTML is originated. He publicly dislike HTML as followed
+ Things like [HTML] happens when we let physicists play with computer.
+ He stated that HTML is a bad markup language because people who build HTML thinks their way of representing web page is the only way. He mentioned a (older and) better alternative to HTML is to define protocol based on ordered region on a tape &amp;mdash; back when tapes were still popular means of storage in 1950&amp;rsquo;s.</description>
+    </item>
+    
+  </channel>
+</rss>

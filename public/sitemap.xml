@@ -26,6 +26,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-aws-ec2-services/</loc>
   </url>
   
@@ -47,6 +51,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/asset/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/attention/</loc>
   </url>
   
   <url>
@@ -98,6 +106,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/company/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/comparison-of-straight.el-to-other-emacs-package-manager/</loc>
   </url>
   
@@ -123,6 +135,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/debug/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/design/</loc>
   </url>
   
   <url>
@@ -182,6 +198,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/email/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/enable-x11-display-in-wsl2/</loc>
   </url>
   
@@ -199,6 +219,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/evolution-of-asset-transaction/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/finance/</loc>
   </url>
   
   <url>
@@ -223,6 +247,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/git-workflow-for-team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/history/</loc>
   </url>
   
   <url>
@@ -266,6 +294,14 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/html/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/html-is-a-bad-design/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/hugo/</loc>
   </url>
   
@@ -286,7 +322,15 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/internet/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/jekyll/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/justifying-existent-of-company/</loc>
   </url>
   
   <url>
@@ -382,6 +426,14 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/society/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/society-as-a-function-of-attention/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/story-telling/</loc>
   </url>
   
@@ -391,6 +443,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/tcp/</loc>
   </url>
   
   <url>
@@ -442,11 +498,19 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/world-wide-web-www-note/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/writing/</loc>
   </url>
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/writing-better-git-comment-message/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/www/</loc>
   </url>
   
   <url>
