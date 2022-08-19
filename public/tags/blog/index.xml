@@ -401,6 +401,19 @@ Incentive is an abstract concept. Physically, incentives are driven by money, re
     </item>
     
     <item>
+      <title>Using jq command tools to filter JSON.</title>
+      <link>https://awannaphasch2016.github.io/posts/using-jq-command-tools-to-filter-json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/using-jq-command-tools-to-filter-json/</guid>
+      <description>This blog summarizes jq documentation&amp;rsquo;s tutorial 1.
+If you can fully understand what the following command do, you don&amp;rsquo;t need read the rest of the blog. That&amp;rsquo;s pretty much sum up all jq can do.
+curl &amp;#39;https://api.github.com/repos/stedolan/jq/commits?per_page=5&amp;#39; | jq &amp;#39;[.[] | {message: .commit.message, name: .commit.committer.name, parents: [.parents[].html_url]}]&amp;#39; If you are still confused, read on.
+There are only 4 concepts in jq shown below.
+# pipelining jq &amp;#39;.[] | {name: [.key[].childkey]} &amp;#39; # only apply to list jq &amp;#39;.</description>
+    </item>
+    
+    <item>
       <title>Using terminals in Doom Emacs.</title>
       <link>https://awannaphasch2016.github.io/posts/using-terminals-in-doom-emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

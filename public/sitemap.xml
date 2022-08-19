@@ -102,6 +102,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/cmd/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/collaboration/</loc>
   </url>
   
@@ -330,6 +334,14 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/jg/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/json/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/justifying-existent-of-company/</loc>
   </url>
   
@@ -483,6 +495,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/useful-emacs-command-and-snippets-for-writing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/using-jq-command-tools-to-filter-json/</loc>
   </url>
   
   <url>

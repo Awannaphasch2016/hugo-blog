@@ -257,15 +257,16 @@ Commands    commands key doom keys custom keys descriptions     capitalize-regio
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/using-terminals-in-doom-emacs/" class="link black dim">
-        Using terminals in Doom Emacs.
+      <a href="/posts/using-jq-command-tools-to-filter-json/" class="link black dim">
+        Using jq command tools to filter JSON.
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      To open multiple terminal, a neat trick is to rename file buffer that terminal is opened 1.
-To open file from terminal, one can just M-x find-file in the terminal buffer.
-  stackoverflow: More than one emacs terminal &#x21a9;&#xfe0e;
-   
+      This blog summarizes jq documentation&rsquo;s tutorial 1.
+If you can fully understand what the following command do, you don&rsquo;t need read the rest of the blog. That&rsquo;s pretty much sum up all jq can do.
+curl &#39;https://api.github.com/repos/stedolan/jq/commits?per_page=5&#39; | jq &#39;[.[] | {message: .commit.message, name: .commit.committer.name, parents: [.parents[].html_url]}]&#39; If you are still confused, read on.
+There are only 4 concepts in jq shown below.
+# pipelining jq &#39;.[] | {name: [.key[].childkey]} &#39; # only apply to list jq &#39;.
     </div>
   </div>
 </div>
