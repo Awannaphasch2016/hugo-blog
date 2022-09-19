@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
+Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
+In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  " />
+<meta property="og:description" content="I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
+Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
+In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" />
+
+<meta itemprop="name" content="  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  ">
+<meta itemprop="description" content="I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
+Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
+In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.">
+
+<meta itemprop="wordCount" content="568">
+
+
+
+<meta itemprop="keywords" content="number-theory,crypto-engineering,abstract-algebra,blog,ea,euclidean-algorithm,bezourt-theorem,extended-euclidean-algorithm,eea," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  "/>
+<meta name="twitter:description" content="I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
+Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
+In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.</p>
+<p>Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.</p>
+<p>In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.</p>
+<p>In these series, prerequisite of knowledge will be required to fully understand the blog. Keep that in mind.</p>
+<p>I suggest reader to watch video on the topic first. The blog is served as a narrated story that designed to fit how human learn and think of things. That&rsquo;s it. Human thinks in narrative.</p>
+<p>Lets start.</p>
+<p>Euclidean algorithm (EA) is a tool that is used to find greatest command denominator (gcd). EA is interesting in that it has a recursive behavior.</p>
+<p>One important thing to note here is that recursive behavior is attractive to algorithms implemented using computer because it allows algorithm to be efficient. Recursion is easy to optimized for maximum computer performance. A field whose focus is on computer performance naturally recursive pattern, such as cryptography engineering.</p>
+<p>Next up, we have Bezout theorem. Bezout theorem observes a pattern that involve 2 integers and their gcd.
+More precisely, \(az + bt = d\) where a, b are integer, and d is a gcd of z and t.</p>
+<p>Apparently, recursive algorithm of EA output a result that can be expressed in \(az + bt = d\). Expressing EA using Bezout&rsquo;s theorem&rsquo;s equation, called &ldquo;Bezout&rsquo;s identity,&rdquo; result in a new algorithm called extended euclidean algorithm (EEA).</p>
+<p>Some people may argue that jumping from EA to EEA  is to trivial to give it a name, but, just like a function, when sequence of operations are used often enough, programmer will eventually convert it to a function and give it a name.</p>
+<p>Where is EEA often used?
+EEA is often used to find multiplicative inverse of a (\(a^{-1}\)) given a mod b.</p>
+<p>Thinking of EEA as a function, we need to put condition on the input such that output EEA guarantees certain rules.</p>
+<p>We know that EEA is EA expressed as Bezout&rsquo;s identity. We also know that gcd of relative prime number is 1. This implies that applying EEA on relative prime number will get \(az + bt = 1\).</p>
+<p>To use EEA to find multiplicative inverse, we need to change EEA&rsquo;a input conditions as followed</p>
+<ol>
+<li>the 2 integers must be relative primes.</li>
+<li>one of the integer must be a prime.</li>
+<li>the two input, s and t, must be of form (s mod t) where t is prime.</li>
+</ol>
+<p>Given the input condition above, applying EEA on s and t where t is prime. we know that output EEA on the 2 input can be expressed as</p>
+<p>\[as + bt = 1 \text{ (mod t)}\]</p>
+<p>then
+\[as + 0 = 1 \]</p>
+<p>Using multiplicative inverse property, \(x * x^{-1} = 1\), we get \(a = s^{-1}\).</p>
+<p>This shows condition of when to use EEA to get multiplicative inverse.</p>
+<p>This is my first blog on math. It is still awkward to write. My writing style is expected to evolve as I get more familiar with writing about math.</p>
+<p>That&rsquo;s it.
+peace.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/number-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">number-theory</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/crypto-engineering" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">crypto-engineering</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/abstract-algebra" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">abstract-algebra</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ea" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ea</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/euclidean-algorithm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">euclidean-algorithm</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/bezourt-theorem" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">bezourt-theorem</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/extended-euclidean-algorithm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">extended-euclidean-algorithm</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/eea" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">eea</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/">Dev Logs: Auto-YASnippet (aka aya) dive deep.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/economic-inside-blockchain-how-does-supply-demand-mechanism-works-in-blockchain/">Economic inside blockchain: How does supply-demand mechanism works in blockchain?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/enable-x11-display-in-wsl2/">Enable x11 display in WSL2</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
