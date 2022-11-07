@@ -168,6 +168,17 @@ All org roam does is the following:
     </item>
     
     <item>
+      <title>Cryptography Engineering</title>
+      <link>https://awannaphasch2016.github.io/posts/cryptography-engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/cryptography-engineering/</guid>
+      <description>Blog blog Explaining X where X = Montgomery form for efficient multiprecision multiplication arithmetic. modular-arithmetic Prerequisites are the following
+ Residue class of modulo N is all \(a\) that satisfy \(a + kN\) where N is a constant and \(k \in \mathbb{Z}\).  Montgomery multiplication is a method for performing fast modular multiplication.
+The algorithm uses the Montgomery forms of \(a\) and \(b\) to efficiently compute the Montgomery form of \(ab \mod N\).</description>
+    </item>
+    
+    <item>
       <title>Dev Logs: Auto-YASnippet (aka aya) dive deep.</title>
       <link>https://awannaphasch2016.github.io/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

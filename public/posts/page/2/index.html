@@ -170,6 +170,25 @@ All org roam does is the following:
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/cryptography-engineering/" class="link black dim">
+        Cryptography Engineering
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Blog blog Explaining X where X = Montgomery form for efficient multiprecision multiplication arithmetic. modular-arithmetic Prerequisites are the following
+ Residue class of modulo N is all \(a\) that satisfy \(a + kN\) where N is a constant and \(k \in \mathbb{Z}\).  Montgomery multiplication is a method for performing fast modular multiplication.
+The algorithm uses the Montgomery forms of \(a\) and \(b\) to efficiently compute the Montgomery form of \(ab \mod N\).
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/" class="link black dim">
         Dev Logs: Auto-YASnippet (aka aya) dive deep.
       </a>
@@ -251,26 +270,6 @@ Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Resources are provided in my roam research note.
 I successfully connect x-apps via x11 protocol by first installing and launching xming server. Xming application provides x11-server. Then, I need to tell the wsl2 &ldquo;address and port of X11 server to connect wsl2 application to&rdquo; (my note on x11 can be seen here) X11 server is enlisted as WSL2 entrusted DNS which located in resolve.conf. (my note on resolve.conf can be seen here.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/" class="link black dim">
-        Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Current Solution as of &lt;2022-03-02 Wed&gt;. The solution only works on doom emacs only, I found that pdf-tools must be install with init.el.
-I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
-I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
-Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
     </div>
   </div>
 </div>
