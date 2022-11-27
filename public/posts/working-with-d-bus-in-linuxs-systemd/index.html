@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Working with D-Bus in Linux&#39;s systemd. | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Working with D-Bus in Linux&#39;s systemd." />
+<meta property="og:description" content="Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/" />
+
+<meta itemprop="name" content="Working with D-Bus in Linux&#39;s systemd.">
+<meta itemprop="description" content="Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.">
+
+<meta itemprop="wordCount" content="230">
+
+
+
+<meta itemprop="keywords" content="linux,blog,systemd,dbud,middleware," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Working with D-Bus in Linux&#39;s systemd."/>
+<meta name="twitter:description" content="Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Working with D-Bus in Linux&#39;s systemd.</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Quoting &ldquo;D-Bus integration in Emacs&rdquo; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, D-Bus is defined as followed</p>
+<blockquote>
+<p>D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.</p>
+</blockquote>
+<p>According to <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by <code>/</code>. Communications to these applications are either &ldquo;methods&rdquo; (requests/responds) or &ldquo;signals&rdquo; (pub/sub). These form of communication is called &ldquo;interface&rdquo; of the application. Name of Interfaces is append to application&rsquo;s name.</p>
+<p>To be honest, I still don&rsquo;t know what is the different between object and application. According to <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, I see &ldquo;object&rdquo; (represented as path) as a way to create arbitrary name to refers to a specific application. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Say I want to add new client D-Bus application to add <code>org-clock</code> notification functionality in Emacs, I have to put add systemd service file at <code>/usr/share/dbus-1/services/</code>. Note that I am using Ubuntu distro on Wsl2 on Window 10. Example of the file name is <code>org.freedesktop.Notifications.service</code>. I speculate that the file is an &ldquo;interface&rdquo; to application named <code>org.freedesktop.Notifications</code></p>
+<p>In <code>org.freedesktop.Notifications.service</code>, I wrote</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/usr/lib/notification-daemon/notification-daemon
+</code></pre></div><p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>~milfex-lostex</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.gnu.org/software/emacs/manual/html_mono/dbus.html#Overview">https://www.gnu.org/software/emacs/manual/html_mono/dbus.html#Overview</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>this works like <code>wire</code> in Urbit&rsquo;s Gall application. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/systemd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">systemd</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/dbud" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">dbud</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/middleware" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">middleware</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/">Getting source code of distributed binary package in Ubuntu</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

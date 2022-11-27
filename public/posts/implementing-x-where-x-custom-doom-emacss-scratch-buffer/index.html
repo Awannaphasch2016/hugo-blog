@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  " />
+<meta property="og:description" content="I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" />
+
+<meta itemprop="name" content="  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  ">
+<meta itemprop="description" content="I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).">
+
+<meta itemprop="wordCount" content="649">
+
+
+
+<meta itemprop="keywords" content="doom,blog,implementation,scratch,module," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  "/>
+<meta name="twitter:description" content="I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME)."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.</p>
+<p>The main function I started to modify is  <code>doom/open-scratch-buffer</code>. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.</p>
+<p><code>doom/open-scratch-buffer</code> does the following</p>
+<ul>
+<li>check if scratch will open in the same buffer or as pop up buffer</li>
+<li>Then, it passes arguments to <code>(doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME)</code>.</li>
+</ul>
+<p><code>doom-scratch-buffer</code> does the following</p>
+<ul>
+<li>create buffer if the name doesn&rsquo;t already exist</li>
+<li>restore existing buffer if buffer already opened by running <code>(doom--load-persistent-scratch-buffer project-name)</code></li>
+<li>add the scratch buffer to <code>doom-scratch-buffers</code></li>
+<li>add related hooks. then open the buffer.</li>
+</ul>
+<p>I ended up copied code from <code>scratch.el</code> and modified it. Modification was pretty straight forward. First, I simplified arguments to pass as a way to poke the system to match my prediction of its behavior to its actual behavior.</p>
+<p>I learned about how scratch page persist content. Content of doom scratch buffer is saved to <code>~/.emacs.d/.local/etc/scratch/__default.el</code> whenever its closed. To persist my scratch buffer content, I created <code>~/.emacs.d/.local/etc/scratch/__now-n-next.el</code> to use inplace of <code>~/.emacs.d/.local/etc/scratch/__default.el</code>.</p>
+<p>After this step, I get the following code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun anak/open-scratch-buffer (<span style="color:#66d9ef">&amp;optional</span> arg)
+  <span style="color:#e6db74">&#34;Pop up a persistent scratch buffer.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">If passed the prefix ARG, do not restore the last scratch buffer.
+</span><span style="color:#e6db74">If PROJECT-P is non-nil, open a persistent scratch buffer associated with the
+</span><span style="color:#e6db74">  current project.&#34;</span>
+  (interactive <span style="color:#e6db74">&#34;P&#34;</span>)
+  (let (projectile-enable-caching)
+    (<span style="color:#a6e22e">funcall</span>
+     <span style="color:#a6e22e">#&#39;</span>pop-to-buffer
+     <span style="color:#75715e">;; #&#39;switch-to-buffer</span>
+     (anak/scratch-buffer
+      arg
+      <span style="color:#e6db74">&#39;org-mode</span>
+      default-directory
+      <span style="color:#66d9ef">nil</span>))))
+
+(defun anak/scratch-buffer (<span style="color:#66d9ef">&amp;optional</span> dont-restore-p mode directory project-name)
+  <span style="color:#e6db74">&#34;Return a scratchpad buffer in major MODE.&#34;</span>
+  (let* ((<span style="color:#a6e22e">buffer-name</span> <span style="color:#e6db74">&#34;*anak:now-n-next*&#34;</span>)
+         (buffer (<span style="color:#a6e22e">get-buffer</span> <span style="color:#a6e22e">buffer-name</span>)))
+    (with-current-buffer
+        (or buffer (<span style="color:#a6e22e">get-buffer-create</span> <span style="color:#a6e22e">buffer-name</span>))
+      (setq default-directory directory)
+      (setq-local so-long--inhibited <span style="color:#66d9ef">t</span>)
+      (if dont-restore-p
+          (<span style="color:#a6e22e">erase-buffer</span>)
+        (unless buffer
+          (anak/load-persistent-scratch-buffer project-name)
+          (when (and (<span style="color:#a6e22e">eq</span> major-mode <span style="color:#e6db74">&#39;fundamental-mode</span>)
+                     (<span style="color:#a6e22e">functionp</span> mode))
+            (<span style="color:#a6e22e">funcall</span> mode))))
+      (cl-pushnew (<span style="color:#a6e22e">current-buffer</span>) doom-scratch-buffers)
+      (add-transient-hook! <span style="color:#e6db74">&#39;doom-switch-buffer-hook</span> (anak/persist-scratch-buffers-h))
+      (add-transient-hook! <span style="color:#e6db74">&#39;doom-switch-window-hook</span> (anak/persist-scratch-buffers-h))
+      (add-hook <span style="color:#e6db74">&#39;kill-buffer-hook</span> <span style="color:#a6e22e">#&#39;</span>anak/persist-scratch-buffer-h <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;local</span>)
+      (<span style="color:#a6e22e">run-hooks</span> <span style="color:#e6db74">&#39;doom-scratch-buffer-created-hook</span>)
+      (<span style="color:#a6e22e">current-buffer</span>))))
+
+(defvar anak/scratch-default-file <span style="color:#e6db74">&#34;__now-n-next&#34;</span>
+  <span style="color:#e6db74">&#34;The default file name for a project-less scratch buffer.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Will be saved in </span><span style="color:#e6db74">`doom-scratch-dir&#39;</span><span style="color:#e6db74">.&#34;</span>)
+
+(defun anak/persist-scratch-buffer-h ()
+  <span style="color:#e6db74">&#34;Save the current buffer to </span><span style="color:#e6db74">`doom-scratch-dir&#39;</span><span style="color:#e6db74">.&#34;</span>
+  (let ((content (<span style="color:#a6e22e">buffer-substring-no-properties</span> (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>)))
+        (<span style="color:#a6e22e">point</span> (<span style="color:#a6e22e">point</span>))
+        (mode major-mode))
+    (with-temp-file
+        (<span style="color:#a6e22e">expand-file-name</span> (<span style="color:#a6e22e">concat</span> anak/scratch-default-file
+                                  <span style="color:#e6db74">&#34;.el&#34;</span>)
+                          doom-scratch-dir)
+      (<span style="color:#a6e22e">prin1</span> (<span style="color:#a6e22e">list</span> content
+                   <span style="color:#a6e22e">point</span>
+                   mode)
+             (<span style="color:#a6e22e">current-buffer</span>)))))
+
+(defun anak/load-persistent-scratch-buffer (project-name)
+  (setq-local doom-scratch-current-project
+              (or project-name
+                  anak/scratch-default-file))
+  (let ((smart-scratch-file
+         (<span style="color:#a6e22e">expand-file-name</span> (<span style="color:#a6e22e">concat</span> doom-scratch-current-project <span style="color:#e6db74">&#34;.el&#34;</span>)
+                           doom-scratch-dir)))
+    (make-directory doom-scratch-dir <span style="color:#66d9ef">t</span>)
+    (when (<span style="color:#a6e22e">file-readable-p</span> smart-scratch-file)
+      (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Reading %s&#34;</span> smart-scratch-file)
+      (cl-destructuring-bind (content <span style="color:#a6e22e">point</span> mode)
+          (with-temp-buffer
+            (save-excursion (<span style="color:#a6e22e">insert-file-contents</span> smart-scratch-file))
+            (<span style="color:#a6e22e">read</span> (<span style="color:#a6e22e">current-buffer</span>)))
+        (<span style="color:#a6e22e">erase-buffer</span>)
+        (<span style="color:#a6e22e">funcall</span> mode)
+        (<span style="color:#a6e22e">insert</span> content)
+        (<span style="color:#a6e22e">goto-char</span> <span style="color:#a6e22e">point</span>)
+        <span style="color:#66d9ef">t</span>))))
+
+(defun anak/persist-scratch-buffers-h ()
+  <span style="color:#e6db74">&#34;Save all scratch buffers to </span><span style="color:#e6db74">`doom-scratch-dir&#39;</span><span style="color:#e6db74">.&#34;</span>
+  (setq doom-scratch-buffers
+        (cl-delete-if-not <span style="color:#a6e22e">#&#39;buffer-live-p</span> doom-scratch-buffers))
+  (dolist (buffer doom-scratch-buffers)
+    (with-current-buffer buffer
+      (anak/persist-scratch-buffer-h))))
+</code></pre></div><p>The code wasn&rsquo;t totally correct. When I opened my scratch buffer (<code>*anak:now-n-next*</code>), the buffer replaced the current buffer (where my cursor is in). I found that <code>pop-to-buffer</code> caused this behavior, shown below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#f92672">...</span>
+(<span style="color:#a6e22e">funcall</span>
+     <span style="color:#a6e22e">#&#39;</span>pop-to-buffer
+     <span style="color:#75715e">;; #&#39;switch-to-buffer</span>
+     (anak/scratch-buffer
+      arg
+      <span style="color:#e6db74">&#39;org-mode</span>
+      default-directory
+      <span style="color:#66d9ef">nil</span>))
+<span style="color:#f92672">...</span>
+</code></pre></div><p>I dig into it further by carefully inspect <code>*Messages*</code> output using edebug. I found that <code>display-buffer</code> applies functions based on file&rsquo;s name. That&rsquo;s it. I changed <code>(buffer-name &quot;*anak:now-n-next*&quot;)</code> to <code>(buffer-name &quot;*doom:now-n-next*&quot;)</code>. Now, <code>*doom:now-n-next*</code> and <code>*doom:scratch*</code> opens buffer the same way.</p>
+<p>A Note on <code>display-buffer</code>, <code>display-buffer</code> collects list of functions to be applied based on class of <code>display-buffer-*-action</code> and <code>*-action</code> where <code>(cdr functions)</code> is buffer name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#f92672">...</span>
+(while (and functions (not window))
+	  (setq window (<span style="color:#a6e22e">funcall</span> (<span style="color:#a6e22e">car</span> functions) buffer alist)
+	  	functions (<span style="color:#a6e22e">cdr</span> functions)))
+<span style="color:#f92672">...</span>
+</code></pre></div><p>Below is a message output by <code>display-buffer</code>'s code section, shown below.</p>
+<p>messages are, in order,</p>
+<ol>
+<li>function name to be applied</li>
+<li>buffer name</li>
+<li>list of actions to apply based.</li>
+</ol>
+<p>Below is output when <code>doom/open-scratch-buffer</code> is evalulated.</p>
+<pre><code class="language-nil" data-lang="nil">Result: +popup-buffer
+
+Result: #&lt;buffer *doom:scratch*&gt;
+
+Result: ((actions) (side . bottom) (size . 0.35) (window-width . 40) (window-height . 0.35) (slot) (vslot . -4) (window-parameters (ttl . t) (quit) (select . t) (modeline . t) (autosave . t) (transient . t) (no-other-window . t)))
+
+Result: #&lt;window 115 on *doom:scratch*&gt;
+</code></pre><p>Below is output when <code>anak/open-scratch-buffer</code> is evalulated.</p>
+<pre><code class="language-nil" data-lang="nil">Result: display-buffer-use-some-window
+
+Result: #&lt;buffer *anak:now-n-next*&gt;
+
+Result: nil
+
+Result: #&lt;window 67 on *anak:now-n-next*&gt;
+</code></pre><p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>~milfex-lostex</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/doom" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">doom</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/implementation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">implementation</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/scratch" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">scratch</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/module" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">module</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/">X implementation where X = executing org babel block in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/keybinding-in-doom-emacs/">Keybinding In Doom Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terminals-in-doom-emacs/">Using terminals in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/">X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

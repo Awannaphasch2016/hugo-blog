@@ -11,6 +11,18 @@
     
     
     <item>
+      <title>  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</guid>
+      <description>Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate &#39;previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.</description>
+    </item>
+    
+    <item>
       <title>Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</title>
       <link>https://awannaphasch2016.github.io/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -40,6 +52,16 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
       <description>Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
 From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
 I am using zsh shell in my remote compute.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Note</title>
+      <link>https://awannaphasch2016.github.io/posts/markdown-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/markdown-note/</guid>
+      <description>Blog blog X implementation where X = &amp;ldquo;markdown-preview&amp;rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &amp;ldquo;url handle&amp;rdquo; (which is prefix to url e.g. file:) expand file name according to &amp;ldquo;url handle&amp;rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  </description>
     </item>
     
     <item>

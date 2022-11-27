@@ -11,6 +11,18 @@
     
     
     <item>
+      <title>  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</guid>
+      <description>&amp;ldquo;Adding jump state to command.&amp;rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &amp;ldquo;jump state&amp;rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&amp;rsquo;s module. From a quick glance into the code, it is clear that &amp;mdash; just like other Doom&amp;rsquo;s module &amp;mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.</description>
+    </item>
+    
+    <item>
       <title>Emacs Package Explained: How to customize key binding in evil modes?</title>
       <link>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

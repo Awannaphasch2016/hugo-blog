@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>note on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/note/</link>
+    <description>Recent content in note on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</guid>
+      <description>&amp;ldquo;Adding jump state to command.&amp;rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &amp;ldquo;jump state&amp;rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&amp;rsquo;s module. From a quick glance into the code, it is clear that &amp;mdash; just like other Doom&amp;rsquo;s module &amp;mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.</description>
+    </item>
+    
+    <item>
+      <title>  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</guid>
+      <description>Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate &#39;previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.</description>
+    </item>
+    
+  </channel>
+</rss>

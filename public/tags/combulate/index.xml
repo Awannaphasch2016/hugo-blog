@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>combulate on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/combulate/</link>
+    <description>Recent content in combulate on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/combulate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</guid>
+      <description>Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate &#39;previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.</description>
+    </item>
+    
+  </channel>
+</rss>

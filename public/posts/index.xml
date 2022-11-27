@@ -23,6 +23,30 @@ In this case, its clearly a environment specific problem which required environe
     </item>
     
     <item>
+      <title>  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</guid>
+      <description>&amp;ldquo;Adding jump state to command.&amp;rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &amp;ldquo;jump state&amp;rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&amp;rsquo;s module. From a quick glance into the code, it is clear that &amp;mdash; just like other Doom&amp;rsquo;s module &amp;mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.</description>
+    </item>
+    
+    <item>
+      <title>  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</guid>
+      <description>Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate &#39;previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.</description>
+    </item>
+    
+    <item>
       <title>  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   </title>
       <link>https://awannaphasch2016.github.io/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/</link>
@@ -32,6 +56,19 @@ In this case, its clearly a environment specific problem which required environe
       <description>I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
 Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
 In this series of &amp;ldquo;Explaining X&amp;rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.</description>
+    </item>
+    
+    <item>
+      <title>  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</guid>
+      <description>I was trying to implement my own scratch buffer.I learned alot about Emacs&amp;rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&amp;rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).</description>
     </item>
     
     <item>
@@ -435,6 +472,16 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
     </item>
     
     <item>
+      <title>Iteration and Recursion in Hoon.</title>
+      <link>https://awannaphasch2016.github.io/posts/iteration-and-recursion-in-hoon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/iteration-and-recursion-in-hoon/</guid>
+      <description>Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
+++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.</description>
+    </item>
+    
+    <item>
       <title>Justifying Existent Of Company.</title>
       <link>https://awannaphasch2016.github.io/posts/justifying-existent-of-company/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -452,6 +499,16 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
       <description>Doom Emacs has its own keybinding system. A more accurate explaination is
  Doom Emacs keybinding system is a wrapper over evil mode such that it is smoothly compatible with Emacs.
  If you use Evil mode without Emacs configuration framework such as Spacemacs or Doom Emacs, it is frustrating to know if your keybinding is setup properly and whether it will always work as expected in any circumstances. A common point of failure is when your keybinding is overwritten by some packages.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Note</title>
+      <link>https://awannaphasch2016.github.io/posts/markdown-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/markdown-note/</guid>
+      <description>Blog blog X implementation where X = &amp;ldquo;markdown-preview&amp;rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &amp;ldquo;url handle&amp;rdquo; (which is prefix to url e.g. file:) expand file name according to &amp;ldquo;url handle&amp;rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  </description>
     </item>
     
     <item>
@@ -619,6 +676,17 @@ docker -v          Docker version 20.10.17 build 100c701    I write the followin
       <guid>https://awannaphasch2016.github.io/posts/what-the-f-is-wiki.c2.com-and-its-potential-for-mainstream-adoption/</guid>
       <description>last edit  [2022-06-26 Sun]    One of my life long projects is to build an index protocol using tokenomics for thought sharing. For now, on [2022-06-26 Sun], I call it &amp;ldquo;The Forest.&amp;rdquo;
 On [2022-06-26 Sun], I stumbled upon wiki.c2.com. I was reading about it for a couple hours, and wiki.c2.com seems to share lots of philosophy that The Forest holds. Two hours in, however, I can&amp;rsquo;t seem to get a grip of some very basic stuff like how to read it?</description>
+    </item>
+    
+    <item>
+      <title>Working with D-Bus in Linux&#39;s systemd.</title>
+      <link>https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/</guid>
+      <description>Quoting &amp;ldquo;D-Bus integration in Emacs&amp;rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &amp;ldquo;a series of identifiers separated by dots&amp;rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &amp;ndash; separated by /.</description>
     </item>
     
     <item>

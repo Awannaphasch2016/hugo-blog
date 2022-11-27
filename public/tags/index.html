@@ -382,6 +382,42 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
+          A Note On X Where X = &#34;adding jump state to command.&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      &ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
           Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   
@@ -391,6 +427,25 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
       I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
 Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
 In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
     </div>
   </div>
 </div>
@@ -846,6 +901,22 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/iteration-and-recursion-in-hoon/" class="link black dim">
+        Iteration and Recursion in Hoon.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
+++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/justifying-existent-of-company/" class="link black dim">
         Justifying Existent Of Company.
       </a>
@@ -1092,6 +1163,23 @@ On [2022-06-26 Sun], I stumbled upon wiki.c2.com. I was reading about it for a c
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/working-with-d-bus-in-linuxs-systemd/" class="link black dim">
+        Working with D-Bus in Linux&#39;s systemd.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/" class="link black dim">
         X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.
       </a>
@@ -1216,6 +1304,31 @@ There are only 4 concepts in jq shown below.
       I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
 Pull Requests To do a pull-requests, you need to do the following
  fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/combulate" class="link blue hover-black">
+            Tag: combulate
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
     </div>
   </div>
 </div>
@@ -1359,6 +1472,30 @@ The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule 
   Figure 1: Figure 21.3
     Figure 2: Figure 21.4
   Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/dbud" class="link blue hover-black">
+            Tag: dbud
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/working-with-d-bus-in-linuxs-systemd/" class="link black dim">
+        Working with D-Bus in Linux&#39;s systemd.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.
     </div>
   </div>
 </div>
@@ -1580,6 +1717,25 @@ Although, searching online directly is not the best approach, it is everyone las
             Tag: doom
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -1832,6 +1988,24 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
@@ -1873,6 +2047,22 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
       Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
 From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
 I am using zsh shell in my remote compute.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/markdown-note/" class="link black dim">
+        Markdown Note
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Blog blog X implementation where X = &ldquo;markdown-preview&rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &ldquo;url handle&rdquo; (which is prefix to url e.g. file:) expand file name according to &ldquo;url handle&rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  
     </div>
   </div>
 </div>
@@ -1978,6 +2168,24 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
+          A Note On X Where X = &#34;adding jump state to command.&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      &ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" class="link black dim">
         Emacs Package Explained: How to customize key binding in evil modes?
       </a>
@@ -2058,6 +2266,29 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
  Power is defined as
  The capacity or ability to direct or influence the behavior of others or the course of events.
  That&rsquo;s is power is defined by abilities to restrict others&rsquo; freedom. Therefore, by definitions, an individual with more power has more freedom than others.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/functionalprogramming" class="link blue hover-black">
+            Tag: functionalprogramming
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/iteration-and-recursion-in-hoon/" class="link black dim">
+        Iteration and Recursion in Hoon.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
+++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.
     </div>
   </div>
 </div>
@@ -2172,6 +2403,29 @@ TCP/IP were implemented in UNIX operating system triggers a widespread adoption 
         
       
         <h2 class="f1">
+          <a href="/tags/hoon" class="link blue hover-black">
+            Tag: hoon
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/iteration-and-recursion-in-hoon/" class="link black dim">
+        Iteration and Recursion in Hoon.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
+++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/html" class="link blue hover-black">
             Tag: html
           </a>
@@ -2266,6 +2520,25 @@ AWS users Note that 1 account has 1 root and can have many IAM user.
             Tag: implementation
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -2454,6 +2727,23 @@ Debian and RPM packages don&#39;t contain source code, only the compiled result.
 </div>
 
         
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/working-with-d-bus-in-linuxs-systemd/" class="link black dim">
+        Working with D-Bus in Linux&#39;s systemd.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.
+    </div>
+  </div>
+</div>
+
+        
       
         <h2 class="f1">
           <a href="/tags/lookup" class="link blue hover-black">
@@ -2473,6 +2763,79 @@ Debian and RPM packages don&#39;t contain source code, only the compiled result.
       I was trying to figure out +lookup/definition that open in other window. In one of the issue, Henrik 1 mention that some lookup backend (As an example, xref is a built in backend for lookup) are asynchronous and there is no standardized mechanism to talk to them to see whether the command runs successfully 2.
 lets call this new command +lookup/definition-other-window Current possible solutions are
  ignore validation step to make sure that the command runs succesfully.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/markdown" class="link blue hover-black">
+            Tag: markdown
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/markdown-note/" class="link black dim">
+        Markdown Note
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Blog blog X implementation where X = &ldquo;markdown-preview&rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &ldquo;url handle&rdquo; (which is prefix to url e.g. file:) expand file name according to &ldquo;url handle&rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/middleware" class="link blue hover-black">
+            Tag: middleware
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/working-with-d-bus-in-linuxs-systemd/" class="link black dim">
+        Working with D-Bus in Linux&#39;s systemd.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/module" class="link blue hover-black">
+            Tag: module
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
     </div>
   </div>
 </div>
@@ -2511,6 +2874,49 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Edit History  last edit on [2022-07-30 Sat] I can refine this blog more by consolidating the current content to my notes on roam research. I don&rsquo;t have time to do this at the time of writing.      In theory, there is no need for &ldquo;medium&rdquo; of exchange. Any exchange can be anything as long as seller and buyer agree upon. Therefore, one can argue that there will always exist a sequence of exchanges of agreements that satisfy any pair of sellers and buyers.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/note" class="link blue hover-black">
+            Tag: note
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
+          A Note On X Where X = &#34;adding jump state to command.&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      &ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
     </div>
   </div>
 </div>
@@ -2924,6 +3330,32 @@ Ultimately, a package is defined is a collection of files required for package&r
         
       
         <h2 class="f1">
+          <a href="/tags/scratch" class="link blue hover-black">
+            Tag: scratch
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/setup" class="link blue hover-black">
             Tag: setup
           </a>
@@ -3079,6 +3511,30 @@ Other unique takes on managing Emacs packages are Borg (assimilates packages as 
         
       
         <h2 class="f1">
+          <a href="/tags/systemd" class="link blue hover-black">
+            Tag: systemd
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/working-with-d-bus-in-linuxs-systemd/" class="link black dim">
+        Working with D-Bus in Linux&#39;s systemd.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quoting &ldquo;D-Bus integration in Emacs&rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &ldquo;a series of identifiers separated by dots&rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &ndash; separated by /.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/tcp" class="link blue hover-black">
             Tag: tcp
           </a>
@@ -3213,6 +3669,29 @@ I am using zsh shell in my remote compute.
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       This stack exchange post state the following.
 Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/urbit" class="link blue hover-black">
+            Tag: urbit
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/iteration-and-recursion-in-hoon/" class="link black dim">
+        Iteration and Recursion in Hoon.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
+++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.
     </div>
   </div>
 </div>

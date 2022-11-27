@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dbud on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/dbud/</link>
+    <description>Recent content in dbud on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/dbud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working with D-Bus in Linux&#39;s systemd.</title>
+      <link>https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/</guid>
+      <description>Quoting &amp;ldquo;D-Bus integration in Emacs&amp;rdquo; 1, D-Bus is defined as followed
+ D-Bus is an inter-process communication mechanism for applications residing on the same host. The communication is based on messages. Data in the messages is carried in a structured way, it is not just a byte stream.
+ According to 1, name of client application is &amp;ldquo;a series of identifiers separated by dots&amp;rdquo;, but an application can install multiple objects under its name which are represents as path like syntax &amp;ndash; separated by /.</description>
+    </item>
+    
+  </channel>
+</rss>

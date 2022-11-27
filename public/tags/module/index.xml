@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>module on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/module/</link>
+    <description>Recent content in module on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</guid>
+      <description>I was trying to implement my own scratch buffer.I learned alot about Emacs&amp;rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&amp;rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).</description>
+    </item>
+    
+  </channel>
+</rss>

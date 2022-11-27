@@ -97,6 +97,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
@@ -142,6 +162,24 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
       Note that information I describe here can be found at FAQ page of TRAMP user manual, see here.
 From an hour of digging, I discovered that tramp is really specific in term of how it read terminal prompt (aka PS1 environment variable.). It also limited in types of terminal, specified by TERM environment variables. TERM must match tramp terminal default setting (tramp-terminal-type).
 I am using zsh shell in my remote compute.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/markdown-note/" class="link black dim">
+        Markdown Note
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Blog blog X implementation where X = &ldquo;markdown-preview&rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &ldquo;url handle&rdquo; (which is prefix to url e.g. file:) expand file name according to &ldquo;url handle&rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  
     </div>
   </div>
 </div>

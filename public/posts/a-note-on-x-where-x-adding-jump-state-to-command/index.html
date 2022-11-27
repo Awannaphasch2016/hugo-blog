@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  A Note On X Where X = &#34;adding jump state to command.&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="&ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (&#43;spell/previous-error) and &#43;spell/next-error.
+Note that &#43;spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  A Note On X Where X = &#34;adding jump state to command.&#34;
+  " />
+<meta property="og:description" content="&ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (&#43;spell/previous-error) and &#43;spell/next-error.
+Note that &#43;spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/" />
+
+<meta itemprop="name" content="  A Note On X Where X = &#34;adding jump state to command.&#34;
+  ">
+<meta itemprop="description" content="&ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (&#43;spell/previous-error) and &#43;spell/next-error.
+Note that &#43;spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.">
+
+<meta itemprop="wordCount" content="504">
+
+
+
+<meta itemprop="keywords" content="evilmode,blog,note," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  A Note On X Where X = &#34;adding jump state to command.&#34;
+  "/>
+<meta name="twitter:description" content="&ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (&#43;spell/previous-error) and &#43;spell/next-error.
+Note that &#43;spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>&ldquo;Adding jump state to command.&rdquo; implies that position (<code>(point)</code>) that the added command is evaluated is added to jump state. In the other word, you can get back to <code>(point)</code> that you executed the command by using <code>(better-jumper-jump-forward)</code>.</p>
+<p>I was trying to add &ldquo;jump state&rdquo; to <code>(+spell/previous-error)</code> and <code>+spell/next-error</code>.</p>
+<p>Note that <code>+spell</code> prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.</p>
+<p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2022-11-22 Tue&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->, I understand that <code>better jumper</code> is an Emacs&rsquo;s package whose job is to provide &ldquo;jumping back and forward functionality&rdquo;. Vanilla Emacs has its own implementation, but, in my opinion, vim&rsquo;s implementation is better &ndash; it is provided by <code>evil-mode</code>.</p>
+<p>Trying to add &ldquo;evil&rsquo;s jump state to command&rdquo; in Doom Emacs is confusing to me because <code>better-jumper</code> doesn&rsquo;t provide function that allow command to remember where it &ldquo;jumped&rdquo; from &ndash; lets call this behavior &ldquo;adding jump state to command.&rdquo; Still, I found that I can simulate this behavior by evaluating &lt;2258328192&gt;.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(progn
+  (better-jumper--push)
+  (+spell/previous-error))
+</code></pre></div><p>This finding was a deadline. I expected it because it was expecting such obvious usage to be provided by the package itself. I was right. Since I use <code>evil-mode</code>, the package that provides this support function is <code>evil-mode</code>. This fact was not clear until after I found the solution.</p>
+<p>I wasn&rsquo;t familiar with macro and structure in Elisp, so I didn&rsquo;t know what information to focus on when reading code in evil package. By searching for keys words like <code>jump</code> and tinkering with functions that have &ldquo;jump state&rdquo;. I was able to figure out that &ldquo;jump state&rdquo; is provided by keyword <code>:jump t</code>. Copied and Pasted code from functions with desired behavior, I added <code>:jump t</code> to <code>(evil-next-flyspell-error)</code>, see &lt;2519460702&gt;. Still, this didn&rsquo;t work. I stuck again.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(evil-define-motion evil-next-flyspell-error (count)
+  <span style="color:#e6db74">&#34;Go to the COUNT&#39;th spelling mistake after point.&#34;</span>
+  :jump <span style="color:#66d9ef">t</span>
+  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
+  (dotimes (_ count)
+    (evil--next-flyspell-error <span style="color:#66d9ef">t</span>)))
+</code></pre></div><p>Now, since I learned about keywords and have a metal framework of how <code>evil-mode</code> works, I was able to find this Reddit&rsquo;s thread titled &ldquo;<a href="https://www.reddit.com/r/emacs/comments/cdwmua/evilmode_jump_back_to_last_position/">evil-mode - jump back to last position.</a>&quot;, and found the correct answer by <code>RuleAndLine</code>. He commented that</p>
+<blockquote>
+<p>Like others are saying, you want C-o. For commands that don&rsquo;t set a jump by default, you want to add something like this to your init file:</p>
+<p>(evil-add-command-properties #&lsquo;foo :jump t)</p>
+<p>Edit: this works for any emacs command, not just the ones defined by evil. So, like, I use (evil-add-command-properties #&lsquo;org-goto :jump t) so I can go to a random org heading then jump back to where I was before.</p>
+</blockquote>
+<p>Hence, the correct answer is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(evil-add-command-properties <span style="color:#a6e22e">#&#39;</span>+spell/next-error :jump <span style="color:#66d9ef">t</span>)
+(evil-add-command-properties <span style="color:#a6e22e">#&#39;</span>+spell/previous-error :jump <span style="color:#66d9ef">t</span>)
+</code></pre></div><p>As of <!-- raw HTML omitted --><!-- raw HTML omitted -->&lt;2022-11-22 Tue&gt;<!-- raw HTML omitted --><!-- raw HTML omitted -->, I still don&rsquo;t know how evil use properties to selectively produce behavior based on keyword, but, at this point, this seems like a trivial work, so I omitted it here.</p>
+<p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>~milfex-lostex</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/evilmode" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">evilmode</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/note" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">note</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/">Emacs Package Explained: How to customize key binding in evil modes?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comparison-of-straight.el-to-other-emacs-package-manager/">Comparison of straight.el to other Emacs package manager.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/comprehensive-review-of-snippets-management-tools-in-emacs.-the-best-way-to-manage-code-snippets-in-emacs/">Comprehensive review of snippets management tools in emacs. The best way to manage code snippets in emacs.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

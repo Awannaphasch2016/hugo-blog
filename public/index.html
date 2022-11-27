@@ -144,17 +144,17 @@ In this case, its clearly a environment specific problem which required environe
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="color-inherit dim link">
-              Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="color-inherit dim link">
+              A Note On X Where X = &#34;adding jump state to command.&#34;
   
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
-Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
-In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.
+          &ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.
         </div>
-          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -171,17 +171,17 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/" class="color-inherit dim link">
-              Philosophy and Meta Physics of &#34;Notes Taking&#34;
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="color-inherit dim link">
+              A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
   
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Note taking is a skill that everyone seems to think that they have &ldquo;solved&rdquo; it. Whatever that means. They are not interested in investing their time to improve their note taking skill.
-No interest. No skill. No framework.
-Regardless of my critique, I think they draw conclusion fairly. Why? around 6 out of 10 people are knowledge worker 1. A subset of those need to use note at all. A subset of those who use notes need to create reusable notes.
+          Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
         </div>
-          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -198,27 +198,30 @@ Regardless of my critique, I think they draw conclusion fairly. Why? around 6 ou
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/writing-a-blog/" class="link black dim">
-                Writing a &#34;Blog&#34;
+            <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
+                Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/" class="link black dim">
-              A Brief Story of Evolution and Widespread Adoption of The Internet
+            <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+                Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/a-note-of-x-where-x-aws-ec2-services/" class="link black dim">
-              A Note of X where X = AWS EC2 services.
+            <a href="/posts/philosophy-and-meta-physics-of-notes-taking/" class="link black dim">
+                Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/a-note-of-x-where-x-aws-iam-services/" class="link black dim">
-              A Note of X where X = AWS IAM services.
+            <a href="/posts/writing-a-blog/" class="link black dim">
+                Writing a &#34;Blog&#34;
+  
             </a>
           </h2>
         

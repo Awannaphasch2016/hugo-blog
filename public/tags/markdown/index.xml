@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/markdown/</link>
+    <description>Recent content in markdown on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Note</title>
+      <link>https://awannaphasch2016.github.io/posts/markdown-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/markdown-note/</guid>
+      <description>Blog blog X implementation where X = &amp;ldquo;markdown-preview&amp;rdquo; in Emacs implementation markdown-preview pass HTML file to browse-url browse-url has the following algorithm
+ prepare argument to use with specify url check for &amp;ldquo;url handle&amp;rdquo; (which is prefix to url e.g. file:) expand file name according to &amp;ldquo;url handle&amp;rdquo; find suitable function to browse url setup environment variable for display e.g. DISPLAY and WAYLAND_DISPLAY apply function with argument  </description>
+    </item>
+    
+  </channel>
+</rss>

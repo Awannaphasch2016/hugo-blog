@@ -112,6 +112,46 @@ In this case, its clearly a environment specific problem which required environe
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
+          A Note On X Where X = &#34;adding jump state to command.&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      &ldquo;Adding jump state to command.&rdquo; implies that position ((point)) that the added command is evaluated is added to jump state. In the other word, you can get back to (point) that you executed the command by using (better-jumper-jump-forward).
+I was trying to add &ldquo;jump state&rdquo; to (+spell/previous-error) and +spell/next-error.
+Note that +spell prefix means this command is provided by a Doom&rsquo;s module. From a quick glance into the code, it is clear that &mdash; just like other Doom&rsquo;s module &mdash; it implements branching condition to allow fallback behavior based on context such as current mode or available packages.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+          A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Lets inspect combobulate-navigate-previous by step into the function.
+The following functions are called in order:
+ combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
           Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   
@@ -121,6 +161,27 @@ In this case, its clearly a environment specific problem which required environe
       I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
 Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
 In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
+          Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I was trying to implement my own scratch buffer.I learned alot about Emacs&rsquo;s way of programming. I gained a new mental debugging tool.
+The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
+doom/open-scratch-buffer does the following
+ check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
     </div>
   </div>
 </div>
@@ -224,61 +285,6 @@ TCP/IP were implemented in UNIX operating system triggers a widespread adoption 
 
         </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/a-note-on-straights-recipe/" class="link black dim">
-        A Note On Straight&#39;s Recipe.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Straight&rsquo;s recipe is similar but not identify to one used by MELPA. 1
-A recipe describes which local repository to link the files from and how to clone that repository, if repo is not found locally. With this definition of recipe, one can think of recipe as a build step (recipe) of a package.
-Ultimately, a package is defined is a collection of files required for package&rsquo;s build. striaght.el views a package in this manner.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/a-note-on-straight/" class="link black dim">
-        A Note On Straight.el&#39;s Transaction
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This article is based on staright.el README which at the moment doesn&rsquo;t have written document on how transaction works. So This is a work in progress until I either read straight.el codebase or summarize its documentation.
-Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rsquo;s load path. A packages in straight.el is defined as recipe as a files which was symlinked together. I have an article on recipe.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/assess-your-level-of-understanding/" class="link black dim">
-        Assess Your Level of Understanding
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Ask youself the following question.
- How do you know your understand something? How can you access much do you understand it? If you don&rsquo;t fully understand it yet, is there a way you can make a snapshot of things that you don&rsquo;t understand such that you can replace this snapshot whenever a better &ldquo;version&rdquo; available to you.  Why ability to assess your level of understanding it important? you asked.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
     </section>
 
 <ul class="pagination">
@@ -354,7 +360,16 @@ Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rs
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/6/">6</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/7/">7</a></li>
     
     
     <li class="page-item">
@@ -362,7 +377,7 @@ Conceptually, stright.el clones Git repo and them symlinking files into Emacs&rs
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/6/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/7/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

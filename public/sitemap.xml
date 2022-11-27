@@ -18,7 +18,19 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-emacs-combobulate-package/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</loc>
   </url>
   
   <url>
@@ -122,6 +134,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/combulate/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/company/</loc>
   </url>
   
@@ -159,6 +175,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/database/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/dbud/</loc>
   </url>
   
   <url>
@@ -278,6 +298,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/functionalprogramming/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/garun/</loc>
   </url>
   
@@ -295,6 +319,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/history/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/hoon/</loc>
   </url>
   
   <url>
@@ -370,6 +398,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/iteration-and-recursion-in-hoon/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/jekyll/</loc>
   </url>
   
@@ -406,6 +438,22 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/markdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/markdown-note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/middleware/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/module/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/money/</loc>
   </url>
   
@@ -419,6 +467,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/my-citation-management-workflow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/note/</loc>
   </url>
   
   <url>
@@ -478,6 +530,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/scratch/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/setup/</loc>
   </url>
   
@@ -503,6 +559,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/straight/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/systemd/</loc>
   </url>
   
   <url>
@@ -538,6 +598,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/urbit/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/useful-emacs-command-and-snippets-for-writing/</loc>
   </url>
   
@@ -563,6 +627,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/wiki/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/working-with-d-bus-in-linuxs-systemd/</loc>
   </url>
   
   <url>
