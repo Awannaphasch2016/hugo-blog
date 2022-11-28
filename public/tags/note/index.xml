@@ -34,5 +34,18 @@ The following functions are called in order:
  combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate &#39;previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.</description>
     </item>
     
+    <item>
+      <title>  A Note on X where X = &#34;LSP &#43; flycheck &#43; lsp-pyright&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/</guid>
+      <description>History of edit
+ Last edit is &amp;lt;2022-11-28 Mon&amp;gt;.  There are 3 components to pay attention to including: conda.el, lsp-pyright, and flycheck.
+First, conda.el allows user to activate conda env from within Emacs. Users can check conda.el by checking conda-env-home-directory, conda-env-current-name, and conda-env-current-path.
+Second, LSP is language server a general concept outside of Emacs and python. LSP may have type checking as its feature. lsp-pyright is python language server (called &amp;ldquo;pyright&amp;rdquo;).</description>
+    </item>
+    
   </channel>
 </rss>

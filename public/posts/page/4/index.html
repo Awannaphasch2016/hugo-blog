@@ -93,6 +93,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/how-to-parse-text-with-awk/" class="link black dim">
+        How to parse text with awk?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ref  https://stackoverflow.com/questions/6284560/how-to-split-a-variable-by-a-special-character/6284596    Awk Syntax awk &#39;(PATTERN1){...print something..} (PATTERN2){..print something..}&#39; awk &#39;PATTERN1{...print something..} PATTERN2{..print something..}&#39; for each line, if PATTERNN is matched, command in {} will be executed.
+syntax `awk &lsquo;NR==1{print}&rsquo; [FILE]` `awk &lsquo;NR==1&rsquo; [FILE]` note for line 1, print whole line `awk &lsquo;NR==1{}&rsquo; [FILE]` note for line 1, {} = don&rsquo;t do anything `awk &lsquo;NR==1{print} {print}&rsquo; [FILE]` note {} without condition is the same as condition always set to True.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/how-to-publish-blog-on-jekyll-with-example/" class="link black dim">
         How to publish blog on Jekyll with example.
       </a>
@@ -255,25 +273,6 @@ In this blog, I will just present minimal info for you to start writing latex in
       Alan Kay famously critique World Wide Web (WWW) where HTML is originated. He publicly dislike HTML as followed
  Things like [HTML] happens when we let physicists play with computer.
  He stated that HTML is a bad markup language because people who build HTML thinks their way of representing web page is the only way. He mentioned a (older and) better alternative to HTML is to define protocol based on ordered region on a tape &mdash; back when tapes were still popular means of storage in 1950&rsquo;s.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/implementation-of-x-where-x-emacs-auth-source/" class="link black dim">
-        Implementation of X where X = Emac&#39;s auth-source.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      As an example, I will use api.github.com as a API endpoint.
-If I use ~/.authinfo.gpg as an auth-sources file. (variable name is auth-sources), I need to add the following to the file where I need to sub value into user-username and user-password.
-machine api.github.com login user-name password user-password auth-source-search is a function that retrieve password from your specify auth-sources file. You can use it as followed. This will output list of property where :secret key has your password as its value.
     </div>
   </div>
 </div>
