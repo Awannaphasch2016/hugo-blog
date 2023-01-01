@@ -164,6 +164,15 @@
     </item>
     
     <item>
+      <title>conda</title>
+      <link>https://awannaphasch2016.github.io/tags/conda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/conda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>config</title>
       <link>https://awannaphasch2016.github.io/tags/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,6 +205,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>customization</title>
+      <link>https://awannaphasch2016.github.io/tags/customization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/customization/</guid>
       <description></description>
     </item>
     
@@ -335,6 +353,15 @@
     </item>
     
     <item>
+      <title>elisp</title>
+      <link>https://awannaphasch2016.github.io/tags/elisp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/elisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>emacs</title>
       <link>https://awannaphasch2016.github.io/tags/emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -367,6 +394,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/euclidean-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>evil-mode</title>
+      <link>https://awannaphasch2016.github.io/tags/evil-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/evil-mode/</guid>
       <description></description>
     </item>
     
@@ -659,11 +695,29 @@
     </item>
     
     <item>
+      <title>org-agenda</title>
+      <link>https://awannaphasch2016.github.io/tags/org-agenda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/org-agenda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>org-babel</title>
       <link>https://awannaphasch2016.github.io/tags/org-babel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/org-babel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>org-refile</title>
+      <link>https://awannaphasch2016.github.io/tags/org-refile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/org-refile/</guid>
       <description></description>
     </item>
     
@@ -691,6 +745,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pkm</title>
+      <link>https://awannaphasch2016.github.io/tags/pkm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/pkm/</guid>
       <description></description>
     </item>
     
@@ -754,6 +817,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/society/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sqlite</title>
+      <link>https://awannaphasch2016.github.io/tags/sqlite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/sqlite/</guid>
       <description></description>
     </item>
     
@@ -848,6 +920,15 @@
     </item>
     
     <item>
+      <title>vterm</title>
+      <link>https://awannaphasch2016.github.io/tags/vterm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/vterm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>wiki</title>
       <link>https://awannaphasch2016.github.io/tags/wiki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -871,6 +952,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://awannaphasch2016.github.io/tags/www/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://awannaphasch2016.github.io/tags/zsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/tags/zsh/</guid>
       <description></description>
     </item>
     

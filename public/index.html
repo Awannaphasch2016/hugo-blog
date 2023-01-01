@@ -144,6 +144,32 @@ In this case, its clearly a environment specific problem which required environe
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="color-inherit dim link">
+              A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.
+        </div>
+          <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="color-inherit dim link">
               A Note On X Where X = &#34;adding jump state to command.&#34;
   
@@ -163,39 +189,19 @@ Note that +spell prefix means this command is provided by a Doom&rsquo;s module.
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="color-inherit dim link">
-              A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
-  
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Lets inspect combobulate-navigate-previous by step into the function.
-The following functions are called in order:
- combobulate-navigate-previous combobulate--move-point-to-node responsible for display and move node. (combobulate--navigate 'previous) pass previuos to combobulate--navigate combobulate--nav-get-prev-sibling get sibling node by query its parents node and get all of its nodes. sibling nodes are arrange in order, so getting previous or next siblings nodes is easy. combobulate--nav-get-sibling-nodes outputs list of nodes seq filter check for matched node.
-        </div>
-          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/" class="link black dim">
+                A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/" class="link black dim">
@@ -205,22 +211,15 @@ The following functions are called in order:
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+                A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
                 Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
-  
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/" class="link black dim">
-                Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
-  
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/philosophy-and-meta-physics-of-notes-taking/" class="link black dim">
-                Philosophy and Meta Physics of &#34;Notes Taking&#34;
   
             </a>
           </h2>
@@ -240,7 +239,7 @@ The following functions are called in order:
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
-    &copy;  Anak Wannaphaschaiyong 2022 
+    &copy;  Anak Wannaphaschaiyong 2023 
   </a>
     <div>
 <div class="ananke-socials">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/zsh/</link>
+    <description>Recent content in zsh on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/</guid>
+      <description>Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &amp;#34;Set point to POSITION for vterm. The return value is `t&amp;#39;when point moved successfully. It will reset to original position if it can&amp;#39;t move there.&amp;#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.</description>
+    </item>
+    
+  </channel>
+</rss>

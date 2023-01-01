@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>org-agenda on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/org-agenda/</link>
+    <description>Recent content in org-agenda on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/org-agenda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/</guid>
+      <description>I couldn&amp;rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&amp;rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&amp;rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &amp;mdash; value shown in custom.</description>
+    </item>
+    
+  </channel>
+</rss>

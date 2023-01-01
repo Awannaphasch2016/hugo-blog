@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  " />
+<meta property="og:description" content="Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" />
+
+<meta itemprop="name" content="  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  ">
+<meta itemprop="description" content="Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.">
+
+<meta itemprop="wordCount" content="170">
+
+
+
+<meta itemprop="keywords" content="vterm,emacs,blog,note,zsh,doom,evil-mode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  "/>
+<meta name="twitter:description" content="Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Set pt value to pos fix awkward completion behavior in vterm.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun vterm-goto-char (pos)
+  <span style="color:#e6db74">&#34;Set point to POSITION for vterm.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">The return value is </span><span style="color:#e6db74">`t&#39;</span><span style="color:#e6db74"> when point moved successfully.
+</span><span style="color:#e6db74">It will reset to original position if it can&#39;t move there.&#34;</span>
+  (when (and vterm--term
+             (vterm-cursor-in-command-buffer-p)
+             (vterm-cursor-in-command-buffer-p pos))
+    (let ((moved <span style="color:#66d9ef">t</span>)
+          (origin-point (<span style="color:#a6e22e">point</span>))
+          pt cursor-pos succ)
+      (vterm-reset-cursor-point)        <span style="color:#75715e">;; Anak: this line cause weird behavior with auto completion</span>
+      (setq cursor-pos (<span style="color:#a6e22e">point</span>))
+      <span style="color:#75715e">;; (setq pt cursor-pos) ;; Anak commented out this line</span>
+      (setq pt pos)                     <span style="color:#75715e">;; Anak added this line and completion in vterm works better.</span>
+      (while (and (<span style="color:#a6e22e">&gt;</span> pos pt) moved)
+        (vterm-send-key <span style="color:#e6db74">&#34;&lt;right&gt;&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span>)
+        (setq moved (not (<span style="color:#a6e22e">=</span> pt (<span style="color:#a6e22e">point</span>))))
+        (setq pt (<span style="color:#a6e22e">point</span>)))
+      (setq pt (<span style="color:#a6e22e">point</span>))
+      (setq moved <span style="color:#66d9ef">t</span>)
+      (while (and (<span style="color:#a6e22e">&lt;</span> pos pt) moved)
+        (vterm-send-key <span style="color:#e6db74">&#34;&lt;left&gt;&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span>)
+        (setq moved (not (<span style="color:#a6e22e">=</span> pt (<span style="color:#a6e22e">point</span>))))
+        (setq pt (<span style="color:#a6e22e">point</span>)))
+      (setq succ (<span style="color:#a6e22e">=</span> pos (<span style="color:#a6e22e">point</span>)))
+      (unless succ
+        (vterm-goto-char cursor-pos)
+        (<span style="color:#a6e22e">goto-char</span> origin-point))
+      succ)))
+</code></pre></div><p>If you <code>(vterm-reset-cursor-point)</code> position in normal mode will not be preserved when you call <code>(evil-collection-vterm-insert)</code></p>
+<p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>~milfex-lostex</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/vterm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vterm</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/emacs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emacs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/note" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">note</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/zsh" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">zsh</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/doom" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">doom</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/evil-mode" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">evil-mode</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/">  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/">  A Note on X where X = &#34;LSP &#43; flycheck &#43; lsp-pyright&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/">  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/">Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/keybinding-in-doom-emacs/">Keybinding In Doom Emacs</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/">Most Efficient Workflow To &#34;Lookup&#34; Documentations On Programming Language.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/using-terminals-in-doom-emacs/">Using terminals in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-doom-emacss-&#43;lookup-command/">X Implementation Where X = Doom Emacs&#39;s &#43;lookup/ Command.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/">X implementation where X = executing org babel block in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

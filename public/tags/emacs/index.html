@@ -117,12 +117,50 @@ The following functions are called in order:
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
     </div>
   </div>
 </div>
@@ -143,6 +181,24 @@ The following functions are called in order:
 I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
 I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
 Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/" class="link black dim">
+        How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment.
     </div>
   </div>
 </div>
@@ -211,7 +267,7 @@ Although, searching online directly is not the best approach, it is everyone las
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
-    &copy;  Anak Wannaphaschaiyong 2022 
+    &copy;  Anak Wannaphaschaiyong 2023 
   </a>
     <div>
 <div class="ananke-socials">

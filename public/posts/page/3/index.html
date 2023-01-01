@@ -93,6 +93,63 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/connection-between-org-roam-bibtex-orb-org-roam-and-org-ref/" class="link black dim">
+        Connection between org-roam-bibtex (orb), org-roam and org-ref.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Org-ref manage citation entry, referenced citation, PDF, and note just fine. But the problem arise when trying to link notes created org-ref as a node in org roam. This is the problem that orb solve to allow PDF notes to be inserted as a org roam node. To summarize, the problem that orb solve to integrate org-ref functionalities into org-roam ecosystem.
+All org roam does is the following:
+ create name of a note file using org roam file name convention.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/cryptography-engineering/" class="link black dim">
+        Cryptography Engineering
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Blog blog Explaining X where X = Montgomery form for efficient multiprecision multiplication arithmetic. modular-arithmetic Prerequisites are the following
+ Residue class of modulo N is all \(a\) that satisfy \(a + kN\) where N is a constant and \(k \in \mathbb{Z}\).  Montgomery multiplication is a method for performing fast modular multiplication.
+The algorithm uses the Montgomery forms of \(a\) and \(b\) to efficiently compute the Montgomery form of \(ab \mod N\).
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/dev-logs-auto-yasnippet-aka-aya-dive-deep/" class="link black dim">
+        Dev Logs: Auto-YASnippet (aka aya) dive deep.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Dev logs is new blog series which dive deep into implementation level. The goal is to understand how things works. I figure this should be an interesting series because I always wanted to know how these program works underneath. Instead of explaining the whole code base, I will only focus on the &ldquo;magical&rdquo; part that sparked my interest the most.
+Todays I present to you aya.
+I started of the series with aya because, I think, it is a small package with the right portion of magic.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/dont-pick-between-org-roam-and-org-brain/" class="link black dim">
         Don&#39;t pick between org roam and org brain. Use them together!!
       </a>
@@ -130,6 +187,23 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" class="link black dim">
+        Elisp Code to Find List of Top N MELPA Authors
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" class="link black dim">
         Emacs Package Explained: How to customize key binding in evil modes?
       </a>
@@ -137,6 +211,25 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       This is my summary of a more thoroughly explained evil guide, see here.
 Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
     </div>
   </div>
 </div>
@@ -175,106 +268,6 @@ I successfully connect x-apps via x11 protocol by first installing and launching
 I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
 I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
 Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/evolution-of-asset-transaction/" class="link black dim">
-        Evolution of Asset Transaction
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hello, guys
-This essay is my interpretation of a discussion on &ldquo;NFTing the World for the General Good&rdquo; episode on Real Vision TV. The information in the essay are adapted to fit rational narrative that I have in my brain.
-This is the beginning of the essay.
-The four phases are categorized into the following
- transaction an physical assets transaction of electron transaction of information transaction of digital assets  Each phase increase efficiency of transactions which depends on three factors: object, process, and rules.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/freedom-and-power-are-two-sides-of-the-same-coin/" class="link black dim">
-        Freedom and Power are two sides of the same coin.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      According to dictionary, freedom is defined as
- The power or right to act, speak, or think as one wants without hindrance or restraint.
- Power is defined as
- The capacity or ability to direct or influence the behavior of others or the course of events.
- That&rsquo;s is power is defined by abilities to restrict others&rsquo; freedom. Therefore, by definitions, an individual with more power has more freedom than others.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/" class="link black dim">
-        Getting source code of distributed binary package in Ubuntu
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This stack exchange post state the following.
-Debian and RPM packages don&#39;t contain source code, only the compiled result. However, you can fetch the source packages - SRPMS, or the Debian description, patch, and original tarball. That&rsquo;s it. You can only download file that are provided in url where target deb file is located. Which files will be provided? Only package maintainers can determine that. Therefore, there could be a scenario where no source codes are available for download.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/git-workflow-for-team/" class="link black dim">
-        Git Workflow For Team
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I intend to make this blog be a work-in-progress where I will keep adding useful git workflow when working with a team.
-Pull Requests To do a pull-requests, you need to do the following
- fork original repo. create new local branch and checkout to the new branch. commit new changes. send pull requests from new local branch from forked repo (origin) to original repo (upstream).  Alternative to the pull-request workflow I mention above, it is possible to do pull-requests by using git forge 1, adding commit to new branch 2, and then do a pull requests to the target branch in remote.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/how-to-guarantee-serialization-with-two-phase-locking-2pl-with-example/" class="link black dim">
-        How to Guarantee Serialization with Two-Phase Locking (2PL) with Example
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This is a summary on Chapter 21.1 Two-Phase Locking Techniques for Concurrency Control from Fundamental of Database system by Pearson 2015.
-The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule is guaranteed to be serializable.
-  Figure 1: Figure 21.3
-    Figure 2: Figure 21.4
-  Figure &lt;Figure_21.3&gt; and figure &lt;Figure_21.4&gt; uses the same set of locks which is provided in Shared/Exclusive locks including read_lock, write_lock and unlock.
     </div>
   </div>
 </div>
@@ -367,7 +360,16 @@ The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule 
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/7/">7</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
     
     
     <li class="page-item">
@@ -375,7 +377,7 @@ The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule 
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/7/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
@@ -386,7 +388,7 @@ The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule 
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
-    &copy;  Anak Wannaphaschaiyong 2022 
+    &copy;  Anak Wannaphaschaiyong 2023 
   </a>
     <div>
 <div class="ananke-socials">

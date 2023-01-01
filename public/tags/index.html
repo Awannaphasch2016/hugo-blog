@@ -382,6 +382,23 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="link black dim">
+          A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
           A Note On X Where X = &#34;adding jump state to command.&#34;
   
@@ -437,6 +454,23 @@ Second, LSP is language server a general concept outside of Emacs and python. LS
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
           Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   
@@ -465,6 +499,24 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
 The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&rsquo;s project.
 doom/open-scratch-buffer does the following
  check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
     </div>
   </div>
 </div>
@@ -696,6 +748,21 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" class="link black dim">
+        Elisp Code to Find List of Top N MELPA Authors
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/" class="link black dim">
         Emacs Package Explained: How to customize key binding in evil modes?
       </a>
@@ -703,6 +770,23 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       This is my summary of a more thoroughly explained evil guide, see here.
 Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
     </div>
   </div>
 </div>
@@ -1377,6 +1461,29 @@ The following functions are called in order:
         
       
         <h2 class="f1">
+          <a href="/tags/conda" class="link blue hover-black">
+            Tag: conda
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/" class="link black dim">
+        How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/config" class="link blue hover-black">
             Tag: config
           </a>
@@ -1472,6 +1579,31 @@ The algorithm uses the Montgomery forms of \(a\) and \(b\) to efficiently comput
         
       
         <h2 class="f1">
+          <a href="/tags/customization" class="link blue hover-black">
+            Tag: customization
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/database" class="link blue hover-black">
             Tag: database
           </a>
@@ -1526,6 +1658,23 @@ The goal of this blog is to give a concrete example on how 2PL&rsquo;s schedule 
             Tag: debug
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="link black dim">
+          A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -1736,6 +1885,23 @@ Although, searching online directly is not the best approach, it is everyone las
             Tag: doom
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -1998,6 +2164,28 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
         
       
         <h2 class="f1">
+          <a href="/tags/elisp" class="link blue hover-black">
+            Tag: elisp
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" class="link black dim">
+        Elisp Code to Find List of Top N MELPA Authors
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/emacs" class="link blue hover-black">
             Tag: emacs
           </a>
@@ -2025,12 +2213,46 @@ The following functions are called in order:
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/" class="link black dim">
         Building fundamental in Emacs: How to customize key binding in vanilla Emacs?
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       When I first get into Emacs, I was a vim user before, so I picked up Doom Emacs without experience with vanilla Emacs. Transition has been smooth so far, but because I never has experience with Vanilla Emacs before when I encounter a bug in Doom Emacs. I always have to first figure out if it is Doom Emacs problem or Emacs problems. Because of this, I put out a new blog series to help me build a stronger foundation of Vanilla Emacs.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
     </div>
   </div>
 </div>
@@ -2049,6 +2271,22 @@ The following functions are called in order:
 I had (package! pdf-tools) and :tools pdf. Dependencies conflict is caused by endable pdf-tools two different ways as shown.
 I solved the problem by remove (package! pdf-tools) from packages.el and only keep :tools pdf.
 Abit of backstory, I first encounter the problem at a very early stage of using doom emacs (first 2 weeks.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/" class="link black dim">
+        How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment.
     </div>
   </div>
 </div>
@@ -2171,6 +2409,30 @@ Abit of backstory, I first encounter the problem at a very early stage of using 
       I always get lost in the detail when learning or working on math, and I find that new math concept introduced only a few important concepts. The rest are filling in details by connecting new and old concepts in the right order using math notation.
 Think of new math concepts as tools that are reusable for tasks in which tools are specialized for.
 In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept, I will try to avoid mathematical details and will try my best to capture the newly introduced concept.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/evil-mode" class="link blue hover-black">
+            Tag: evil-mode
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
     </div>
   </div>
 </div>
@@ -2589,6 +2851,21 @@ doom/open-scratch-buffer does the following
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" class="link black dim">
+        Elisp Code to Find List of Top N MELPA Authors
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/" class="link black dim">
         X implementation where X = executing org babel block in Doom Emacs.
       </a>
@@ -2961,6 +3238,23 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="link black dim">
+          A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
           A Note On X Where X = &#34;adding jump state to command.&#34;
   
@@ -3007,6 +3301,41 @@ The following functions are called in order:
  Last edit is &lt;2022-11-28 Mon&gt;.  There are 3 components to pay attention to including: conda.el, lsp-pyright, and flycheck.
 First, conda.el allows user to activate conda env from within Emacs. Users can check conda.el by checking conda-env-home-directory, conda-env-current-name, and conda-env-current-path.
 Second, LSP is language server a general concept outside of Emacs and python. LSP may have type checking as its feature. lsp-pyright is python language server (called &ldquo;pyright&rdquo;).
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
     </div>
   </div>
 </div>
@@ -3126,6 +3455,31 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
         
       
         <h2 class="f1">
+          <a href="/tags/org-agenda" class="link blue hover-black">
+            Tag: org-agenda
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/org-babel" class="link blue hover-black">
             Tag: org-babel
           </a>
@@ -3143,6 +3497,31 @@ In this series of &ldquo;Explaining X&rdquo; where X is any mathematical concept
       Editing History  [2022-07-06 Wed] Last edit is on [2022-07-07 Thu]    This article investigates what is executed when one presses enter to execute org babel source block in Doom Emacs.
 Pressing enter in org-babel block will execute +org/dwim-at-point, see code below for reference. First, it checks if point is on a button. Then, it proceeds to assign evaluated output of org-element-context and org-element-type.
 (+org/dwim-at-point *optional ARG) .
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/org-refile" class="link blue hover-black">
+            Tag: org-refile
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
     </div>
   </div>
 </div>
@@ -3370,6 +3749,30 @@ Incentive is an abstract concept. Physically, incentives are driven by money, re
         
       
         <h2 class="f1">
+          <a href="/tags/pkm" class="link blue hover-black">
+            Tag: pkm
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/power" class="link blue hover-black">
             Tag: power
           </a>
@@ -3521,6 +3924,23 @@ In my workflow, to share code snippet with others, gists is needed.
 </div>
 
         
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
+    </div>
+  </div>
+</div>
+
+        
       
         <h2 class="f1">
           <a href="/tags/society" class="link blue hover-black">
@@ -3539,6 +3959,30 @@ In my workflow, to share code snippet with others, gists is needed.
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Incentive is an underlying mechanism that drive society at any scale including individual, group of individuals, and human population as a whole.
 Incentive is an abstract concept. Physically, incentives are driven by money, refer to my blog titled &ldquo;Incentives of Owning Money&rdquo; for more detail. Another important concept is to accept that money is an indirect form of freedom and power, refer to my blog titled &ldquo;Blog Freedom and Power are two sides of the same coin&rdquo; for more detail.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/sqlite" class="link blue hover-black">
+            Tag: sqlite
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/" class="link black dim">
+        Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      By now, in &lt;2022-12-08 Thu&gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.
     </div>
   </div>
 </div>
@@ -3815,6 +4259,30 @@ Debian and RPM packages don&#39;t contain source code, only the compiled result.
         
       
         <h2 class="f1">
+          <a href="/tags/vterm" class="link blue hover-black">
+            Tag: vterm
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/wiki" class="link blue hover-black">
             Tag: wiki
           </a>
@@ -3903,6 +4371,30 @@ A creation of WWW jumped start more sophisticated usage of hypermedia. In 1994, 
 
         
       
+        <h2 class="f1">
+          <a href="/tags/zsh" class="link blue hover-black">
+            Tag: zsh
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        
+      
     </section>
   </div>
 
@@ -3910,7 +4402,7 @@ A creation of WWW jumped start more sophisticated usage of hypermedia. In 1994, 
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
-    &copy;  Anak Wannaphaschaiyong 2022 
+    &copy;  Anak Wannaphaschaiyong 2023 
   </a>
     <div>
 <div class="ananke-socials">

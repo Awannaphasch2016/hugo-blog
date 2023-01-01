@@ -23,6 +23,17 @@ In this case, its clearly a environment specific problem which required environe
     </item>
     
     <item>
+      <title>  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/</guid>
+      <description>To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &amp;mdash; variables declared by defcustom &amp;mdash; using custom-set-variables.</description>
+    </item>
+    
+    <item>
       <title>  A Note On X Where X = &#34;adding jump state to command.&#34;
   </title>
       <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</link>
@@ -60,6 +71,17 @@ Second, LSP is language server a general concept outside of Emacs and python. LS
     </item>
     
     <item>
+      <title>  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/</guid>
+      <description>Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &amp;#34;Set point to POSITION for vterm. The return value is `t&amp;#39;when point moved successfully. It will reset to original position if it can&amp;#39;t move there.&amp;#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.</description>
+    </item>
+    
+    <item>
       <title>  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   </title>
       <link>https://awannaphasch2016.github.io/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/</link>
@@ -82,6 +104,18 @@ In this series of &amp;ldquo;Explaining X&amp;rdquo; where X is any mathematical
 The main function I started to modify is doom/open-scratch-buffer. The functions deals with opening scratch buffer when current-buffer is inside and outside of a projectile&amp;rsquo;s project.
 doom/open-scratch-buffer does the following
  check if scratch will open in the same buffer or as pop up buffer Then, it passes arguments to (doom-scratch-buffer &amp;amp;optional DONT-RESTORE-P MODE DIRECTORY PROJECT-NAME).</description>
+    </item>
+    
+    <item>
+      <title>  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/</guid>
+      <description>I couldn&amp;rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&amp;rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&amp;rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &amp;mdash; value shown in custom.</description>
     </item>
     
     <item>
@@ -261,6 +295,15 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
     </item>
     
     <item>
+      <title>Elisp Code to Find List of Top N MELPA Authors</title>
+      <link>https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/</guid>
+      <description>;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &amp;#39;url) (require &amp;#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &amp;#34;Melpa recipe JSON data.&amp;#34;) (defun smelpa-json () &amp;#34;Return an alist of MELPA recipe metadata.&amp;#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &amp;#34;https://melpa.org/archive.json&amp;#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &amp;#34;Return alist of form: ((author . (package-url...))).&amp;#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &amp;#39;props data)) (url (alist-get &amp;#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &amp;#34;/&amp;#34; &amp;#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &amp;#34;Return alist of form ((author .</description>
+    </item>
+    
+    <item>
       <title>Emacs Package Explained: How to customize key binding in evil modes?</title>
       <link>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -268,6 +311,17 @@ If you are familiar with Etherem, we have heard Wei and GWei. These are not the 
       <guid>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</guid>
       <description>This is my summary of a more thoroughly explained evil guide, see here.
 Keymap Precendence in vanilla emacs  overriding-terminal-local-map for terminal-specific key bind overriding-local-map keymap char property at point keymaps for the current character. Yasnippet keymaps are in this category. emulation-mode-map-alists. Apparently, its more multi-mode keymap management. I am not sure what this means, but if i have to guess it is used in modes that have its known key precedence or other complexity that its key binding system brings.</description>
+    </item>
+    
+    <item>
+      <title>Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!</title>
+      <link>https://awannaphasch2016.github.io/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/</guid>
+      <description>By now, in &amp;lt;2022-12-08 Thu&amp;gt;, it should be conclusive that any type of contents are best organized/managed using database. Responsibilities of database includes retrieve/store data. That&amp;rsquo;s it.
+However, emacs manages data as text. Advantages of this is simplicity, but, this argument doesn&amp;rsquo;t even work anymore. why? Emacs supports SQLite as built-in!
+I like Emacs because of level of compatibility that it provides, but it frustrates me to realized that open source community is not as collaborative, as a result, Emacs slow to adopts.</description>
     </item>
     
     <item>
@@ -415,6 +469,16 @@ This can be done by setting the following
       
       <guid>https://awannaphasch2016.github.io/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/</guid>
       <description>{{&amp;lt; ref &amp;ldquo;~/org/personal-knowledge-management-pkm-note.org&amp;rdquo; &amp;gt;}}</description>
+    </item>
+    
+    <item>
+      <title>How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/</guid>
+      <description>I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &amp;#39;switch-to-buffer :after #&amp;#39;conda--switch-buffer-auto-activate) (advice-remove &amp;#39;switch-to-buffer #&amp;#39;conda--switch-buffer-auto-activate)) The error is (error &amp;quot;No such conda environment: %s&amp;quot; name) because input argument name has nil value when a file that is switched to don&amp;rsquo;t have environment.</description>
     </item>
     
     <item>

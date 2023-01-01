@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elisp on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/elisp/</link>
+    <description>Recent content in elisp on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/elisp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elisp Code to Find List of Top N MELPA Authors</title>
+      <link>https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/</guid>
+      <description>;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &amp;#39;url) (require &amp;#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &amp;#34;Melpa recipe JSON data.&amp;#34;) (defun smelpa-json () &amp;#34;Return an alist of MELPA recipe metadata.&amp;#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &amp;#34;https://melpa.org/archive.json&amp;#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &amp;#34;Return alist of form: ((author . (package-url...))).&amp;#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &amp;#39;props data)) (url (alist-get &amp;#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &amp;#34;/&amp;#34; &amp;#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &amp;#34;Return alist of form ((author .</description>
+    </item>
+    
+  </channel>
+</rss>

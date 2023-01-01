@@ -18,6 +18,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-adding-jump-state-to-command/</loc>
   </url>
   
@@ -30,11 +34,19 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/</loc>
   </url>
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/</loc>
   </url>
   
   <url>
@@ -154,6 +166,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/conda/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/config/</loc>
   </url>
   
@@ -175,6 +191,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/cryptography-engineering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/customization/</loc>
   </url>
   
   <url>
@@ -250,11 +270,23 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/elisp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/emacs/</loc>
   </url>
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/emacs-package-explained-how-to-customize-key-binding-in-evil-modes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/</loc>
   </url>
   
   <url>
@@ -275,6 +307,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/euclidean-algorithm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/evil-mode/</loc>
   </url>
   
   <url>
@@ -359,6 +395,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/</loc>
   </url>
   
   <url>
@@ -510,7 +550,15 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/org-agenda/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/tags/org-babel/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/org-refile/</loc>
   </url>
   
   <url>
@@ -527,6 +575,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/tags/philosophy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/pkm/</loc>
   </url>
   
   <url>
@@ -567,6 +619,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/society-as-a-function-of-attention/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/sqlite/</loc>
   </url>
   
   <url>
@@ -634,6 +690,10 @@
   </url>
   
   <url>
+    <loc>https://awannaphasch2016.github.io/tags/vterm/</loc>
+  </url>
+  
+  <url>
     <loc>https://awannaphasch2016.github.io/posts/what-is-x-where-x-is-dockers-image/</loc>
   </url>
   
@@ -671,6 +731,10 @@
   
   <url>
     <loc>https://awannaphasch2016.github.io/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://awannaphasch2016.github.io/tags/zsh/</loc>
   </url>
   
 </urlset>

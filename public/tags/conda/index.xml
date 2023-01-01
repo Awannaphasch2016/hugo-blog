@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conda on Anak Wannaphaschaiyong</title>
+    <link>https://awannaphasch2016.github.io/tags/conda/</link>
+    <description>Recent content in conda on Anak Wannaphaschaiyong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://awannaphasch2016.github.io/tags/conda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?</title>
+      <link>https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/</guid>
+      <description>I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &amp;#39;switch-to-buffer :after #&amp;#39;conda--switch-buffer-auto-activate) (advice-remove &amp;#39;switch-to-buffer #&amp;#39;conda--switch-buffer-auto-activate)) The error is (error &amp;quot;No such conda environment: %s&amp;quot; name) because input argument name has nil value when a file that is switched to don&amp;rsquo;t have environment.</description>
+    </item>
+    
+  </channel>
+</rss>

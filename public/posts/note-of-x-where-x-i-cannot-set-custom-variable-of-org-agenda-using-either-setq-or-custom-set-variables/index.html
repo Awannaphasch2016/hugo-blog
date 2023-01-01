@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  " />
+<meta property="og:description" content="I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" />
+
+<meta itemprop="name" content="  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  ">
+<meta itemprop="description" content="I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.">
+
+<meta itemprop="wordCount" content="303">
+
+
+
+<meta itemprop="keywords" content="org-agenda,blog,note,org-refile,customization," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  "/>
+<meta name="twitter:description" content="I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I couldn&rsquo;t use <code>setq</code> and <code>custom-set-variables</code> to have <code>org-refile</code> shows list of newly set <code>org-agenda-files</code>.</p>
+<p>Started to solve, first suspect I found was when I learned about <code>custom.el</code> file. Custom variable set by <code>defcustom</code> will set custom value in <code>custom.el</code>. I reset all <code>custom.el</code> to <code>nil</code> to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.</p>
+<p>I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in <code>helpful-variable</code>, and <code>org-agenda-files</code> was not set to nil &mdash; value shown in <code>custom.el</code> &mdash; when I commented out  <code>(org-agenda-files nil)</code>. Note that I set <code>org-agenda-files</code> to nil using <code>customize</code> previous to commenting it out.</p>
+<p>I also found that reloaded Doom Emacs seems to load <code>custom.el</code> after <code>init.el</code>. I tested this hypothesis of this behavior a couple time.</p>
+<p>Still, It was too soon to say with confident what side effect of using <code>setq</code> in place of <code>custom-set-variable</code> is.</p>
+<p>Next, I tried changing <code>setq</code> to <code>custom-set-variables</code>. Then I reloaded. Both <code>setq</code> or <code>custom-set-variables</code> changed value of <code>org-agenda-file</code> in <code>helpful-variable</code> accordingly. However, <code>org-refile</code> still showed old <code>org-agenda-file</code> list.</p>
+<p>Next attempt is to look at the code, skimmed through <code>~/.emacs.d/.local/straight/repos/org/lisp/org-refile.el</code>, I found that <code>org-refile-get-targets</code> retrieve list of files from <code>org-agenda-files</code>. This is interesting because value of <code>org-agenda-files</code> I saw in <code>helpful-variables</code> hold newly changed value &mdash; value that was not reflected in list showed in <code>org-refile</code>. Saw this, I immediately think about cached value &ndash; similar situation related to projectile value not updating. Then, I searched for &ldquo;reload&rdquo; and &ldquo;cache&rdquo; keyword in <code>helpful-functions</code> and found <code>org-reload</code>. Running <code>org-reload</code> solved the problem. Now, org agenda files values reflected the change.</p>
+<p>Note I didn&rsquo;t try that hard to find cache file because <code>org-reload</code> turned out to solve the problem. I also didn&rsquo;t spend time figure out how refile related cache function works.</p>
+<p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>~milfex-lostex</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/org-agenda" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">org-agenda</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/note" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">note</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/org-refile" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">org-refile</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/customization" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">customization</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/">  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/">  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/">  A Note on X where X = &#34;LSP &#43; flycheck &#43; lsp-pyright&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/assess-your-level-of-understanding/">Assess Your Level of Understanding</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

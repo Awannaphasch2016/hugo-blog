@@ -112,6 +112,25 @@ In this case, its clearly a environment specific problem which required environe
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" class="link black dim">
+          A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/" class="link black dim">
           A Note On X Where X = &#34;adding jump state to command.&#34;
   
@@ -173,6 +192,25 @@ Second, LSP is language server a general concept outside of Emacs and python. LS
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/" class="link black dim">
+          A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Set pt value to pos fix awkward completion behavior in vterm.
+(defun vterm-goto-char (pos) &#34;Set point to POSITION for vterm. The return value is `t&#39;when point moved successfully. It will reset to original position if it can&#39;t move there.&#34; (when (and vterm--term (vterm-cursor-in-command-buffer-p) (vterm-cursor-in-command-buffer-p pos)) (let ((moved t) (origin-point (point)) pt cursor-pos succ) (vterm-reset-cursor-point) ;; Anak: this line cause weird behavior with auto completion (setq cursor-pos (point)) ;; (setq pt cursor-pos) ;; Anak commented out this line (setq pt pos) ;; Anak added this line and completion in vterm works better.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/" class="link black dim">
           Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
   
@@ -214,6 +252,26 @@ doom/open-scratch-buffer does the following
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/" class="link black dim">
+          Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I couldn&rsquo;t use setq and custom-set-variables to have org-refile shows list of newly set org-agenda-files.
+Started to solve, first suspect I found was when I learned about custom.el file. Custom variable set by defcustom will set custom value in custom.el. I reset all custom.el to nil to make sure that it doesn&rsquo;t set custom variables under weird condition that I am not aware of.
+I reloaded Doom Emacs. Changed variables didn&rsquo;t reflect in helpful-variable, and org-agenda-files was not set to nil &mdash; value shown in custom.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/philosophy-and-meta-physics-of-notes-taking/" class="link black dim">
           Philosophy and Meta Physics of &#34;Notes Taking&#34;
   
@@ -223,64 +281,6 @@ doom/open-scratch-buffer does the following
       Note taking is a skill that everyone seems to think that they have &ldquo;solved&rdquo; it. Whatever that means. They are not interested in investing their time to improve their note taking skill.
 No interest. No skill. No framework.
 Regardless of my critique, I think they draw conclusion fairly. Why? around 6 out of 10 people are knowledge worker 1. A subset of those need to use note at all. A subset of those who use notes need to create reusable notes.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/writing-a-blog/" class="link black dim">
-          Writing a &#34;Blog&#34;
-  
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Last edited  [2022-06-23 Thu]    Note: This blog will mostly likely ever changes as I form my preference of what I think a good blog should be.
-Blog. Piece. Article. Whatever you called it doesn&rsquo;t matter. I will redefine it here. For the rest of the blog, I will use the word blog.
-I define blog as followed
- Blog is a collection of text with a goal&rsquo;s guided narrative.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/" class="link black dim">
-        A Brief Story of Evolution and Widespread Adoption of The Internet
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &ldquo;Internetworking Architecture&rdquo; (Leiner et al. 2009) was a fundamental design that enable machines and computers to communicate via internet regardless of underlying communication protocol.
-TCP/IP were implemented in UNIX operating system triggers a widespread adoption of internet (Leiner et al. 2009). Dispersion of protocols began in research community. Recall that predecessor of internet project (it was named &ldquo;internetworking&rdquo; at the time) was funded with the goal to increase speed and efficiency of research collaborations.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/a-note-of-x-where-x-aws-ec2-services/" class="link black dim">
-        A Note of X where X = AWS EC2 services.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      An EC2 instance has 4 state of life cycle: running, stopped, and terminated. Furthermore, state transition (or action) of an EC2 instance is launch, rebooting, pending, shutting-down, and stopping, see &lt;ec2_life_cycle&gt;.
-  Figure 1: EC2 instance life cycle
-  Validating that you have correct setup This article assumes that you have setup AWS credentials in your terminal environment. You can check out one of my article named &ldquo;Setup AWS credentials for your AWS account and create new user&rdquo; to help you set things up.
     </div>
   </div>
 </div>
@@ -371,7 +371,16 @@ TCP/IP were implemented in UNIX operating system triggers a widespread adoption 
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/7/">7</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
     
     
     <li class="page-item">
@@ -379,7 +388,7 @@ TCP/IP were implemented in UNIX operating system triggers a widespread adoption 
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/7/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
@@ -390,7 +399,7 @@ TCP/IP were implemented in UNIX operating system triggers a widespread adoption 
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
-    &copy;  Anak Wannaphaschaiyong 2022 
+    &copy;  Anak Wannaphaschaiyong 2023 
   </a>
     <div>
 <div class="ananke-socials">

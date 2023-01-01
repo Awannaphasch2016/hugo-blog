@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>elisp | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+      <link href="/tags/elisp/index.xml" rel="alternate" type="application/rss+xml" title="Anak Wannaphaschaiyong" />
+      <link href="/tags/elisp/index.xml" rel="feed" type="application/rss+xml" title="Anak Wannaphaschaiyong" />
+      
+    
+    
+    <meta property="og:title" content="elisp" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/tags/elisp/" />
+
+<meta itemprop="name" content="elisp">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="elisp"/>
+<meta name="twitter:description" content=""/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          elisp
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “elisp”</p>
+    </div>
+  </article>
+  <div class="mw8 center">
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" class="link black dim">
+        Elisp Code to Find List of Top N MELPA Authors
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el? | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?" />
+<meta property="og:description" content="I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/how-to-setup-a-python-file-to-activate-specific-conda-environment-using-emacss-conda/" />
+
+<meta itemprop="name" content="How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?">
+<meta itemprop="description" content="I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment.">
+
+<meta itemprop="wordCount" content="217">
+
+
+
+<meta itemprop="keywords" content="conda,emacs," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?"/>
+<meta name="twitter:description" content="I found that default setup for conda.el to be annoying and not robust. Firstly, setting (conda-env-autoactivate-mode t) will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.
+(if conda-env-autoactivate-mode ;; already on, now switching off (advice-add &#39;switch-to-buffer :after #&#39;conda--switch-buffer-auto-activate) (advice-remove &#39;switch-to-buffer #&#39;conda--switch-buffer-auto-activate)) The error is (error &quot;No such conda environment: %s&quot; name) because input argument name has nil value when a file that is switched to don&rsquo;t have environment."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">How to setup a python file to activate specific conda environment using Emacs&#39;s conda.el?</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I found that default setup for <code>conda.el</code> to be annoying and not robust. Firstly, setting <code>(conda-env-autoactivate-mode t)</code> will output error everytime file. Apparently, from inspecting the code, this is how it is implemented! see below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(if conda-env-autoactivate-mode <span style="color:#75715e">;; already on, now switching off</span>
+      (advice-add <span style="color:#e6db74">&#39;switch-to-buffer</span> :after <span style="color:#a6e22e">#&#39;</span>conda--switch-buffer-auto-activate)
+    (advice-remove <span style="color:#e6db74">&#39;switch-to-buffer</span> <span style="color:#a6e22e">#&#39;</span>conda--switch-buffer-auto-activate))
+</code></pre></div><p>The error is <code>(error &quot;No such conda environment: %s&quot; name)</code> because input argument <code>name</code> has nil value when a file that is switched to don&rsquo;t have <code>environment.yml</code> setup. What an assumption to make! &mdash; I think the author is being lazy. (which is reasonable given that he doesn&rsquo;t need to share. I still thank him for sharing!)</p>
+<p>The default configuration works fine for me, but it gets annoying whenever I run <code>toggle-debug-on-error</code>!.</p>
+<p>The solution to this annoying problem is for you to use conda like how it is implemented &mdash; not what it says in the Readme.md! (a very common and understandable documentation bug). I purpose my solution below.</p>
+<p>First, you must put the following code in config.el</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package! conda
+  :config (setq-default mode-line-format (<span style="color:#a6e22e">cons</span> <span style="color:#f92672">&#39;</span>(:exec conda-env-current-name) mode-line-format))
+  :after python-mode
+  :hook (add-hook <span style="color:#e6db74">&#39;python-mode-hook</span> <span style="color:#e6db74">&#39;conda-env-activate-for-buffer</span>))
+</code></pre></div><p>Then, you must place <code>environment.yml</code> in base directory (or in any level of parent directories of a python file) then put the following code in the yaml file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: test
+</code></pre></div><p>That&rsquo;s it.</p>
+<p>Peace.</p>
+<p>milfex-lostex</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/conda" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">conda</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/emacs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">emacs</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/">  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/building-fundamental-in-emacs-how-to-customize-key-binding-in-vanilla-emacs/">Building fundamental in Emacs: How to customize key binding in vanilla Emacs?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/emacss-snippet-management-packages-still-use-text-based-management-just-use-sqlite/">Emacs&#39;s Snippet Management Packages Still Use Text-Based Management? Just Use Sqlite!</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/dependcies-conflicts-while-installing-pdf-tools-via-pdf-tools-install/">Error log: Error in private config: config.el, (error pdf-info-epdfinfo-program is not executable) and Dependcies conflicts while installing pdf-tools via pdf-tools-install.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/how-to-solve-handing-tramp/">How to solve hanging tramps?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/markdown-note/">Markdown Note</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/most-efficient-workflow-to-lookup-documentations-on-programming-language/">Most Efficient Workflow To &#34;Lookup&#34; Documentations On Programming Language.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

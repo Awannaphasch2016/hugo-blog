@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+   | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  " />
+<meta property="og:description" content="To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/" />
+
+<meta itemprop="name" content="  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  ">
+<meta itemprop="description" content="To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables.">
+
+<meta itemprop="wordCount" content="126">
+
+
+
+<meta itemprop="keywords" content="blog,note,debug," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  "/>
+<meta name="twitter:description" content="To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &mdash; variables declared by defcustom &mdash; using custom-set-variables."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>To debug org related bug, org-reload reloads all lisp files in <code>~/.emacs.d/.local/straight/repos/org/</code>. Reloading <code>config.el</code> files should inform you what information has been overwritten. If you use <code>Doom Emacs</code> and modify either <code>package.el</code> or <code>init.el</code>, you must run <code>doom sync</code> in your terminal (outside of emacs), then consequently run <code>doom/reload</code> inside <code>Doom Emacs</code> for modification to correctly take effect.</p>
+<p>It is important to note that you should always make sure to set <code>custom-variables</code>  &mdash; variables declared by <code>defcustom</code> &mdash; using <code>custom-set-variables</code>. These values are saved in <code>custom.el</code>. If, after applying <code>org-reload</code>, configuration still not fully refresh, you need to check <code>custom.el</code>. For more information about what information is cached, see <code>~/.emacs.d/.local/cache</code>. More information about recorded history is at <code>~/.emacs.d/.local/cache/savehist</code>. I don&rsquo;t recall chaining value here help much.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/note" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">note</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/debug" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">debug</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/">  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/">  A Note on X where X = &#34;LSP &#43; flycheck &#43; lsp-pyright&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/">  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/">Getting source code of distributed binary package in Ubuntu</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-iam-services/">A Note of X where X = AWS IAM services.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

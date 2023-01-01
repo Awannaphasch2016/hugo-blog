@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Elisp Code to Find List of Top N MELPA Authors | Anak Wannaphaschaiyong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content=";; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Elisp Code to Find List of Top N MELPA Authors" />
+<meta property="og:description" content=";; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://awannaphasch2016.github.io/posts/elisp-code-to-find-list-of-top-n-melpa-authors/" />
+
+<meta itemprop="name" content="Elisp Code to Find List of Top N MELPA Authors">
+<meta itemprop="description" content=";; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author .">
+
+<meta itemprop="wordCount" content="129">
+
+
+
+<meta itemprop="keywords" content="elisp,blog,implementation," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Elisp Code to Find List of Top N MELPA Authors"/>
+<meta name="twitter:description" content=";; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/ (require &#39;url) (require &#39;cl-lib) (defvar url-http-end-of-headers) (defvar smelpa-json nil &#34;Melpa recipe JSON data.&#34;) (defun smelpa-json () &#34;Return an alist of MELPA recipe metadata.&#34; (or smelpa-json (setq smelpa-json (with-current-buffer (url-retrieve-synchronously &#34;https://melpa.org/archive.json&#34;) (goto-char url-http-end-of-headers) (json-read))))) (defun smelpa-packages-by-author () &#34;Return alist of form: ((author . (package-url...))).&#34; (let (authors) (cl-loop for (_ . data) in (smelpa-json) do (when-let ((props (alist-get &#39;props data)) (url (alist-get &#39;url props)) (parsed (url-generic-parse-url url)) (filename (url-filename parsed)) (tokens (split-string filename &#34;/&#34; &#39;omit-nulls)) (author (intern (car tokens)))) (if (alist-get author authors) (push url (alist-get author authors)) (push (cons author (list url)) authors)))) authors)) (defun smelpa-most-published-authors (n) &#34;Return alist of form ((author ."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Anak Wannaphaschaiyong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Elisp Code to Find List of Top N MELPA Authors</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Anak Wannaphaschaiyong
+          
+          </strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; https://www.reddit.com/r/emacs/comments/t9qs6h/need_help_listing_all_emacs_super_developers/</span>
+(require <span style="color:#e6db74">&#39;url</span>)
+(require <span style="color:#e6db74">&#39;cl-lib</span>)
+(defvar url-http-end-of-headers)
+(defvar smelpa-json <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;Melpa recipe JSON data.&#34;</span>)
+
+(defun smelpa-json ()
+  <span style="color:#e6db74">&#34;Return an alist of MELPA recipe metadata.&#34;</span>
+  (or smelpa-json
+      (setq smelpa-json
+            (with-current-buffer (url-retrieve-synchronously <span style="color:#e6db74">&#34;https://melpa.org/archive.json&#34;</span>)
+              (<span style="color:#a6e22e">goto-char</span> url-http-end-of-headers)
+              (json-read)))))
+(defun smelpa-packages-by-author ()
+  <span style="color:#e6db74">&#34;Return alist of form: ((author . (package-url...))).&#34;</span>
+  (let (authors)
+    (cl-loop for (_ <span style="color:#f92672">.</span> data) in (smelpa-json)
+             do (when-let ((props     (alist-get <span style="color:#e6db74">&#39;props</span> data))
+                           (url       (alist-get <span style="color:#e6db74">&#39;url</span> props))
+                           (parsed    (url-generic-parse-url url))
+                           (filename  (url-filename parsed))
+                           (tokens    (split-string filename <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#e6db74">&#39;omit-nulls</span>))
+                           (author    (<span style="color:#a6e22e">intern</span> (<span style="color:#a6e22e">car</span> tokens))))
+                  (if (alist-get author authors)
+                      (push url (alist-get author authors))
+                    (push (<span style="color:#a6e22e">cons</span> author (<span style="color:#a6e22e">list</span> url)) authors))))
+    authors))
+(defun smelpa-most-published-authors (n)
+  <span style="color:#e6db74">&#34;Return alist of form ((author . (url...))) for top N published MELPA authors.&#34;</span>
+  (let ((authors (smelpa-packages-by-author)))
+    (cl-subseq
+     (cl-sort authors <span style="color:#a6e22e">#&#39;&gt;</span>
+              :key (lambda (cell) (<span style="color:#a6e22e">length</span> (<span style="color:#a6e22e">cdr</span> cell))))
+     <span style="color:#ae81ff">0</span> (<span style="color:#a6e22e">min</span> n (<span style="color:#a6e22e">length</span> authors)))))
+</code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/elisp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">elisp</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/blog" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">blog</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/implementation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">implementation</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/implementing-x-where-x-custom-doom-emacss-scratch-buffer/">  Implementing X where X = &#34;Custom Doom Emacs&#39;s Scratch Buffer&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/x-implementation-where-x-executing-org-babel-block-in-doom-emacs/">X implementation where X = executing org babel block in Doom Emacs.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/">  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-emacs-combobulate-package/">  A Note On X Where X = &#34;Emac&#39;s Combobulate Package&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-making-evil-mode-not-awkward-with-zsh-completion-in-doom-emacs-vterm/">  A Note On X Where X = &#34;Making Evil Mode Not Awkward With Zsh Completion In Doom Emacs Vterm&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-adding-jump-state-to-command/">  A Note On X Where X = &#34;adding jump state to command.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-x-where-x-lsp-&#43;-flycheck-&#43;-lsp-pyright/">  A Note on X where X = &#34;LSP &#43; flycheck &#43; lsp-pyright&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/explaining-x-where-x-is-using-extended-euclidean-algorithm-eea-to-find-multiplicative-inverse/">  Explaining X where X is &#34;using Extended Euclidean algorithm (EEA) to find multiplicative inverse.&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/note-of-x-where-x-i-cannot-set-custom-variable-of-org-agenda-using-either-setq-or-custom-set-variables/">  Note of X where X = &#34;I cannot set custom-variable of org-agenda using either setq or custom-set-variables&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/philosophy-and-meta-physics-of-notes-taking/">  Philosophy and Meta Physics of &#34;Notes Taking&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/writing-a-blog/">  Writing a &#34;Blog&#34;
+  </a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-brief-story-of-evolution-and-widespread-adoption-of-the-internet/">A Brief Story of Evolution and Widespread Adoption of The Internet</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straights-recipe/">A Note On Straight&#39;s Recipe.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-on-straight/">A Note On Straight.el&#39;s Transaction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/a-note-of-x-where-x-aws-ec2-services/">A Note of X where X = AWS EC2 services.</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://awannaphasch2016.github.io" >
+    &copy;  Anak Wannaphaschaiyong 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

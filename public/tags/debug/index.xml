@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>  A Note Of X Where X = &#34;Debugging Org&#39;s Overwritten Variables&#34;
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/a-note-of-x-where-x-debugging-orgs-overwritten-variables/</guid>
+      <description>To debug org related bug, org-reload reloads all lisp files in ~/.emacs.d/.local/straight/repos/org/. Reloading config.el files should inform you what information has been overwritten. If you use Doom Emacs and modify either package.el or init.el, you must run doom sync in your terminal (outside of emacs), then consequently run doom/reload inside Doom Emacs for modification to correctly take effect.
+It is important to note that you should always make sure to set custom-variables &amp;mdash; variables declared by defcustom &amp;mdash; using custom-set-variables.</description>
+    </item>
+    
+    <item>
       <title>Getting source code of distributed binary package in Ubuntu</title>
       <link>https://awannaphasch2016.github.io/posts/getting-source-code-of-distributed-binary-package-in-ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
