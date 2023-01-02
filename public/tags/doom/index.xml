@@ -35,6 +35,17 @@ doom/open-scratch-buffer does the following
     </item>
     
     <item>
+      <title>  Must Read before running &#34;Doom upgrade&#34;!!!!!!
+  </title>
+      <link>https://awannaphasch2016.github.io/posts/must-read-before-running-doom-upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://awannaphasch2016.github.io/posts/must-read-before-running-doom-upgrade/</guid>
+      <description>Doom discord announces important update and fixes. This is where you should take a look first before attempting to pull remote commits that are ahead of your local commits.
+Doom emacs has only 1 branch. It used to have 2 main branch master and develop branch, but Henrik give up on develop branch because, I assume, its too much work to make develop branch stable before merging to master. For this reason, instead of merging develop branch to master branch.</description>
+    </item>
+    
+    <item>
       <title>Keybinding In Doom Emacs</title>
       <link>https://awannaphasch2016.github.io/posts/keybinding-in-doom-emacs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

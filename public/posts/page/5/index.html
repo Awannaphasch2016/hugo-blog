@@ -93,6 +93,27 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/how-to-set-recurring-todo-tasks-with-org-mode-in-emacs/" class="link black dim">
+        how to set recurring todo tasks with org mode in emacs?
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      First thing is to understand that behavior of a header block in org mode is dictated by properties.
+I want to set repeating task to have the following functions
+ when I change from TODO state to DONE state, a header block will log &ldquo;state changes&rdquo; with time stamp.  That is all the requirement I need for recurring tasks.
+This can be done by setting the following
+ set :REPEAT_TO_STATE: property under the header with org-set-property set either DEADLINE (org-deadline) or SCHEDULE (org-schedule) with recurring syntax 1 , for example, adding .
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/how-to-set-up-org-roam-and-org-roam-bibtex-as-building-block-of-emacs-as-your-primary-personal-knowledge-management/" class="link black dim">
         How to set up org-roam and org-roam-bibtex as building block of emacs as your primary personal knowledge management?
       </a>
@@ -250,23 +271,6 @@ Motivation drive efforts. Effort is a seed of creation and innovation. It just h
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Code below is a part of Exercise: A Playing Card Library 1 section in Hoon School 7. Libraries.
 ++ shuffle-deck |= [unshuffled=deck entropy=@] ^- deck =/ shuffled *deck =/ random ~(. og entropy) =/ remaining (lent unshuffled) |- ?: =(remaining 1) :_ shuffled (snag 0 unshuffled) =^ index random (rads:random remaining) %= $ shuffled [(snag index unshuffled) shuffled] remaining (dec remaining) unshuffled (oust [index 1] unshuffled) == Notice that random card is selected from the following 2 lines.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/justifying-existent-of-company/" class="link black dim">
-        Justifying Existent Of Company.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      TBD
     </div>
   </div>
 </div>
